@@ -28,12 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            Video = new LibVLCSharp.WinForms.VideoView();
+            ((System.ComponentModel.ISupportInitialize)Video).BeginInit();
+            SuspendLayout();
+            // 
+            // Video
+            // 
+            Video.AllowDrop = true;
+            Video.BackColor = Color.Black;
+            Video.Dock = DockStyle.Fill;
+            Video.Location = new Point(0, 0);
+            Video.MediaPlayer = null;
+            Video.Name = "Video";
+            Video.Size = new Size(800, 450);
+            Video.TabIndex = 0;
+            Video.Text = "videoView1";
+            Video.DragDrop += Video_DragDrop;
+            Video.DragEnter += Video_DragEnter;
+            // 
+            // Form1
+            // 
+            AllowDrop = true;
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
+            ClientSize = new Size(800, 450);
+            Controls.Add(Video);
+            Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Block Player";
+            FormClosed += Form1_FormClosed;
+            DragDrop += Video_DragDrop;
+            DragEnter += Video_DragEnter;
+            ((System.ComponentModel.ISupportInitialize)Video).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private LibVLCSharp.WinForms.VideoView Video;
     }
 }
