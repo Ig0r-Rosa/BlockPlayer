@@ -16,7 +16,7 @@ namespace BlockPlayer
 
             ConfigPainel();
 
-            ConfigBarra();
+            ConfigInterface();
 
 
         }
@@ -36,26 +36,32 @@ namespace BlockPlayer
             Painel.Dock = DockStyle.Fill;
             Painel.BringToFront();
             Painel.BackColor = Color.Transparent;
-            Painel.Click += (_, __) => Pause();
+
         }
 
-        private void ConfigBarra()
+        private void ConfigInterface()
         {
             BarraVideo.Parent = this;
             BarraVideo.BringToFront();
-            BarraVideo.Visible = false;
+
+            TempoAtualFinal.Parent = this;
+            TempoAtualFinal.BringToFront();
 
             // Força o controle a se refrescar corretamente
             BarraVideo.Invalidate();
+            TempoAtualFinal.Invalidate();
         }
 
-        private void ExibirBarra(bool exibe)
+        private void ExibirInterface(bool exibe)
         {
             BarraVideo.Visible = exibe;
+            TempoAtualFinal.Visible = exibe;
             if (exibe)
             {
+                TempoAtualFinal.BringToFront();
                 BarraVideo.BringToFront();
                 BarraVideo.Invalidate(); // força o redesenho
+                TempoAtualFinal.Invalidate();
             }
         }
 
@@ -63,16 +69,46 @@ namespace BlockPlayer
         {
             if (Video.MediaPlayer.IsPlaying)
             {
+                AtualizarTempoVideo();
                 Video.MediaPlayer.SetPause(true);
-                ExibirBarra(true);
+                ExibirInterface(true);
                 TimerVideo.Stop();
             }
             else
             {
                 Video.MediaPlayer.SetPause(false);
-                ExibirBarra(false);
+                ExibirInterface(false);
                 TimerVideo.Start();
             }
+        }
+
+        private string FormatarTempo(long ms)
+        {
+            var totalSeconds = ms / 1000;
+            var minutes = totalSeconds / 60;
+            var seconds = totalSeconds % 60;
+            return $"{minutes:D2}:{seconds:D2}";
+        }
+
+        private void AtualizarTempoVideo()
+        {
+            if (_mediaPlayer.Length > 0)
+            {
+                long pos = _mediaPlayer.Time; // posição atual (ms)
+                long len = _mediaPlayer.Length; // duração total (ms)
+
+                // Atualiza a barra de progresso
+                int progress = (int)((double)pos / len * BarraVideo.Maximum);
+                BarraVideo.Value = Math.Min(progress, BarraVideo.Maximum);
+
+                // Atualiza o label com o tempo atual e total
+                TempoAtualFinal.Text = $"{FormatarTempo(pos)} / {FormatarTempo(len)}";
+            }
+        }
+
+        private void Painel_Click(object sender, EventArgs e)
+        {
+            Pause();
         }
 
         private void Video_DragEnter(object sender, DragEventArgs e)
@@ -108,13 +144,7 @@ namespace BlockPlayer
 
         private void TimerVideo_Tick(object sender, EventArgs e)
         {
-            if (_mediaPlayer.IsPlaying && _mediaPlayer.Length > 0)
-            {
-                long pos = _mediaPlayer.Time; // posição atual (ms)
-                long len = _mediaPlayer.Length; // duração total (ms)
-                int progress = (int)((double)pos / len * BarraVideo.Maximum);
-                BarraVideo.Value = Math.Min(progress, BarraVideo.Maximum);
-            }
+            AtualizarTempoVideo();
         }
 
         private void BarraVideo_Scroll(object sender, EventArgs e)
@@ -125,6 +155,12 @@ namespace BlockPlayer
                 long newTime = (long)(_mediaPlayer.Length * pos);
                 _mediaPlayer.Time = newTime;
             }
+            AtualizarTempoVideo();
+        }
+
+        private void BarraVideo_MouseUp(object sender, MouseEventArgs e)
+        {
+            AtualizarTempoVideo();
         }
     }
 

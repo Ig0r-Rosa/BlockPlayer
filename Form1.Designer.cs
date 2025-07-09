@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             Video = new LibVLCSharp.WinForms.VideoView();
             Painel = new TransparentPanel();
+            TempoAtualFinal = new Label();
             BarraVideo = new TrackBar();
             TimerVideo = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)Video).BeginInit();
@@ -55,6 +56,7 @@
             // Painel
             // 
             Painel.BackColor = Color.Transparent;
+            Painel.Controls.Add(TempoAtualFinal);
             Painel.Controls.Add(BarraVideo);
             Painel.Dock = DockStyle.Fill;
             Painel.ForeColor = Color.Transparent;
@@ -62,6 +64,17 @@
             Painel.Name = "Painel";
             Painel.Size = new Size(978, 544);
             Painel.TabIndex = 1;
+            Painel.Click += Painel_Click;
+            // 
+            // TempoAtualFinal
+            // 
+            TempoAtualFinal.AutoSize = true;
+            TempoAtualFinal.Location = new Point(12, 18);
+            TempoAtualFinal.Name = "TempoAtualFinal";
+            TempoAtualFinal.Size = new Size(117, 25);
+            TempoAtualFinal.TabIndex = 2;
+            TempoAtualFinal.Text = "00:00 / 00:00";
+            TempoAtualFinal.Visible = false;
             // 
             // BarraVideo
             // 
@@ -74,10 +87,13 @@
             BarraVideo.Size = new Size(978, 15);
             BarraVideo.TabIndex = 1;
             BarraVideo.TickStyle = TickStyle.None;
+            BarraVideo.Visible = false;
             BarraVideo.Scroll += BarraVideo_Scroll;
+            BarraVideo.MouseUp += BarraVideo_MouseUp;
             // 
             // TimerVideo
             // 
+            TimerVideo.Interval = 10;
             TimerVideo.Tick += TimerVideo_Tick;
             // 
             // Form1
@@ -108,5 +124,6 @@
         private TransparentPanel Painel;
         private TrackBar BarraVideo;
         private System.Windows.Forms.Timer TimerVideo;
+        private Label TempoAtualFinal;
     }
 }
