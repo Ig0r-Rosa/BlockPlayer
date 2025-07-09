@@ -12,17 +12,51 @@ namespace BlockPlayer
         {
             InitializeComponent();
 
+            ConfigVLC();
+
+            ConfigPainel();
+
+            ConfigBarra();
+
+
+        }
+
+        private void ConfigVLC()
+        {
             Core.Initialize();
 
             _libVLC = new LibVLC();
             _mediaPlayer = new MediaPlayer(_libVLC);
 
             Video.MediaPlayer = _mediaPlayer;
+        }
 
+        private void ConfigPainel()
+        {
             Painel.Dock = DockStyle.Fill;
             Painel.BringToFront();
             Painel.BackColor = Color.Transparent;
             Painel.Click += (_, __) => Pause();
+        }
+
+        private void ConfigBarra()
+        {
+            BarraVideo.Parent = this;
+            BarraVideo.BringToFront();
+            BarraVideo.Visible = false;
+
+            // Força o controle a se refrescar corretamente
+            BarraVideo.Invalidate();
+        }
+
+        private void ExibirBarra(bool exibe)
+        {
+            BarraVideo.Visible = exibe;
+            if (exibe)
+            {
+                BarraVideo.BringToFront();
+                BarraVideo.Invalidate(); // força o redesenho
+            }
         }
 
         private void Pause()
@@ -30,10 +64,14 @@ namespace BlockPlayer
             if (Video.MediaPlayer.IsPlaying)
             {
                 Video.MediaPlayer.SetPause(true);
+                ExibirBarra(true);
+                TimerVideo.Stop();
             }
             else
             {
                 Video.MediaPlayer.SetPause(false);
+                ExibirBarra(false);
+                TimerVideo.Start();
             }
         }
 
@@ -68,7 +106,26 @@ namespace BlockPlayer
             _libVLC.Dispose();
         }
 
+        private void TimerVideo_Tick(object sender, EventArgs e)
+        {
+            if (_mediaPlayer.IsPlaying && _mediaPlayer.Length > 0)
+            {
+                long pos = _mediaPlayer.Time; // posição atual (ms)
+                long len = _mediaPlayer.Length; // duração total (ms)
+                int progress = (int)((double)pos / len * BarraVideo.Maximum);
+                BarraVideo.Value = Math.Min(progress, BarraVideo.Maximum);
+            }
+        }
 
+        private void BarraVideo_Scroll(object sender, EventArgs e)
+        {
+            if (_mediaPlayer.Length > 0)
+            {
+                float pos = (float)BarraVideo.Value / BarraVideo.Maximum;
+                long newTime = (long)(_mediaPlayer.Length * pos);
+                _mediaPlayer.Time = newTime;
+            }
+        }
     }
 
     public class TransparentPanel : Panel

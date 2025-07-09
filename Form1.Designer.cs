@@ -28,9 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             Video = new LibVLCSharp.WinForms.VideoView();
             Painel = new TransparentPanel();
+            BarraVideo = new TrackBar();
+            TimerVideo = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)Video).BeginInit();
+            Painel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)BarraVideo).BeginInit();
             SuspendLayout();
             // 
             // Video
@@ -41,7 +46,7 @@
             Video.Location = new Point(0, 0);
             Video.MediaPlayer = null;
             Video.Name = "Video";
-            Video.Size = new Size(800, 450);
+            Video.Size = new Size(978, 544);
             Video.TabIndex = 0;
             Video.Text = "videoView1";
             Video.DragDrop += Video_DragDrop;
@@ -50,12 +55,30 @@
             // Painel
             // 
             Painel.BackColor = Color.Transparent;
+            Painel.Controls.Add(BarraVideo);
             Painel.Dock = DockStyle.Fill;
             Painel.ForeColor = Color.Transparent;
             Painel.Location = new Point(0, 0);
             Painel.Name = "Painel";
-            Painel.Size = new Size(800, 450);
+            Painel.Size = new Size(978, 544);
             Painel.TabIndex = 1;
+            // 
+            // BarraVideo
+            // 
+            BarraVideo.BackColor = Color.FromArgb(64, 64, 64);
+            BarraVideo.Dock = DockStyle.Top;
+            BarraVideo.Location = new Point(0, 0);
+            BarraVideo.Maximum = 1000;
+            BarraVideo.MaximumSize = new Size(0, 15);
+            BarraVideo.Name = "BarraVideo";
+            BarraVideo.Size = new Size(978, 15);
+            BarraVideo.TabIndex = 1;
+            BarraVideo.TickStyle = TickStyle.None;
+            BarraVideo.Scroll += BarraVideo_Scroll;
+            // 
+            // TimerVideo
+            // 
+            TimerVideo.Tick += TimerVideo_Tick;
             // 
             // Form1
             // 
@@ -63,7 +86,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(978, 544);
             Controls.Add(Painel);
             Controls.Add(Video);
             Name = "Form1";
@@ -73,6 +96,9 @@
             DragDrop += Video_DragDrop;
             DragEnter += Video_DragEnter;
             ((System.ComponentModel.ISupportInitialize)Video).EndInit();
+            Painel.ResumeLayout(false);
+            Painel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)BarraVideo).EndInit();
             ResumeLayout(false);
         }
 
@@ -80,5 +106,7 @@
 
         private LibVLCSharp.WinForms.VideoView Video;
         private TransparentPanel Painel;
+        private TrackBar BarraVideo;
+        private System.Windows.Forms.Timer TimerVideo;
     }
 }
