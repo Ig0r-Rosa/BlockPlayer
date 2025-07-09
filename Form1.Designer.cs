@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             Video = new LibVLCSharp.WinForms.VideoView();
+            Painel = new TransparentPanel();
             ((System.ComponentModel.ISupportInitialize)Video).BeginInit();
             SuspendLayout();
             // 
@@ -46,6 +47,16 @@
             Video.DragDrop += Video_DragDrop;
             Video.DragEnter += Video_DragEnter;
             // 
+            // Painel
+            // 
+            Painel.BackColor = Color.Transparent;
+            Painel.Dock = DockStyle.Fill;
+            Painel.ForeColor = Color.Transparent;
+            Painel.Location = new Point(0, 0);
+            Painel.Name = "Painel";
+            Painel.Size = new Size(800, 450);
+            Painel.TabIndex = 1;
+            // 
             // Form1
             // 
             AllowDrop = true;
@@ -53,6 +64,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(800, 450);
+            Controls.Add(Painel);
             Controls.Add(Video);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
@@ -67,5 +79,6 @@
         #endregion
 
         private LibVLCSharp.WinForms.VideoView Video;
+        private TransparentPanel Painel;
     }
 }

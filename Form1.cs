@@ -18,6 +18,11 @@ namespace BlockPlayer
             _mediaPlayer = new MediaPlayer(_libVLC);
 
             Video.MediaPlayer = _mediaPlayer;
+
+            Painel.Dock = DockStyle.Fill;
+            Painel.BringToFront();
+            Painel.BackColor = Color.Transparent;
+            Painel.Click += (_, __) => Pause();
         }
 
         private void Pause()
@@ -61,6 +66,32 @@ namespace BlockPlayer
             _mediaPlayer.Stop();
             _mediaPlayer.Dispose();
             _libVLC.Dispose();
+        }
+
+
+    }
+
+    public class TransparentPanel : Panel
+    {
+        public TransparentPanel()
+        {
+            this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            this.BackColor = Color.Transparent;
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                var cp = base.CreateParams;
+                cp.ExStyle |= 0x00000020; // WS_EX_TRANSPARENT
+                return cp;
+            }
+        }
+
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            // Não pintar o fundo
         }
     }
 }
