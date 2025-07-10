@@ -1,5 +1,7 @@
 using LibVLCSharp.Shared;
 using LibVLCSharp.WinForms;
+using System.Numerics;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
 
 namespace BlockPlayer
 {
@@ -7,6 +9,8 @@ namespace BlockPlayer
     {
         private LibVLC _libVLC;
         private MediaPlayer _mediaPlayer;
+
+        List<Control> Interface;
 
         public Form1()
         {
@@ -41,27 +45,33 @@ namespace BlockPlayer
 
         private void ConfigInterface()
         {
-            BarraVideo.Parent = this;
-            BarraVideo.BringToFront();
+            Interface = new List<Control>
+            {
+                BackgroundInterface,
+                VolumeVideo,
+                VolumeTexto,
+                BarraVideo,
+                TempoAtualFinal
+            };
 
-            TempoAtualFinal.Parent = this;
-            TempoAtualFinal.BringToFront();
-
-            // Força o controle a se refrescar corretamente
-            BarraVideo.Invalidate();
-            TempoAtualFinal.Invalidate();
+            foreach (var item in Interface)
+            {
+                item.Parent = this;
+                item.BringToFront();
+                item.Invalidate(); // força o redesenho
+            }
         }
 
         private void ExibirInterface(bool exibe)
         {
-            BarraVideo.Visible = exibe;
-            TempoAtualFinal.Visible = exibe;
-            if (exibe)
+            foreach (var item in Interface)
             {
-                TempoAtualFinal.BringToFront();
-                BarraVideo.BringToFront();
-                BarraVideo.Invalidate(); // força o redesenho
-                TempoAtualFinal.Invalidate();
+                item.Visible = exibe;
+                if (exibe)
+                {
+                    item.BringToFront();
+                    item.Invalidate();
+                }
             }
         }
 
@@ -70,12 +80,14 @@ namespace BlockPlayer
             if (Video.MediaPlayer.IsPlaying)
             {
                 AtualizarTempoVideo();
+                AtualizarVolume();
                 Video.MediaPlayer.SetPause(true);
                 ExibirInterface(true);
                 TimerVideo.Stop();
             }
             else
             {
+                AtualizarVolume();
                 Video.MediaPlayer.SetPause(false);
                 ExibirInterface(false);
                 TimerVideo.Start();
@@ -106,6 +118,12 @@ namespace BlockPlayer
             }
         }
 
+        private void AtualizarVolume()
+        {
+            _mediaPlayer.Volume = VolumeVideo.Value;
+            VolumeTexto.Text = VolumeVideo.Value.ToString();
+        }
+
         private void Painel_Click(object sender, EventArgs e)
         {
             Pause();
@@ -119,6 +137,9 @@ namespace BlockPlayer
 
         private void Video_DragDrop(object sender, DragEventArgs e)
         {
+            VolumeVideo.Value = 100;
+            AtualizarVolume();
+            
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
             if (files.Length > 0)
             {
@@ -161,6 +182,17 @@ namespace BlockPlayer
         private void BarraVideo_MouseUp(object sender, MouseEventArgs e)
         {
             AtualizarTempoVideo();
+        }
+
+        private void BotaoStop_Click(object sender, EventArgs e)
+        {
+            _mediaPlayer.Stop();
+            ExibirInterface(false);
+        }
+
+        private void VolumeVideo_Scroll(object sender, EventArgs e)
+        {
+            AtualizarVolume();
         }
     }
 
