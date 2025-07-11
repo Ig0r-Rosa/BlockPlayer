@@ -5,14 +5,14 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
 
 namespace BlockPlayer
 {
-    public partial class Form1 : Form
+    public partial class BackgroundSemVideo : Form
     {
         private LibVLC _libVLC;
         private MediaPlayer _mediaPlayer;
 
         List<Control> Interface;
 
-        public Form1()
+        public BackgroundSemVideo()
         {
             InitializeComponent();
 
@@ -47,11 +47,10 @@ namespace BlockPlayer
         {
             Interface = new List<Control>
             {
-                BackgroundInterface,
-                VolumeVideo,
-                VolumeTexto,
                 BarraVideo,
-                TempoAtualFinal
+                TempoAtualFinal,
+                VolumeVideo,
+                VolumeTexto
             };
 
             foreach (var item in Interface)

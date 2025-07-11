@@ -1,6 +1,6 @@
 ﻿namespace BlockPlayer
 {
-    partial class Form1
+    partial class BackgroundSemVideo
     {
         /// <summary>
         ///  Required designer variable.
@@ -31,18 +31,15 @@
             components = new System.ComponentModel.Container();
             Video = new LibVLCSharp.WinForms.VideoView();
             Painel = new TransparentPanel();
-            TempoAtualFinal = new Label();
-            BarraVideo = new TrackBar();
-            BackgroundInterface = new Panel();
-            BotaoStop = new Button();
             VolumeTexto = new Label();
             VolumeVideo = new TrackBar();
+            TempoAtualFinal = new Label();
+            BarraVideo = new TrackBar();
             TimerVideo = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)Video).BeginInit();
             Painel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)BarraVideo).BeginInit();
-            BackgroundInterface.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)VolumeVideo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)BarraVideo).BeginInit();
             SuspendLayout();
             // 
             // Video
@@ -62,9 +59,10 @@
             // Painel
             // 
             Painel.BackColor = Color.Transparent;
+            Painel.Controls.Add(VolumeTexto);
+            Painel.Controls.Add(VolumeVideo);
             Painel.Controls.Add(TempoAtualFinal);
             Painel.Controls.Add(BarraVideo);
-            Painel.Controls.Add(BackgroundInterface);
             Painel.Dock = DockStyle.Fill;
             Painel.ForeColor = Color.Transparent;
             Painel.Location = new Point(0, 0);
@@ -73,12 +71,39 @@
             Painel.TabIndex = 1;
             Painel.Click += Painel_Click;
             // 
+            // VolumeTexto
+            // 
+            VolumeTexto.AutoSize = true;
+            VolumeTexto.Dock = DockStyle.Right;
+            VolumeTexto.Font = new Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            VolumeTexto.ForeColor = Color.Black;
+            VolumeTexto.Location = new Point(788, 20);
+            VolumeTexto.Name = "VolumeTexto";
+            VolumeTexto.Size = new Size(40, 23);
+            VolumeTexto.TabIndex = 5;
+            VolumeTexto.Text = "100";
+            VolumeTexto.Visible = false;
+            // 
+            // VolumeVideo
+            // 
+            VolumeVideo.BackColor = Color.FromArgb(64, 64, 64);
+            VolumeVideo.Dock = DockStyle.Right;
+            VolumeVideo.Location = new Point(828, 20);
+            VolumeVideo.Maximum = 100;
+            VolumeVideo.MaximumSize = new Size(150, 25);
+            VolumeVideo.Name = "VolumeVideo";
+            VolumeVideo.Size = new Size(150, 25);
+            VolumeVideo.TabIndex = 3;
+            VolumeVideo.Visible = false;
+            VolumeVideo.Scroll += VolumeVideo_Scroll;
+            // 
             // TempoAtualFinal
             // 
             TempoAtualFinal.AutoSize = true;
+            TempoAtualFinal.Dock = DockStyle.Left;
             TempoAtualFinal.Font = new Font("Times New Roman", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TempoAtualFinal.ForeColor = Color.Black;
-            TempoAtualFinal.Location = new Point(12, 18);
+            TempoAtualFinal.Location = new Point(0, 20);
             TempoAtualFinal.Name = "TempoAtualFinal";
             TempoAtualFinal.Size = new Size(179, 35);
             TempoAtualFinal.TabIndex = 2;
@@ -92,69 +117,21 @@
             BarraVideo.LargeChange = 10;
             BarraVideo.Location = new Point(0, 0);
             BarraVideo.Maximum = 1000;
-            BarraVideo.MaximumSize = new Size(0, 15);
+            BarraVideo.MaximumSize = new Size(0, 20);
             BarraVideo.Name = "BarraVideo";
-            BarraVideo.Size = new Size(978, 15);
+            BarraVideo.Size = new Size(978, 20);
             BarraVideo.TabIndex = 1;
             BarraVideo.TickStyle = TickStyle.None;
             BarraVideo.Visible = false;
             BarraVideo.Scroll += BarraVideo_Scroll;
             BarraVideo.MouseUp += BarraVideo_MouseUp;
             // 
-            // BackgroundInterface
-            // 
-            BackgroundInterface.BackColor = Color.White;
-            BackgroundInterface.Controls.Add(BotaoStop);
-            BackgroundInterface.Controls.Add(VolumeTexto);
-            BackgroundInterface.Controls.Add(VolumeVideo);
-            BackgroundInterface.ForeColor = Color.Black;
-            BackgroundInterface.Location = new Point(3, 3);
-            BackgroundInterface.Name = "BackgroundInterface";
-            BackgroundInterface.Size = new Size(212, 150);
-            BackgroundInterface.TabIndex = 4;
-            BackgroundInterface.Visible = false;
-            // 
-            // BotaoStop
-            // 
-            BotaoStop.Font = new Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BotaoStop.Location = new Point(9, 65);
-            BotaoStop.Name = "BotaoStop";
-            BotaoStop.Size = new Size(91, 34);
-            BotaoStop.TabIndex = 6;
-            BotaoStop.Text = "🔲";
-            BotaoStop.UseVisualStyleBackColor = true;
-            BotaoStop.Click += BotaoStop_Click;
-            // 
-            // VolumeTexto
-            // 
-            VolumeTexto.AutoSize = true;
-            VolumeTexto.Font = new Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            VolumeTexto.ForeColor = Color.Black;
-            VolumeTexto.Location = new Point(165, 118);
-            VolumeTexto.Name = "VolumeTexto";
-            VolumeTexto.Size = new Size(40, 23);
-            VolumeTexto.TabIndex = 5;
-            VolumeTexto.Text = "100";
-            VolumeTexto.Visible = false;
-            // 
-            // VolumeVideo
-            // 
-            VolumeVideo.BackColor = Color.FromArgb(64, 64, 64);
-            VolumeVideo.Location = new Point(9, 118);
-            VolumeVideo.Maximum = 100;
-            VolumeVideo.MaximumSize = new Size(150, 20);
-            VolumeVideo.Name = "VolumeVideo";
-            VolumeVideo.Size = new Size(150, 20);
-            VolumeVideo.TabIndex = 3;
-            VolumeVideo.Visible = false;
-            VolumeVideo.Scroll += VolumeVideo_Scroll;
-            // 
             // TimerVideo
             // 
             TimerVideo.Interval = 10;
             TimerVideo.Tick += TimerVideo_Tick;
             // 
-            // Form1
+            // BackgroundSemVideo
             // 
             AllowDrop = true;
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -163,7 +140,9 @@
             ClientSize = new Size(978, 544);
             Controls.Add(Painel);
             Controls.Add(Video);
-            Name = "Form1";
+            ForeColor = SystemColors.Control;
+            MinimumSize = new Size(600, 300);
+            Name = "BackgroundSemVideo";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Block Player";
             FormClosed += Form1_FormClosed;
@@ -172,10 +151,8 @@
             ((System.ComponentModel.ISupportInitialize)Video).EndInit();
             Painel.ResumeLayout(false);
             Painel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)BarraVideo).EndInit();
-            BackgroundInterface.ResumeLayout(false);
-            BackgroundInterface.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)VolumeVideo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)BarraVideo).EndInit();
             ResumeLayout(false);
         }
 
@@ -185,10 +162,8 @@
         private TransparentPanel Painel;
         private TrackBar BarraVideo;
         private System.Windows.Forms.Timer TimerVideo;
-        private Label TempoAtualFinal;
-        private TrackBar VolumeVideo;
-        private Panel BackgroundInterface;
         private Label VolumeTexto;
-        private Button BotaoStop;
+        private TrackBar VolumeVideo;
+        private Label TempoAtualFinal;
     }
 }
