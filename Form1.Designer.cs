@@ -36,6 +36,7 @@
             TempoAtualFinal = new Label();
             BarraVideo = new TrackBar();
             TimerVideo = new System.Windows.Forms.Timer(components);
+            PainelSemVideo = new Panel();
             ((System.ComponentModel.ISupportInitialize)Video).BeginInit();
             Painel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)VolumeVideo).BeginInit();
@@ -53,6 +54,7 @@
             Video.Size = new Size(978, 544);
             Video.TabIndex = 0;
             Video.Text = "videoView1";
+            Video.Visible = false;
             Video.DragDrop += Video_DragDrop;
             Video.DragEnter += Video_DragEnter;
             // 
@@ -70,6 +72,7 @@
             Painel.Size = new Size(978, 544);
             Painel.TabIndex = 1;
             Painel.Click += Painel_Click;
+            Painel.DoubleClick += Painel_DoubleClick;
             // 
             // VolumeTexto
             // 
@@ -131,6 +134,14 @@
             TimerVideo.Interval = 10;
             TimerVideo.Tick += TimerVideo_Tick;
             // 
+            // PainelSemVideo
+            // 
+            PainelSemVideo.Dock = DockStyle.Fill;
+            PainelSemVideo.Location = new Point(0, 0);
+            PainelSemVideo.Name = "PainelSemVideo";
+            PainelSemVideo.Size = new Size(978, 544);
+            PainelSemVideo.TabIndex = 2;
+            // 
             // BackgroundSemVideo
             // 
             AllowDrop = true;
@@ -138,9 +149,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(978, 544);
+            Controls.Add(PainelSemVideo);
             Controls.Add(Painel);
             Controls.Add(Video);
             ForeColor = SystemColors.Control;
+            KeyPreview = true;
             MinimumSize = new Size(600, 300);
             Name = "BackgroundSemVideo";
             StartPosition = FormStartPosition.CenterScreen;
@@ -165,5 +178,6 @@
         private Label VolumeTexto;
         private TrackBar VolumeVideo;
         private Label TempoAtualFinal;
+        private Panel PainelSemVideo;
     }
 }

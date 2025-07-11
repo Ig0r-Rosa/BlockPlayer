@@ -1,5 +1,6 @@
 using LibVLCSharp.Shared;
 using LibVLCSharp.WinForms;
+using System.Diagnostics.Eventing.Reader;
 using System.Numerics;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
 
@@ -11,6 +12,11 @@ namespace BlockPlayer
         private MediaPlayer _mediaPlayer;
 
         List<Control> Interface;
+
+        // Estados de visualização
+        private bool EstaMaximizado = false;
+        private bool EstaFullscreen = false;
+
 
         public BackgroundSemVideo()
         {
@@ -61,6 +67,110 @@ namespace BlockPlayer
             }
         }
 
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case Keys.Delete:
+                    _mediaPlayer.Stop();
+                    AtualizarVisibilidadeVideo(false);
+                    return true;
+
+                case Keys.Space:
+                    Pause();
+                    return true;
+
+                case Keys.Right:
+                    _mediaPlayer.Time += 5000;
+                    AtualizarTempoVideo();
+                    return true;
+
+                case Keys.Left:
+                    _mediaPlayer.Time = Math.Max(0, _mediaPlayer.Time - 5000);
+                    AtualizarTempoVideo();
+                    return true;
+
+                case Keys.Up:
+                    VolumeVideo.Value = Math.Min(VolumeVideo.Value + 5, VolumeVideo.Maximum);
+                    AtualizarVolume();
+                    return true;
+
+                case Keys.Down:
+                    VolumeVideo.Value = Math.Max(VolumeVideo.Value - 5, VolumeVideo.Minimum);
+                    AtualizarVolume();
+                    return true;
+
+                case Keys.Enter:
+                    AlternarMaximizado();
+                    return true;
+
+                case Keys.F11:
+                    AlternarFullscreen();
+                    return true;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        private void AlternarMaximizado()
+        {
+            if (EstaFullscreen)
+            {
+                AlternarFullscreen();
+            }
+
+            if (EstaMaximizado)
+            {
+                WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+
+            EstaMaximizado = !EstaMaximizado;
+        }
+
+        private void AlternarFullscreen()
+        {
+            if (EstaMaximizado)
+            {
+                AlternarMaximizado();
+            }
+
+            if (!EstaFullscreen)
+            {
+                FormBorderStyle = FormBorderStyle.None;
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                FormBorderStyle = FormBorderStyle.Sizable;
+                WindowState = FormWindowState.Normal;
+            }
+            EstaFullscreen = !EstaFullscreen;
+        }
+
+        private void AtualizarVisibilidadeVideo(bool visivel)
+        {
+            Video.Visible = visivel;
+            PainelSemVideo.Visible = !visivel;
+            if (visivel)
+            {
+                Video.BringToFront();
+                Video.Invalidate();
+
+                Painel.BringToFront();
+            }
+            else
+            {
+                ExibirInterface(false);
+                PainelSemVideo.BringToFront();
+                PainelSemVideo.Invalidate();
+
+            }
+        }
+
         private void ExibirInterface(bool exibe)
         {
             foreach (var item in Interface)
@@ -78,11 +188,11 @@ namespace BlockPlayer
         {
             if (Video.MediaPlayer.IsPlaying)
             {
+                TimerVideo.Stop();
                 AtualizarTempoVideo();
                 AtualizarVolume();
                 Video.MediaPlayer.SetPause(true);
                 ExibirInterface(true);
-                TimerVideo.Stop();
             }
             else
             {
@@ -138,7 +248,7 @@ namespace BlockPlayer
         {
             VolumeVideo.Value = 100;
             AtualizarVolume();
-            
+
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
             if (files.Length > 0)
             {
@@ -153,6 +263,13 @@ namespace BlockPlayer
                     MessageBox.Show("Apenas arquivos .mp4 ou .mp3 são suportados.");
                 }
             }
+
+            if (!Video.MediaPlayer.IsPlaying)
+            {
+                Pause();
+            }
+
+            AtualizarVisibilidadeVideo(true);
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
@@ -183,15 +300,15 @@ namespace BlockPlayer
             AtualizarTempoVideo();
         }
 
-        private void BotaoStop_Click(object sender, EventArgs e)
-        {
-            _mediaPlayer.Stop();
-            ExibirInterface(false);
-        }
-
         private void VolumeVideo_Scroll(object sender, EventArgs e)
         {
             AtualizarVolume();
+        }
+
+        private void Painel_DoubleClick(object sender, EventArgs e)
+        {
+            AlternarFullscreen();
+            Pause();
         }
     }
 
