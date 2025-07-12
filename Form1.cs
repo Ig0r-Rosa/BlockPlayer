@@ -17,7 +17,6 @@ namespace BlockPlayer
         private bool EstaMaximizado = false;
         private bool EstaFullscreen = false;
 
-
         public BackgroundSemVideo()
         {
             InitializeComponent();
@@ -27,8 +26,6 @@ namespace BlockPlayer
             ConfigPainel();
 
             ConfigInterface();
-
-
         }
 
         private void ConfigVLC()
@@ -46,7 +43,6 @@ namespace BlockPlayer
             Painel.Dock = DockStyle.Fill;
             Painel.BringToFront();
             Painel.BackColor = Color.Transparent;
-
         }
 
         private void ConfigInterface()
@@ -157,10 +153,7 @@ namespace BlockPlayer
             PainelSemVideo.Visible = !visivel;
             if (visivel)
             {
-                Video.BringToFront();
                 Video.Invalidate();
-
-                Painel.BringToFront();
             }
             else
             {
