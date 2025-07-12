@@ -12,6 +12,7 @@ namespace BlockPlayer
         private bool EstaFullscreen = false;
 
         private Miniplayer _miniplayer;
+        private GlobalHotkey _hotkey;
 
         private void ConfigVLC()
         {

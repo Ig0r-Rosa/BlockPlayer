@@ -11,6 +11,9 @@ namespace BlockPlayer
             ConfigVLC();
             ConfigInterface();
             ConfigSemVideo();
+
+            _hotkey = new GlobalHotkey(this, Keys.M);
+            _hotkey.OnHotkeyPressed += AlternarMiniPlayer;
         }
 
         private void Painel_Click(object sender, EventArgs e)
@@ -67,13 +70,6 @@ namespace BlockPlayer
             }
         }
 
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            _mediaPlayer.Stop();
-            _mediaPlayer.Dispose();
-            _libVLC.Dispose();
-        }
-
         private void TimerVideo_Tick(object sender, EventArgs e)
         {
             AtualizarTempoVideo();
@@ -109,6 +105,14 @@ namespace BlockPlayer
         {
             _miniplayer = new Miniplayer();
             _miniplayer.Show();
+        }
+
+        private void Player_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _hotkey?.Unregister();
+            _mediaPlayer.Stop();
+            _mediaPlayer.Dispose();
+            _libVLC.Dispose();
         }
     }
 }

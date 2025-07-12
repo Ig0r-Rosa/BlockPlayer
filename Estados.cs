@@ -65,5 +65,18 @@ namespace BlockPlayer
                 TimerVideo.Start();
             }
         }
+
+        private void AlternarMiniPlayer()
+        {
+            if (_miniplayer == null || _miniplayer.IsDisposed)
+            {
+                _miniplayer = new Miniplayer();
+                _miniplayer.Show();
+            }
+            else
+            {
+                _miniplayer.Close();
+            }
+        }
     }
 }

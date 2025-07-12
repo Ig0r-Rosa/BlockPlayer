@@ -229,7 +229,7 @@
             Name = "Janela";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Block Player";
-            FormClosed += Form1_FormClosed;
+            FormClosed += Player_FormClosed;
             DragDrop += Video_DragDrop;
             DragEnter += Video_DragEnter;
             ((System.ComponentModel.ISupportInitialize)Video).EndInit();
