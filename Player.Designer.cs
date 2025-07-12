@@ -198,6 +198,7 @@
             BotaoAjusteMinipayer.TabIndex = 1;
             BotaoAjusteMinipayer.Text = "Ajustar o miniplayer";
             BotaoAjusteMinipayer.UseVisualStyleBackColor = true;
+            BotaoAjusteMinipayer.Click += BotaoAjusteMinipayer_Click;
             // 
             // BotaoEscolhaVideo
             // 

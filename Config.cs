@@ -11,6 +11,8 @@ namespace BlockPlayer
         private bool EstaMaximizado = false;
         private bool EstaFullscreen = false;
 
+        private Miniplayer _miniplayer;
+
         private void ConfigVLC()
         {
             Core.Initialize();

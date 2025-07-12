@@ -104,5 +104,11 @@ namespace BlockPlayer
             AlternarFullscreen();
             Pause();
         }
+
+        private void BotaoAjusteMinipayer_Click(object sender, EventArgs e)
+        {
+            _miniplayer = new Miniplayer();
+            _miniplayer.Show();
+        }
     }
 }
