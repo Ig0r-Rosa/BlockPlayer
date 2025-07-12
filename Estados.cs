@@ -70,7 +70,7 @@ namespace BlockPlayer
         {
             if (_miniplayer == null || _miniplayer.IsDisposed)
             {
-                _miniplayer = new Miniplayer();
+                _miniplayer = new Miniplayer(_mediaPlayer);
                 _miniplayer.Show();
             }
             else

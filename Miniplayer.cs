@@ -1,25 +1,30 @@
 ﻿using LibVLCSharp.Shared;
 using System.Runtime.InteropServices;
+using LibVLCSharp.WinForms;
 
 namespace BlockPlayer
 {
     public partial class Miniplayer : Form
     {
-        public Miniplayer()
+        private MediaPlayer _mediaPlayer;
+        public VideoView Video => videoView1;
+
+        public Miniplayer(MediaPlayer mediaPlayer)
         {
             InitializeComponent();
+            _mediaPlayer = mediaPlayer;
+            Video.MediaPlayer = _mediaPlayer;
 
-            FormBorderStyle = FormBorderStyle.None;
-            StartPosition = FormStartPosition.Manual;
-            TopMost = true;
-            ShowInTaskbar = false;
-            BackColor = Color.Black;
-            Opacity = 0.8; // Leve transparência
-            Width = 300;
-            Height = 80;
-            Location = new Point(Screen.PrimaryScreen.WorkingArea.Width - Width - 10, 10);
+            // Configurações do Miniplayer
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.TopMost = true;
+            this.ShowInTaskbar = false;
+            this.Opacity = 0.8;
+            this.BackColor = Color.Black;
 
-            SetClickThrough(); // ⬅ essencial
+            // Faz ele não receber foco (opcional)
+            int initialStyle = (int)WinAPI.GetWindowLong(this.Handle, WinAPI.GWL_EXSTYLE);
+            WinAPI.SetWindowLong(this.Handle, WinAPI.GWL_EXSTYLE, initialStyle | WinAPI.WS_EX_NOACTIVATE);
         }
 
         protected override CreateParams CreateParams
@@ -50,5 +55,17 @@ namespace BlockPlayer
 
         [DllImport("user32.dll")]
         private static extern IntPtr SetWindowLong(IntPtr hWnd, int nIndex, IntPtr dwNewLong);
+    }
+
+    public static class WinAPI
+    {
+        public const int GWL_EXSTYLE = -20;
+        public const int WS_EX_NOACTIVATE = 0x08000000;
+
+        [DllImport("user32.dll")]
+        public static extern IntPtr GetWindowLong(IntPtr hWnd, int nIndex);
+
+        [DllImport("user32.dll")]
+        public static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
     }
 }

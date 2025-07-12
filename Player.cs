@@ -103,8 +103,15 @@ namespace BlockPlayer
 
         private void BotaoAjusteMinipayer_Click(object sender, EventArgs e)
         {
-            _miniplayer = new Miniplayer();
-            _miniplayer.Show();
+            if (_miniplayer == null || _miniplayer.IsDisposed)
+            {
+                _miniplayer = new Miniplayer(_mediaPlayer);
+                _miniplayer.Show();
+            }
+            else
+            {
+                _miniplayer.Close(); // alterna visibilidade
+            }
         }
 
         private void Player_FormClosed(object sender, FormClosedEventArgs e)
