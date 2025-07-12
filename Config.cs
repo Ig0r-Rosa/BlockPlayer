@@ -43,7 +43,6 @@ namespace BlockPlayer
 
         private void ConfigSemVideo()
         {
-            BotaoEscolhaVideo.BringToFront();
             AtualizarVisibilidadeVideo(false);
             AtualizarVolume();
         }

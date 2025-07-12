@@ -37,6 +37,10 @@
             BarraVideo = new TrackBar();
             TimerVideo = new System.Windows.Forms.Timer(components);
             PainelSemVideo = new Panel();
+            ContinuarAssistindo = new ListView();
+            BotaoContinuarAssistindo = new Button();
+            BotaoAjuda = new Button();
+            BotaoAjusteMinipayer = new Button();
             BotaoEscolhaVideo = new Button();
             ((System.ComponentModel.ISupportInitialize)Video).BeginInit();
             Painel.SuspendLayout();
@@ -139,6 +143,10 @@
             // 
             // PainelSemVideo
             // 
+            PainelSemVideo.Controls.Add(ContinuarAssistindo);
+            PainelSemVideo.Controls.Add(BotaoContinuarAssistindo);
+            PainelSemVideo.Controls.Add(BotaoAjuda);
+            PainelSemVideo.Controls.Add(BotaoAjusteMinipayer);
             PainelSemVideo.Controls.Add(BotaoEscolhaVideo);
             PainelSemVideo.Dock = DockStyle.Fill;
             PainelSemVideo.Location = new Point(0, 0);
@@ -146,13 +154,59 @@
             PainelSemVideo.Size = new Size(978, 544);
             PainelSemVideo.TabIndex = 2;
             // 
+            // ContinuarAssistindo
+            // 
+            ContinuarAssistindo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            ContinuarAssistindo.Location = new Point(100, 86);
+            ContinuarAssistindo.Name = "ContinuarAssistindo";
+            ContinuarAssistindo.Size = new Size(779, 372);
+            ContinuarAssistindo.TabIndex = 5;
+            ContinuarAssistindo.UseCompatibleStateImageBehavior = false;
+            // 
+            // BotaoContinuarAssistindo
+            // 
+            BotaoContinuarAssistindo.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            BotaoContinuarAssistindo.ForeColor = SystemColors.ActiveCaptionText;
+            BotaoContinuarAssistindo.Location = new Point(878, 464);
+            BotaoContinuarAssistindo.MaximumSize = new Size(100, 80);
+            BotaoContinuarAssistindo.Name = "BotaoContinuarAssistindo";
+            BotaoContinuarAssistindo.Size = new Size(100, 80);
+            BotaoContinuarAssistindo.TabIndex = 4;
+            BotaoContinuarAssistindo.Text = "Continuar assistindo";
+            BotaoContinuarAssistindo.UseVisualStyleBackColor = true;
+            // 
+            // BotaoAjuda
+            // 
+            BotaoAjuda.Dock = DockStyle.Left;
+            BotaoAjuda.ForeColor = SystemColors.ActiveCaptionText;
+            BotaoAjuda.Location = new Point(200, 0);
+            BotaoAjuda.MaximumSize = new Size(100, 80);
+            BotaoAjuda.Name = "BotaoAjuda";
+            BotaoAjuda.Size = new Size(100, 80);
+            BotaoAjuda.TabIndex = 2;
+            BotaoAjuda.Text = "Ajuda";
+            BotaoAjuda.UseVisualStyleBackColor = true;
+            // 
+            // BotaoAjusteMinipayer
+            // 
+            BotaoAjusteMinipayer.Dock = DockStyle.Left;
+            BotaoAjusteMinipayer.ForeColor = SystemColors.ActiveCaptionText;
+            BotaoAjusteMinipayer.Location = new Point(100, 0);
+            BotaoAjusteMinipayer.MaximumSize = new Size(100, 80);
+            BotaoAjusteMinipayer.Name = "BotaoAjusteMinipayer";
+            BotaoAjusteMinipayer.Size = new Size(100, 80);
+            BotaoAjusteMinipayer.TabIndex = 1;
+            BotaoAjusteMinipayer.Text = "Ajustar o miniplayer";
+            BotaoAjusteMinipayer.UseVisualStyleBackColor = true;
+            // 
             // BotaoEscolhaVideo
             // 
-            BotaoEscolhaVideo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            BotaoEscolhaVideo.Dock = DockStyle.Left;
             BotaoEscolhaVideo.ForeColor = SystemColors.ActiveCaptionText;
-            BotaoEscolhaVideo.Location = new Point(267, 213);
+            BotaoEscolhaVideo.Location = new Point(0, 0);
+            BotaoEscolhaVideo.MaximumSize = new Size(100, 80);
             BotaoEscolhaVideo.Name = "BotaoEscolhaVideo";
-            BotaoEscolhaVideo.Size = new Size(437, 126);
+            BotaoEscolhaVideo.Size = new Size(100, 80);
             BotaoEscolhaVideo.TabIndex = 0;
             BotaoEscolhaVideo.Text = "Escolha o vídeo";
             BotaoEscolhaVideo.UseVisualStyleBackColor = true;
@@ -165,9 +219,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(978, 544);
+            Controls.Add(PainelSemVideo);
             Controls.Add(Painel);
             Controls.Add(Video);
-            Controls.Add(PainelSemVideo);
             ForeColor = SystemColors.Control;
             KeyPreview = true;
             MinimumSize = new Size(600, 300);
@@ -197,5 +251,9 @@
         private Label TempoAtualFinal;
         private Panel PainelSemVideo;
         private Button BotaoEscolhaVideo;
+        private Button BotaoAjusteMinipayer;
+        private Button BotaoAjuda;
+        private Button BotaoContinuarAssistindo;
+        private ListView ContinuarAssistindo;
     }
 }
