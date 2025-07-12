@@ -99,6 +99,7 @@
             VolumeVideo.Name = "VolumeVideo";
             VolumeVideo.Size = new Size(150, 25);
             VolumeVideo.TabIndex = 3;
+            VolumeVideo.Value = 50;
             VolumeVideo.Visible = false;
             VolumeVideo.Scroll += VolumeVideo_Scroll;
             // 
@@ -164,9 +165,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(978, 544);
-            Controls.Add(PainelSemVideo);
             Controls.Add(Painel);
             Controls.Add(Video);
+            Controls.Add(PainelSemVideo);
             ForeColor = SystemColors.Control;
             KeyPreview = true;
             MinimumSize = new Size(600, 300);

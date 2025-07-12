@@ -40,5 +40,12 @@ namespace BlockPlayer
                 item.Invalidate();
             }
         }
+
+        private void ConfigSemVideo()
+        {
+            BotaoEscolhaVideo.BringToFront();
+            AtualizarVisibilidadeVideo(false);
+            AtualizarVolume();
+        }
     }
 }

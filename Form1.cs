@@ -10,6 +10,7 @@ namespace BlockPlayer
             InitializeComponent();
             ConfigVLC();
             ConfigInterface();
+            ConfigSemVideo();
         }
 
         private void Painel_Click(object sender, EventArgs e)
