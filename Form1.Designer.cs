@@ -1,6 +1,6 @@
 ﻿namespace BlockPlayer
 {
-    partial class BackgroundSemVideo
+    partial class Janela
     {
         /// <summary>
         ///  Required designer variable.
@@ -37,10 +37,12 @@
             BarraVideo = new TrackBar();
             TimerVideo = new System.Windows.Forms.Timer(components);
             PainelSemVideo = new Panel();
+            BotaoEscolhaVideo = new Button();
             ((System.ComponentModel.ISupportInitialize)Video).BeginInit();
             Painel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)VolumeVideo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BarraVideo).BeginInit();
+            PainelSemVideo.SuspendLayout();
             SuspendLayout();
             // 
             // Video
@@ -136,13 +138,26 @@
             // 
             // PainelSemVideo
             // 
+            PainelSemVideo.Controls.Add(BotaoEscolhaVideo);
             PainelSemVideo.Dock = DockStyle.Fill;
             PainelSemVideo.Location = new Point(0, 0);
             PainelSemVideo.Name = "PainelSemVideo";
             PainelSemVideo.Size = new Size(978, 544);
             PainelSemVideo.TabIndex = 2;
             // 
-            // BackgroundSemVideo
+            // BotaoEscolhaVideo
+            // 
+            BotaoEscolhaVideo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            BotaoEscolhaVideo.ForeColor = SystemColors.ActiveCaptionText;
+            BotaoEscolhaVideo.Location = new Point(267, 213);
+            BotaoEscolhaVideo.Name = "BotaoEscolhaVideo";
+            BotaoEscolhaVideo.Size = new Size(437, 126);
+            BotaoEscolhaVideo.TabIndex = 0;
+            BotaoEscolhaVideo.Text = "Escolha o vídeo";
+            BotaoEscolhaVideo.UseVisualStyleBackColor = true;
+            BotaoEscolhaVideo.Click += BotaoEscolhaVideo_Click;
+            // 
+            // Janela
             // 
             AllowDrop = true;
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -155,7 +170,7 @@
             ForeColor = SystemColors.Control;
             KeyPreview = true;
             MinimumSize = new Size(600, 300);
-            Name = "BackgroundSemVideo";
+            Name = "Janela";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Block Player";
             FormClosed += Form1_FormClosed;
@@ -166,6 +181,7 @@
             Painel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)VolumeVideo).EndInit();
             ((System.ComponentModel.ISupportInitialize)BarraVideo).EndInit();
+            PainelSemVideo.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -179,5 +195,6 @@
         private TrackBar VolumeVideo;
         private Label TempoAtualFinal;
         private Panel PainelSemVideo;
+        private Button BotaoEscolhaVideo;
     }
 }
