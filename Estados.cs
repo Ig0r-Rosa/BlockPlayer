@@ -49,19 +49,19 @@ namespace BlockPlayer
 
         public void Pause()
         {
-            if (Video.MediaPlayer.IsPlaying)
+            if (_mediaPlayer.IsPlaying)
             {
                 TimerVideo.Stop();
+                ExibirInterface(true);
                 AtualizarTempoVideo();
                 AtualizarVolume();
-                Video.MediaPlayer.SetPause(true);
-                ExibirInterface(true);
+                _mediaPlayer.SetPause(true);
             }
             else
             {
-                AtualizarVolume();
-                Video.MediaPlayer.SetPause(false);
                 ExibirInterface(false);
+                AtualizarVolume();
+                _mediaPlayer.SetPause(false);
                 TimerVideo.Start();
             }
         }
@@ -70,25 +70,31 @@ namespace BlockPlayer
         {
             if (_miniplayer.Visible)
             {
+                _mediaPlayer.Stop();
+                _miniplayer.Video.MediaPlayer = null;
                 Video.MediaPlayer = _mediaPlayer;
                 _miniplayer.Hide();
                 this.Show();
-                if (Video.MediaPlayer.IsPlaying == true)
+                if (_mediaPlayer.IsPlaying == true)
                 {
                     Pause();
                 }
                 this.Activate();
+                _mediaPlayer.Play();
             }
             else
             {
+                _mediaPlayer.Stop();
+                Video.MediaPlayer = null;
                 _miniplayer.Video.MediaPlayer = _mediaPlayer;
                 _miniplayer.Show();
                 this.Hide();
-                if (Video.MediaPlayer.IsPlaying == false)
+                if (_mediaPlayer.IsPlaying == false)
                 {
                     Pause();
                 }
                 _miniplayer.Activate();
+                _mediaPlayer.Play();
             }
         }
     }

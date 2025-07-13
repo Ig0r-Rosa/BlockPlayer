@@ -5,16 +5,16 @@ using LibVLCSharp.WinForms;
 namespace BlockPlayer
 {
     public partial class Miniplayer : Form
-    {                                                                                                           
-        public MediaPlayer _mediaPlayer;
+    {
+        //private readonly MediaPlayer _mediaPlayer;
 
         public VideoView Video => videoView1;
 
         public Miniplayer(MediaPlayer mediaPlayer)
         {
             InitializeComponent();
-            _mediaPlayer = mediaPlayer;
-            Video.MediaPlayer = _mediaPlayer; 
+            //_mediaPlayer = mediaPlayer;
+            //Video.MediaPlayer = _mediaPlayer; 
 
             // Configurações do Miniplayer
             this.FormBorderStyle = FormBorderStyle.None;
