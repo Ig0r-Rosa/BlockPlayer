@@ -70,23 +70,25 @@ namespace BlockPlayer
         {
             if (_miniplayer.Visible)
             {
+                Video.MediaPlayer = _mediaPlayer;
                 _miniplayer.Hide();
                 this.Show();
-                _mediaPlayer.Play();
                 if (Video.MediaPlayer.IsPlaying == true)
                 {
                     Pause();
                 }
+                this.Activate();
             }
             else
             {
+                _miniplayer.Video.MediaPlayer = _mediaPlayer;
                 _miniplayer.Show();
                 this.Hide();
-                _miniplayer._mediaPlayer.Play();
                 if (Video.MediaPlayer.IsPlaying == false)
                 {
                     Pause();
                 }
+                _miniplayer.Activate();
             }
         }
     }

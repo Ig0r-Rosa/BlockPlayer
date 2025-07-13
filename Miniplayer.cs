@@ -14,7 +14,7 @@ namespace BlockPlayer
         {
             InitializeComponent();
             _mediaPlayer = mediaPlayer;
-            Video.MediaPlayer = _mediaPlayer;
+            Video.MediaPlayer = _mediaPlayer; 
 
             // Configurações do Miniplayer
             this.FormBorderStyle = FormBorderStyle.None;
@@ -23,9 +23,11 @@ namespace BlockPlayer
             this.Opacity = 0.85;
             this.BackColor = Color.Black;
 
-            // Faz ele não receber foco (opcional)
+            // Faz ele não receber foco
             int initialStyle = (int)WinAPI.GetWindowLong(this.Handle, WinAPI.GWL_EXSTYLE);
             WinAPI.SetWindowLong(this.Handle, WinAPI.GWL_EXSTYLE, initialStyle | WinAPI.WS_EX_NOACTIVATE);
+
+            SetClickThrough();
         }
 
         protected override CreateParams CreateParams
@@ -39,7 +41,7 @@ namespace BlockPlayer
             }
         }
 
-        // Torna o formulário não clicável (ignora mouse)
+        // Torna o formulário não clicável
         private void SetClickThrough()
         {
             int exStyle = (int)GetWindowLong(this.Handle, GWL_EXSTYLE);
