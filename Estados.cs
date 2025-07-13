@@ -66,16 +66,27 @@ namespace BlockPlayer
             }
         }
 
-        private void AlternarMiniPlayer()
+        private void AlternarMiniplayer()
         {
-            if (_miniplayer == null || _miniplayer.IsDisposed)
+            if (_miniplayer.Visible)
             {
-                _miniplayer = new Miniplayer(_mediaPlayer);
-                _miniplayer.Show();
+                _miniplayer.Hide();
+                this.Show();
+                _mediaPlayer.Play();
+                if (Video.MediaPlayer.IsPlaying == true)
+                {
+                    Pause();
+                }
             }
             else
             {
-                _miniplayer.Close();
+                _miniplayer.Show();
+                this.Hide();
+                _miniplayer._mediaPlayer.Play();
+                if (Video.MediaPlayer.IsPlaying == false)
+                {
+                    Pause();
+                }
             }
         }
     }

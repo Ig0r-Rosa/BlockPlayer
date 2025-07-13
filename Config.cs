@@ -49,5 +49,11 @@ namespace BlockPlayer
             AtualizarVisibilidadeVideo(false);
             AtualizarVolume();
         }
+
+        private void ConfigMiniplayer()
+        {
+            _miniplayer = new Miniplayer(_mediaPlayer);
+            _miniplayer.FormClosed += (s, e) => _miniplayer = null;
+        }
     }
 }

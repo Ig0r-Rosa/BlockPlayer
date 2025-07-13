@@ -11,9 +11,14 @@ namespace BlockPlayer
             ConfigVLC();
             ConfigInterface();
             ConfigSemVideo();
+            ConfigMiniplayer();
 
             _hotkey = new GlobalHotkey(this, Keys.M);
-            _hotkey.OnHotkeyPressed += AlternarMiniPlayer;
+            _hotkey.OnHotkeyPressed += AlternarMiniplayer;
+
+            // Janela obter foco ao iniciar e exibir na frente
+            this.Activate();
+            this.BringToFront();
         }
 
         private void Painel_Click(object sender, EventArgs e)
@@ -103,15 +108,7 @@ namespace BlockPlayer
 
         private void BotaoAjusteMinipayer_Click(object sender, EventArgs e)
         {
-            if (_miniplayer == null || _miniplayer.IsDisposed)
-            {
-                _miniplayer = new Miniplayer(_mediaPlayer);
-                _miniplayer.Show();
-            }
-            else
-            {
-                _miniplayer.Close(); // alterna visibilidade
-            }
+            AlternarMiniplayer();
         }
 
         private void Player_FormClosed(object sender, FormClosedEventArgs e)

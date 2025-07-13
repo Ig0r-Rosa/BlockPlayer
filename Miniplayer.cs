@@ -5,8 +5,9 @@ using LibVLCSharp.WinForms;
 namespace BlockPlayer
 {
     public partial class Miniplayer : Form
-    {
-        private MediaPlayer _mediaPlayer;
+    {                                                                                                           
+        public MediaPlayer _mediaPlayer;
+
         public VideoView Video => videoView1;
 
         public Miniplayer(MediaPlayer mediaPlayer)
@@ -19,7 +20,7 @@ namespace BlockPlayer
             this.FormBorderStyle = FormBorderStyle.None;
             this.TopMost = true;
             this.ShowInTaskbar = false;
-            this.Opacity = 0.8;
+            this.Opacity = 0.85;
             this.BackColor = Color.Black;
 
             // Faz ele não receber foco (opcional)

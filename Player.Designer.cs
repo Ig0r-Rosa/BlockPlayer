@@ -229,6 +229,7 @@
             Name = "Janela";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Block Player";
+            TopMost = true;
             FormClosed += Player_FormClosed;
             DragDrop += Video_DragDrop;
             DragEnter += Video_DragEnter;
