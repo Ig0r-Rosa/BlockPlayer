@@ -108,7 +108,8 @@ namespace BlockPlayer
 
         private void BotaoAjusteMinipayer_Click(object sender, EventArgs e)
         {
-            AlternarMiniplayer();
+            var form = new AjustarMiniplayer();
+            form.ShowDialog();
         }
 
         private void Player_FormClosed(object sender, FormClosedEventArgs e)

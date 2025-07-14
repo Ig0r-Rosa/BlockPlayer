@@ -1,6 +1,7 @@
 ﻿using LibVLCSharp.Shared;
 using System.Runtime.InteropServices;
 using LibVLCSharp.WinForms;
+using BlockPlayer.Properties;
 
 namespace BlockPlayer
 {
@@ -12,16 +13,15 @@ namespace BlockPlayer
 
         public Miniplayer(MediaPlayer mediaPlayer)
         {
+            // Carregar configuração salva
+            this.Left = Properties.Settings.Default.MiniplayerX;
+            this.Top = Properties.Settings.Default.MiniplayerY;
+            this.Opacity = Properties.Settings.Default.MiniplayerOpacity;
+            this.Width = Properties.Settings.Default.MiniplayerSizeX;
+            this.Height = Properties.Settings.Default.MiniplayerSizeY;
             InitializeComponent();
-            //_mediaPlayer = mediaPlayer;
-            //Video.MediaPlayer = _mediaPlayer; 
 
-            // Configurações do Miniplayer
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.TopMost = true;
-            this.ShowInTaskbar = false;
-            this.Opacity = 0.85;
-            this.BackColor = Color.Black;
+            // Quando inicializo os componentes antes de definir os paramentros de tamanho, etc
 
             // Faz ele não receber foco
             int initialStyle = (int)WinAPI.GetWindowLong(this.Handle, WinAPI.GWL_EXSTYLE);
@@ -42,11 +42,21 @@ namespace BlockPlayer
         }
 
         // Torna o formulário não clicável
-        private void SetClickThrough()
+        public void SetClickThrough()
         {
             int exStyle = (int)GetWindowLong(this.Handle, GWL_EXSTYLE);
             exStyle |= WS_EX_LAYERED | WS_EX_TRANSPARENT;
             SetWindowLong(this.Handle, GWL_EXSTYLE, (IntPtr)exStyle);
+        }
+
+        public void AtualizarTamanho()
+        {
+            this.Left = Properties.Settings.Default.MiniplayerX;
+            this.Top = Properties.Settings.Default.MiniplayerY;
+            this.Opacity = Properties.Settings.Default.MiniplayerOpacity;
+            this.Width = Properties.Settings.Default.MiniplayerSizeX;
+            this.Height = Properties.Settings.Default.MiniplayerSizeY;
+            SetClickThrough();
         }
 
         private const int GWL_EXSTYLE = -20;

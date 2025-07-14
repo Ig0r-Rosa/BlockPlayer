@@ -14,6 +14,8 @@ namespace BlockPlayer
         private Miniplayer _miniplayer;
         private GlobalHotkey _hotkey;
 
+        private AjustarMiniplayer ajustarMiniplayerForm = null;
+
         private void ConfigVLC()
         {
             Core.Initialize();

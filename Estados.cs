@@ -87,7 +87,7 @@ namespace BlockPlayer
 
                 _mediaPlayer.Time = tempoAtual;
 
-                Thread.Sleep(100);
+                Thread.Sleep(50);
 
                 Pause();
 
@@ -97,6 +97,7 @@ namespace BlockPlayer
                 _mediaPlayer.Stop();
                 Video.MediaPlayer = null;
                 _miniplayer.Video.MediaPlayer = _mediaPlayer;
+                _miniplayer.AtualizarTamanho();
                 _miniplayer.Show();
                 this.Hide();
                 _miniplayer.Activate();
