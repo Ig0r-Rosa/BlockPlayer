@@ -117,5 +117,10 @@ namespace BlockPlayer
             _mediaPlayer.Dispose();
             _libVLC.Dispose();
         }
+
+        private void BotaoContinuarAssistindo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
