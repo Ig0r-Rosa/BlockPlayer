@@ -24,10 +24,10 @@ namespace BlockPlayer
             Win = 0x0008
         }
 
-        public GlobalHotkey(Form form, Keys key, Modifiers modifiers = Modifiers.Control | Modifiers.Shift)
+        public GlobalHotkey(Form form, int id, Keys key, Modifiers modifiers = Modifiers.Control | Modifiers.Shift)
         {
             _form = form;
-            hotkeyId = form.GetHashCode();
+            hotkeyId = id;
             RegisterHotKey(form.Handle, hotkeyId, (uint)modifiers, (uint)key);
             Application.AddMessageFilter(this);
         }

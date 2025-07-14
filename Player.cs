@@ -12,9 +12,7 @@ namespace BlockPlayer
             ConfigInterface();
             ConfigSemVideo();
             ConfigMiniplayer();
-
-            _hotkey = new GlobalHotkey(this, Keys.M);
-            _hotkey.OnHotkeyPressed += AlternarMiniplayer;
+            ConfigHotKeys();
 
             // Janela obter foco ao iniciar e exibir na frente
             this.Activate();
@@ -114,7 +112,7 @@ namespace BlockPlayer
 
         private void Player_FormClosed(object sender, FormClosedEventArgs e)
         {
-            _hotkey?.Unregister();
+            HotKeysUnregister();
             _mediaPlayer.Stop();
             _mediaPlayer.Dispose();
             _libVLC.Dispose();

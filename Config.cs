@@ -12,7 +12,10 @@ namespace BlockPlayer
         private bool EstaFullscreen = false;
 
         private Miniplayer _miniplayer;
+
         private GlobalHotkey _hotkey;
+        private GlobalHotkey _hotkeyVoltar;
+        private GlobalHotkey _hotkeyAvancar;
 
         private AjustarMiniplayer ajustarMiniplayerForm = null;
 
@@ -56,6 +59,30 @@ namespace BlockPlayer
         {
             _miniplayer = new Miniplayer(_mediaPlayer);
             _miniplayer.FormClosed += (s, e) => _miniplayer = null;
+        }
+
+        private void ConfigHotKeys()
+        {
+            _hotkey = new GlobalHotkey(this, 1, Keys.M);
+            _hotkey.OnHotkeyPressed += AlternarMiniplayer;
+
+            _hotkeyVoltar = new GlobalHotkey(this, 2, Keys.Oemcomma);
+            _hotkeyVoltar.OnHotkeyPressed += () =>
+            {
+                if(_miniplayer != null && _miniplayer.Visible)
+                {
+                    AjustarTempo(-10000);
+                }
+            };
+
+            _hotkeyAvancar = new GlobalHotkey(this, 3, Keys.OemPeriod);
+            _hotkeyAvancar.OnHotkeyPressed += () =>
+            {
+                if (_miniplayer != null && _miniplayer.Visible)
+                {
+                    AjustarTempo(10000);
+                }
+            };
         }
     }
 }

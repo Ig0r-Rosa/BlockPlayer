@@ -28,5 +28,22 @@ namespace BlockPlayer
             _mediaPlayer.Volume = VolumeVideo.Value;
             VolumeTexto.Text = VolumeVideo.Value.ToString();
         }
+
+        private void AjustarTempo(int deltaMs)
+        {
+            if (_mediaPlayer != null && _mediaPlayer.Media != null)
+            {
+                long novoTempo = Math.Max(0, _mediaPlayer.Time + deltaMs);
+                _mediaPlayer.Time = novoTempo;
+                AtualizarTempoVideo();
+            }
+        }
+
+        private void HotKeysUnregister()
+        {
+            _hotkey?.Unregister();
+            _hotkeyVoltar?.Unregister();
+            _hotkeyAvancar?.Unregister();
+        }
     }
 }
