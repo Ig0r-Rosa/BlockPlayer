@@ -9,6 +9,7 @@ namespace BlockPlayer
             {
                 case Keys.Delete:
                     _mediaPlayer.Stop();
+                    _mediaPlayer.Media = null;
                     AtualizarVisibilidadeVideo(false);
                     return true;
 

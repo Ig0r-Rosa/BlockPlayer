@@ -82,7 +82,7 @@ namespace BlockPlayer
                 this.Activate();
                 _mediaPlayer.Play();
             }
-            else
+            else if (_mediaPlayer.Media != null)
             {
                 _mediaPlayer.Stop();
                 Video.MediaPlayer = null;
