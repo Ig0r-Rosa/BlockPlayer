@@ -1,4 +1,5 @@
-﻿
+﻿using System.Threading;
+
 namespace BlockPlayer
 {
     public partial class Janela : Form
@@ -68,6 +69,10 @@ namespace BlockPlayer
 
         private void AlternarMiniplayer()
         {
+            long tempoAtual = _mediaPlayer.Time;
+
+            Thread.Sleep(50);
+
             if (_miniplayer.Visible)
             {
                 _mediaPlayer.Stop();
@@ -75,12 +80,17 @@ namespace BlockPlayer
                 Video.MediaPlayer = _mediaPlayer;
                 _miniplayer.Hide();
                 this.Show();
-                if (_mediaPlayer.IsPlaying == true)
-                {
-                    Pause();
-                }
                 this.Activate();
                 _mediaPlayer.Play();
+
+                Thread.Sleep(50);
+
+                _mediaPlayer.Time = tempoAtual;
+
+                Thread.Sleep(100);
+
+                Pause();
+
             }
             else if (_mediaPlayer.Media != null)
             {
@@ -89,12 +99,12 @@ namespace BlockPlayer
                 _miniplayer.Video.MediaPlayer = _mediaPlayer;
                 _miniplayer.Show();
                 this.Hide();
-                if (_mediaPlayer.IsPlaying == false)
-                {
-                    Pause();
-                }
                 _miniplayer.Activate();
                 _mediaPlayer.Play();
+
+                Thread.Sleep(50);
+
+                _mediaPlayer.Time = tempoAtual;
             }
         }
     }
