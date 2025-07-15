@@ -29,6 +29,7 @@ namespace BlockPlayer
             }
             else
             {
+                CarregarContinuarAssistindo();
                 ExibirInterface(false);
                 PainelSemVideo.BringToFront();
                 PainelSemVideo.Invalidate();

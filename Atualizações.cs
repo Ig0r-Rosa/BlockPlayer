@@ -45,5 +45,42 @@ namespace BlockPlayer
             _hotkeyVoltar?.Unregister();
             _hotkeyAvancar?.Unregister();
         }
+
+        private void SalvarContinuarAssistindo()
+        {
+            // Salvando caminho e tempo do vídeo atual
+            if (_mediaPlayer?.Media?.Mrl != null && _mediaPlayer.Length > 0)
+            {
+                string path = _mediaPlayer.Media.Mrl.Replace("file:///", "").Replace("/", "\\");
+                long tempo = _mediaPlayer.Time;
+
+                if (Properties.Settings.Default.VideoPaths == null)
+                    Properties.Settings.Default.VideoPaths = new System.Collections.Specialized.StringCollection();
+                if (Properties.Settings.Default.VideoTimes == null)
+                    Properties.Settings.Default.VideoTimes = new System.Collections.Specialized.StringCollection();
+
+                // Remover duplicatas
+                int existingIndex = Properties.Settings.Default.VideoPaths.IndexOf(path);
+                if (existingIndex >= 0)
+                {
+                    Properties.Settings.Default.VideoPaths.RemoveAt(existingIndex);
+                    Properties.Settings.Default.VideoTimes.RemoveAt(existingIndex);
+                }
+
+                Properties.Settings.Default.VideoPaths.Add(path);
+                Properties.Settings.Default.VideoTimes.Add(tempo.ToString());
+
+                Properties.Settings.Default.Save();
+
+
+                System.Windows.Forms.Timer delay = new System.Windows.Forms.Timer { Interval = 200 };
+                delay.Tick += (s, ev) =>
+                {
+                    delay.Stop();
+                    delay.Dispose();
+                };
+                delay.Start();
+            }
+        }
     }
 }

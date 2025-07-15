@@ -82,5 +82,27 @@ namespace BlockPlayer.Properties {
                 this["MiniplayerSizeY"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection VideoPaths {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["VideoPaths"]));
+            }
+            set {
+                this["VideoPaths"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection VideoTimes {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["VideoTimes"]));
+            }
+            set {
+                this["VideoTimes"] = value;
+            }
+        }
     }
 }

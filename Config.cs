@@ -84,5 +84,24 @@ namespace BlockPlayer
                 }
             };
         }
+
+        private void CarregarContinuarAssistindo()
+        {
+            if (Properties.Settings.Default.VideoPaths == null || Properties.Settings.Default.VideoTimes == null)
+                return;
+
+            ContinuarAssistindo.Items.Clear();
+
+            for (int i = 0; i < Properties.Settings.Default.VideoPaths.Count; i++)
+            {
+                string path = Properties.Settings.Default.VideoPaths[i];
+                string tempo = Properties.Settings.Default.VideoTimes[i];
+
+                var item = new ListViewItem(System.IO.Path.GetFileName(path));
+                item.SubItems.Add(FormatarTempo(long.Parse(tempo)));
+                item.Tag = new VideoInfo { Caminho = path, Tempo = long.Parse(tempo) };
+                ContinuarAssistindo.Items.Add(item);
+            }
+        }
     }
 }

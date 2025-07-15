@@ -38,6 +38,7 @@
             BarraVideo = new TrackBar();
             TimerVideo = new System.Windows.Forms.Timer(components);
             PainelSemVideo = new Panel();
+            ApagarContinuarAssistindo = new Button();
             pictureBox1 = new PictureBox();
             ContinuarAssistindo = new ListView();
             BotaoContinuarAssistindo = new Button();
@@ -152,6 +153,7 @@
             // PainelSemVideo
             // 
             PainelSemVideo.BackColor = Color.FromArgb(21, 23, 66);
+            PainelSemVideo.Controls.Add(ApagarContinuarAssistindo);
             PainelSemVideo.Controls.Add(pictureBox1);
             PainelSemVideo.Controls.Add(ContinuarAssistindo);
             PainelSemVideo.Controls.Add(BotaoContinuarAssistindo);
@@ -165,6 +167,20 @@
             PainelSemVideo.Padding = new Padding(20);
             PainelSemVideo.Size = new Size(978, 544);
             PainelSemVideo.TabIndex = 2;
+            // 
+            // ApagarContinuarAssistindo
+            // 
+            ApagarContinuarAssistindo.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            ApagarContinuarAssistindo.BackColor = Color.Red;
+            ApagarContinuarAssistindo.FlatStyle = FlatStyle.Flat;
+            ApagarContinuarAssistindo.Location = new Point(915, 375);
+            ApagarContinuarAssistindo.MaximumSize = new Size(40, 40);
+            ApagarContinuarAssistindo.Name = "ApagarContinuarAssistindo";
+            ApagarContinuarAssistindo.Size = new Size(40, 40);
+            ApagarContinuarAssistindo.TabIndex = 11;
+            ApagarContinuarAssistindo.Text = "🗑️";
+            ApagarContinuarAssistindo.UseVisualStyleBackColor = false;
+            ApagarContinuarAssistindo.Click += ApagarContinuarAssistindo_Click;
             // 
             // pictureBox1
             // 
@@ -354,5 +370,6 @@
         private Label TempoVideoContinuarAssistindo;
         private Panel panel1;
         private PictureBox pictureBox1;
+        private Button ApagarContinuarAssistindo;
     }
 }

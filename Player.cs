@@ -18,15 +18,7 @@ namespace BlockPlayer
             this.Activate();
             this.BringToFront();
 
-
-            // Adição manual para teste, precisa fazer o salvamento e resgatar
-            var item = new ListViewItem("Nome do vídeo");
-            item.Tag = new VideoInfo
-            {
-                Caminho = @"C:\Users\igord\Videos\Animes\[AnimeFire.plus] Grand Blue Season 2 - Episódio 1 (HD).mp4",
-                Tempo = 10000 // tempo em milissegundos onde parou
-            };
-            ContinuarAssistindo.Items.Add(item);
+            CarregarContinuarAssistindo();
         }
 
         private void Painel_Click(object sender, EventArgs e)
@@ -125,6 +117,7 @@ namespace BlockPlayer
         private void Player_FormClosed(object sender, FormClosedEventArgs e)
         {
             HotKeysUnregister();
+            SalvarContinuarAssistindo();
             _mediaPlayer.Stop();
             _mediaPlayer.Dispose();
             _libVLC.Dispose();
@@ -160,6 +153,37 @@ namespace BlockPlayer
             else
             {
                 MessageBox.Show("Arquivo não encontrado ou informação inválida.");
+            }
+        }
+
+        private void ApagarContinuarAssistindo_Click(object sender, EventArgs e)
+        {
+            if (ContinuarAssistindo.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Selecione um item para apagar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var item = ContinuarAssistindo.SelectedItems[0];
+
+            if (item.Tag is VideoInfo info)
+            {
+                var paths = Properties.Settings.Default.VideoPaths;
+                var tempos = Properties.Settings.Default.VideoTimes;
+
+                if (paths != null && tempos != null)
+                {
+                    int index = paths.IndexOf(info.Caminho);
+
+                    if (index >= 0)
+                    {
+                        paths.RemoveAt(index);
+                        tempos.RemoveAt(index);
+                        Properties.Settings.Default.Save();
+                    }
+                }
+
+                ContinuarAssistindo.Items.Remove(item);
             }
         }
     }

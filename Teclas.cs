@@ -8,6 +8,7 @@ namespace BlockPlayer
             switch (keyData)
             {
                 case Keys.Delete:
+                    SalvarContinuarAssistindo();
                     _mediaPlayer.Stop();
                     _mediaPlayer.Media = null;
                     AtualizarVisibilidadeVideo(false);

@@ -17,5 +17,11 @@
     <Setting Name="MiniplayerSizeY" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">400</Value>
     </Setting>
+    <Setting Name="VideoPaths" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="VideoTimes" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>
