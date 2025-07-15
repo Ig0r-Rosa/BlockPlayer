@@ -4,9 +4,6 @@ namespace BlockPlayer
 {
     public partial class AjustarMiniplayer : Form
     {
-        private TrackBar trackBarOpacidade;
-        private Button btnSalvar;
-        private Label lblPorcentagem;
 
         public AjustarMiniplayer()
         {

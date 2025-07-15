@@ -17,6 +17,16 @@ namespace BlockPlayer
             // Janela obter foco ao iniciar e exibir na frente
             this.Activate();
             this.BringToFront();
+
+
+            // Adição manual para teste, precisa fazer o salvamento e resgatar
+            var item = new ListViewItem("Nome do vídeo");
+            item.Tag = new VideoInfo
+            {
+                Caminho = @"C:\Users\igord\Videos\Animes\[AnimeFire.plus] Grand Blue Season 2 - Episódio 1 (HD).mp4",
+                Tempo = 10000 // tempo em milissegundos onde parou
+            };
+            ContinuarAssistindo.Items.Add(item);
         }
 
         private void Painel_Click(object sender, EventArgs e)
@@ -28,6 +38,8 @@ namespace BlockPlayer
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
                 e.Effect = DragDropEffects.Copy;
+
+            // Quando arrastar um video adicionar camada "Mova seu video aqui"
         }
 
         private void Video_DragDrop(object sender, DragEventArgs e)
@@ -120,7 +132,35 @@ namespace BlockPlayer
 
         private void BotaoContinuarAssistindo_Click(object sender, EventArgs e)
         {
+            if (ContinuarAssistindo.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Selecione um vídeo para continuar assistindo.");
+                return;
+            }
 
+            var itemSelecionado = ContinuarAssistindo.SelectedItems[0];
+
+            if (itemSelecionado.Tag is VideoInfo info && File.Exists(info.Caminho))
+            {
+                var media = new Media(_libVLC, info.Caminho, FromType.FromPath);
+                _mediaPlayer.Play(media);
+
+                // Espera um pouco para garantir que o vídeo carregue
+                System.Windows.Forms.Timer delay = new System.Windows.Forms.Timer { Interval = 200 };
+                delay.Tick += (s, ev) =>
+                {
+                    delay.Stop();
+                    delay.Dispose();
+                    _mediaPlayer.Time = info.Tempo;
+                };
+                delay.Start();
+
+                AtualizarVisibilidadeVideo(true);
+            }
+            else
+            {
+                MessageBox.Show("Arquivo não encontrado ou informação inválida.");
+            }
         }
     }
 }
