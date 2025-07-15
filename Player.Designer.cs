@@ -196,6 +196,7 @@
             BotaoContinuarAssistindo.BackColor = Color.SteelBlue;
             BotaoContinuarAssistindo.FlatAppearance.MouseDownBackColor = Color.LightSteelBlue;
             BotaoContinuarAssistindo.FlatStyle = FlatStyle.Flat;
+            BotaoContinuarAssistindo.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             BotaoContinuarAssistindo.ForeColor = SystemColors.ActiveCaptionText;
             BotaoContinuarAssistindo.Location = new Point(805, 441);
             BotaoContinuarAssistindo.MaximumSize = new Size(150, 80);
@@ -212,6 +213,7 @@
             BotaoAjuda.Dock = DockStyle.Left;
             BotaoAjuda.FlatAppearance.MouseDownBackColor = Color.LightSteelBlue;
             BotaoAjuda.FlatStyle = FlatStyle.Flat;
+            BotaoAjuda.Font = new Font("Times New Roman", 12F);
             BotaoAjuda.ForeColor = SystemColors.ActiveCaptionText;
             BotaoAjuda.Location = new Point(320, 20);
             BotaoAjuda.MaximumSize = new Size(150, 80);
@@ -227,6 +229,7 @@
             BotaoAjusteMinipayer.Dock = DockStyle.Left;
             BotaoAjusteMinipayer.FlatAppearance.MouseDownBackColor = Color.LightSteelBlue;
             BotaoAjusteMinipayer.FlatStyle = FlatStyle.Flat;
+            BotaoAjusteMinipayer.Font = new Font("Times New Roman", 12F);
             BotaoAjusteMinipayer.ForeColor = SystemColors.ActiveCaptionText;
             BotaoAjusteMinipayer.Location = new Point(170, 20);
             BotaoAjusteMinipayer.MaximumSize = new Size(150, 80);
@@ -243,6 +246,7 @@
             BotaoEscolhaVideo.Dock = DockStyle.Left;
             BotaoEscolhaVideo.FlatAppearance.MouseDownBackColor = Color.LightSteelBlue;
             BotaoEscolhaVideo.FlatStyle = FlatStyle.Flat;
+            BotaoEscolhaVideo.Font = new Font("Times New Roman", 12F);
             BotaoEscolhaVideo.ForeColor = SystemColors.ActiveCaptionText;
             BotaoEscolhaVideo.Location = new Point(20, 20);
             BotaoEscolhaVideo.MaximumSize = new Size(150, 80);
@@ -268,9 +272,10 @@
             // 
             TempoVideoContinuarAssistindo.AutoSize = true;
             TempoVideoContinuarAssistindo.Dock = DockStyle.Bottom;
-            TempoVideoContinuarAssistindo.Location = new Point(0, 44);
+            TempoVideoContinuarAssistindo.Font = new Font("Times New Roman", 12F);
+            TempoVideoContinuarAssistindo.Location = new Point(0, 42);
             TempoVideoContinuarAssistindo.Name = "TempoVideoContinuarAssistindo";
-            TempoVideoContinuarAssistindo.Size = new Size(117, 25);
+            TempoVideoContinuarAssistindo.Size = new Size(139, 27);
             TempoVideoContinuarAssistindo.TabIndex = 8;
             TempoVideoContinuarAssistindo.Text = "00:00 / 00:00";
             // 
@@ -278,9 +283,11 @@
             // 
             NomeVideoContinuarAssistindo.AutoSize = true;
             NomeVideoContinuarAssistindo.Dock = DockStyle.Top;
+            NomeVideoContinuarAssistindo.Font = new Font("Times New Roman", 12F);
             NomeVideoContinuarAssistindo.Location = new Point(0, 0);
+            NomeVideoContinuarAssistindo.MaximumSize = new Size(700, 80);
             NomeVideoContinuarAssistindo.Name = "NomeVideoContinuarAssistindo";
-            NomeVideoContinuarAssistindo.Size = new Size(58, 25);
+            NomeVideoContinuarAssistindo.Size = new Size(69, 27);
             NomeVideoContinuarAssistindo.TabIndex = 7;
             NomeVideoContinuarAssistindo.Text = "Vídeo";
             // 
