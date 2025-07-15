@@ -51,7 +51,7 @@ namespace BlockPlayer
             // Salvando caminho e tempo do vídeo atual
             if (_mediaPlayer?.Media?.Mrl != null && _mediaPlayer.Length > 0)
             {
-                string path = _mediaPlayer.Media.Mrl.Replace("file:///", "").Replace("/", "\\");
+                string path = Uri.UnescapeDataString(_mediaPlayer.Media.Mrl.Replace("file:///", "").Replace("/", "\\"));
                 long tempo = _mediaPlayer.Time;
 
                 if (Properties.Settings.Default.VideoPaths == null)

@@ -133,6 +133,15 @@ namespace BlockPlayer
 
             var itemSelecionado = ContinuarAssistindo.SelectedItems[0];
 
+            if (itemSelecionado.Tag is VideoInfo info2)
+            {
+                MessageBox.Show($"Caminho salvo na Tag:\n\n{info2.Caminho}\nTempo: {info2.Tempo} ms", "Tag do Item");
+            }
+            else
+            {
+                MessageBox.Show("A Tag do item selecionado não é um VideoInfo válido.");
+            }
+
             if (itemSelecionado.Tag is VideoInfo info && File.Exists(info.Caminho))
             {
                 var media = new Media(_libVLC, info.Caminho, FromType.FromPath);
