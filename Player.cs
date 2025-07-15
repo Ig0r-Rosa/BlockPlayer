@@ -133,29 +133,11 @@ namespace BlockPlayer
 
             var itemSelecionado = ContinuarAssistindo.SelectedItems[0];
 
-            if (itemSelecionado.Tag is VideoInfo info2)
-            {
-                MessageBox.Show($"Caminho salvo na Tag:\n\n{info2.Caminho}\nTempo: {info2.Tempo} ms", "Tag do Item");
-            }
-            else
-            {
-                MessageBox.Show("A Tag do item selecionado não é um VideoInfo válido.");
-            }
-
             if (itemSelecionado.Tag is VideoInfo info && File.Exists(info.Caminho))
             {
                 var media = new Media(_libVLC, info.Caminho, FromType.FromPath);
                 _mediaPlayer.Play(media);
-
-                // Espera um pouco para garantir que o vídeo carregue
-                System.Windows.Forms.Timer delay = new System.Windows.Forms.Timer { Interval = 200 };
-                delay.Tick += (s, ev) =>
-                {
-                    delay.Stop();
-                    delay.Dispose();
-                    _mediaPlayer.Time = info.Tempo;
-                };
-                delay.Start();
+                _mediaPlayer.Time = info.Tempo;
 
                 AtualizarVisibilidadeVideo(true);
             }

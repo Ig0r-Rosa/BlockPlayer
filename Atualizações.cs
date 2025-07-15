@@ -53,11 +53,15 @@ namespace BlockPlayer
             {
                 string path = Uri.UnescapeDataString(_mediaPlayer.Media.Mrl.Replace("file:///", "").Replace("/", "\\"));
                 long tempo = _mediaPlayer.Time;
+                string dataAtual = DateTime.Now.ToString("o"); // ISO 8601 format
 
                 if (Properties.Settings.Default.VideoPaths == null)
                     Properties.Settings.Default.VideoPaths = new System.Collections.Specialized.StringCollection();
                 if (Properties.Settings.Default.VideoTimes == null)
                     Properties.Settings.Default.VideoTimes = new System.Collections.Specialized.StringCollection();
+                if (Properties.Settings.Default.VideoDatas == null)
+                    Properties.Settings.Default.VideoDatas = new System.Collections.Specialized.StringCollection();
+
 
                 // Remover duplicatas
                 int existingIndex = Properties.Settings.Default.VideoPaths.IndexOf(path);
@@ -65,10 +69,12 @@ namespace BlockPlayer
                 {
                     Properties.Settings.Default.VideoPaths.RemoveAt(existingIndex);
                     Properties.Settings.Default.VideoTimes.RemoveAt(existingIndex);
+                    Properties.Settings.Default.VideoDatas.RemoveAt(existingIndex);
                 }
 
                 Properties.Settings.Default.VideoPaths.Add(path);
                 Properties.Settings.Default.VideoTimes.Add(tempo.ToString());
+                Properties.Settings.Default.VideoDatas.Add(dataAtual);
 
                 Properties.Settings.Default.Save();
 

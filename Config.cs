@@ -87,21 +87,59 @@ namespace BlockPlayer
 
         private void CarregarContinuarAssistindo()
         {
-            if (Properties.Settings.Default.VideoPaths == null || Properties.Settings.Default.VideoTimes == null)
+            var paths = Properties.Settings.Default.VideoPaths;
+            var tempos = Properties.Settings.Default.VideoTimes;
+            var datas = Properties.Settings.Default.VideoDatas;
+
+            if (paths == null || tempos == null || datas == null)
                 return;
+
+            var lista = new List<VideoInfo>();
+
+            for (int i = 0; i < paths.Count; i++)
+            {
+                string path = paths[i];
+                string tempo = tempos[i];
+                string data = datas[i];
+
+                if (File.Exists(path))
+                {
+                    lista.Add(new VideoInfo
+                    {
+                        Caminho = path,
+                        Tempo = long.Parse(tempo),
+                        DataAtualizacao = DateTime.Parse(data)
+                    });
+                }
+            }
+
+            // Ordena do mais recente para o mais antigo
+            var ordenados = lista.OrderByDescending(v => v.DataAtualizacao).ToList();
 
             ContinuarAssistindo.Items.Clear();
 
-            for (int i = 0; i < Properties.Settings.Default.VideoPaths.Count; i++)
+            foreach (var video in ordenados)
             {
-                string path = Properties.Settings.Default.VideoPaths[i];
-                string tempo = Properties.Settings.Default.VideoTimes[i];
-
-                var item = new ListViewItem(System.IO.Path.GetFileName(path));
-                item.SubItems.Add(FormatarTempo(long.Parse(tempo)));
-                item.Tag = new VideoInfo { Caminho = path, Tempo = long.Parse(tempo) };
+                var item = new ListViewItem(System.IO.Path.GetFileName(video.Caminho));
+                item.SubItems.Add(FormatarTempo(video.Tempo));
+                item.SubItems.Add(video.DataAtualizacao.ToString("dd/MM/yyyy HH:mm"));
+                item.Tag = video;
                 ContinuarAssistindo.Items.Add(item);
             }
+
+            // Atualiza apenas com os que ainda existem
+            Properties.Settings.Default.VideoPaths = new System.Collections.Specialized.StringCollection();
+            Properties.Settings.Default.VideoTimes = new System.Collections.Specialized.StringCollection();
+            Properties.Settings.Default.VideoDatas = new System.Collections.Specialized.StringCollection();
+
+            foreach (var video in ordenados)
+            {
+                Properties.Settings.Default.VideoPaths.Add(video.Caminho);
+                Properties.Settings.Default.VideoTimes.Add(video.Tempo.ToString());
+                Properties.Settings.Default.VideoDatas.Add(video.DataAtualizacao.ToString("o"));
+            }
+
+            Properties.Settings.Default.Save();
         }
     }
 }

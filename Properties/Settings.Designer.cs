@@ -104,5 +104,16 @@ namespace BlockPlayer.Properties {
                 this["VideoTimes"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection VideoDatas {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["VideoDatas"]));
+            }
+            set {
+                this["VideoDatas"] = value;
+            }
+        }
     }
 }
