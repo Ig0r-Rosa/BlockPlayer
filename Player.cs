@@ -44,13 +44,13 @@ namespace BlockPlayer
             {
                 string file = files[0];
                 string ext = Path.GetExtension(file).ToLower();
-                if (ext == ".mp4" || ext == ".mp3")
+                if (ext == ".mp4")
                 {
                     _mediaPlayer.Play(new Media(_libVLC, file, FromType.FromPath));
                 }
                 else
                 {
-                    MessageBox.Show("Apenas arquivos .mp4 ou .mp3 são suportados.");
+                    MessageBox.Show("Apenas arquivos .mp4 são suportados.");
                 }
             }
 
