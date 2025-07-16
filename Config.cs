@@ -19,6 +19,9 @@ namespace BlockPlayer
 
         private AjustarMiniplayer ajustarMiniplayerForm = null;
 
+        private string _arquivoInicial;
+
+
         private void ConfigVLC()
         {
             Core.Initialize();

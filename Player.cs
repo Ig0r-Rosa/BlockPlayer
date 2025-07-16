@@ -5,9 +5,13 @@ namespace BlockPlayer
 {
     public partial class Janela : Form
     {
-        public Janela()
+        public Janela(string[] args = null)
         {
             InitializeComponent();
+
+            if (args != null && args.Length > 0)
+                _arquivoInicial = args[0]; // Pega o caminho do arquivo .mp4
+
             ConfigVLC();
             ConfigInterface();
             ConfigSemVideo();
@@ -19,6 +23,13 @@ namespace BlockPlayer
             this.BringToFront();
 
             CarregarContinuarAssistindo();
+
+            if (!string.IsNullOrEmpty(_arquivoInicial) && File.Exists(_arquivoInicial))
+            {
+                var media = new Media(_libVLC, _arquivoInicial, FromType.FromPath);
+                _mediaPlayer.Play(media);
+                AtualizarVisibilidadeVideo(true);
+            }
         }
 
         private void Painel_Click(object sender, EventArgs e)
