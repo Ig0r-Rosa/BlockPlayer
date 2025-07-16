@@ -128,6 +128,7 @@ namespace BlockPlayer
             if (ContinuarAssistindo.SelectedItems.Count == 0)
             {
                 MessageBox.Show("Selecione um vídeo para continuar assistindo.");
+                CarregarContinuarAssistindo();
                 return;
             }
 
@@ -144,6 +145,7 @@ namespace BlockPlayer
             else
             {
                 MessageBox.Show("Arquivo não encontrado ou informação inválida.");
+                CarregarContinuarAssistindo();
             }
         }
 

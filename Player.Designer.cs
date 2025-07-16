@@ -153,7 +153,6 @@
             // PainelSemVideo
             // 
             PainelSemVideo.BackColor = Color.FromArgb(21, 23, 66);
-            PainelSemVideo.Controls.Add(ApagarContinuarAssistindo);
             PainelSemVideo.Controls.Add(pictureBox1);
             PainelSemVideo.Controls.Add(ContinuarAssistindo);
             PainelSemVideo.Controls.Add(BotaoContinuarAssistindo);
@@ -173,7 +172,7 @@
             ApagarContinuarAssistindo.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             ApagarContinuarAssistindo.BackColor = Color.Red;
             ApagarContinuarAssistindo.FlatStyle = FlatStyle.Flat;
-            ApagarContinuarAssistindo.Location = new Point(915, 375);
+            ApagarContinuarAssistindo.Location = new Point(739, 60);
             ApagarContinuarAssistindo.MaximumSize = new Size(40, 40);
             ApagarContinuarAssistindo.Name = "ApagarContinuarAssistindo";
             ApagarContinuarAssistindo.Size = new Size(40, 40);
@@ -275,6 +274,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(ApagarContinuarAssistindo);
             panel1.Controls.Add(TempoVideoContinuarAssistindo);
             panel1.Controls.Add(NomeVideoContinuarAssistindo);
             panel1.Controls.Add(ProgressoVideoContinuarAssistindo);
