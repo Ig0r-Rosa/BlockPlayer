@@ -7,10 +7,14 @@ namespace BlockPlayer
     {
         public Janela(string[] args = null)
         {
+            // Melhorar codígo e iniciar frontend
+
             InitializeComponent();
 
             if (args != null && args.Length > 0)
-                _arquivoInicial = args[0]; // Pega o caminho do arquivo .mp4
+            {
+                _arquivoInicial = args[0];
+            }
 
             ConfigVLC();
             ConfigInterface();
