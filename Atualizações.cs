@@ -48,44 +48,37 @@ namespace BlockPlayer
 
         private void SalvarContinuarAssistindo()
         {
-            // Salvando caminho e tempo do vídeo atual
             if (_mediaPlayer?.Media?.Mrl != null && _mediaPlayer.Length > 0)
             {
                 string path = Uri.UnescapeDataString(_mediaPlayer.Media.Mrl.Replace("file:///", "").Replace("/", "\\"));
                 long tempo = _mediaPlayer.Time;
-                string dataAtual = DateTime.Now.ToString("o"); // ISO 8601 format
+                long duracao = _mediaPlayer.Length;
+                DateTime agora = DateTime.UtcNow;
 
-                if (Properties.Settings.Default.VideoPaths == null)
-                    Properties.Settings.Default.VideoPaths = new System.Collections.Specialized.StringCollection();
-                if (Properties.Settings.Default.VideoTimes == null)
-                    Properties.Settings.Default.VideoTimes = new System.Collections.Specialized.StringCollection();
-                if (Properties.Settings.Default.VideoDatas == null)
-                    Properties.Settings.Default.VideoDatas = new System.Collections.Specialized.StringCollection();
+                var paths = Properties.Settings.Default.VideoPaths ?? new System.Collections.Specialized.StringCollection();
+                var tempos = Properties.Settings.Default.VideoTimes ?? new System.Collections.Specialized.StringCollection();
+                var datas = Properties.Settings.Default.VideoDatas ?? new System.Collections.Specialized.StringCollection();
+                var duracoes = Properties.Settings.Default.VideoDuracao ?? new System.Collections.Specialized.StringCollection();
 
-
-                // Remover duplicatas
-                int existingIndex = Properties.Settings.Default.VideoPaths.IndexOf(path);
+                int existingIndex = paths.IndexOf(path);
                 if (existingIndex >= 0)
                 {
-                    Properties.Settings.Default.VideoPaths.RemoveAt(existingIndex);
-                    Properties.Settings.Default.VideoTimes.RemoveAt(existingIndex);
-                    Properties.Settings.Default.VideoDatas.RemoveAt(existingIndex);
+                    paths.RemoveAt(existingIndex);
+                    tempos.RemoveAt(existingIndex);
+                    datas.RemoveAt(existingIndex);
+                    duracoes.RemoveAt(existingIndex);
                 }
 
-                Properties.Settings.Default.VideoPaths.Add(path);
-                Properties.Settings.Default.VideoTimes.Add(tempo.ToString());
-                Properties.Settings.Default.VideoDatas.Add(dataAtual);
+                paths.Add(path);
+                tempos.Add(tempo.ToString());
+                datas.Add(agora.ToString("o"));
+                duracoes.Add(duracao.ToString());
 
+                Properties.Settings.Default.VideoPaths = paths;
+                Properties.Settings.Default.VideoTimes = tempos;
+                Properties.Settings.Default.VideoDatas = datas;
+                Properties.Settings.Default.VideoDuracao = duracoes;
                 Properties.Settings.Default.Save();
-
-
-                System.Windows.Forms.Timer delay = new System.Windows.Forms.Timer { Interval = 200 };
-                delay.Tick += (s, ev) =>
-                {
-                    delay.Stop();
-                    delay.Dispose();
-                };
-                delay.Start();
             }
         }
     }

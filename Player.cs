@@ -174,8 +174,10 @@ namespace BlockPlayer
             {
                 var paths = Properties.Settings.Default.VideoPaths;
                 var tempos = Properties.Settings.Default.VideoTimes;
+                var datas = Properties.Settings.Default.VideoDatas;
+                var duracoes = Properties.Settings.Default.VideoDuracao;
 
-                if (paths != null && tempos != null)
+                if (paths != null && tempos != null && datas != null && duracoes != null)
                 {
                     int index = paths.IndexOf(info.Caminho);
 
@@ -183,11 +185,56 @@ namespace BlockPlayer
                     {
                         paths.RemoveAt(index);
                         tempos.RemoveAt(index);
+                        datas.RemoveAt(index);
+                        duracoes.RemoveAt(index);
                         Properties.Settings.Default.Save();
                     }
                 }
 
                 ContinuarAssistindo.Items.Remove(item);
+            }
+        }
+
+        private void ContinuarAssistindo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ContinuarAssistindo.SelectedItems.Count == 0)
+            {
+                NomeVideoContinuarAssistindo.Visible = false;
+                TempoVideoContinuarAssistindo.Visible = false;
+                ProgressoVideoContinuarAssistindo.Visible = false;
+                return;
+            }
+
+            NomeVideoContinuarAssistindo.Visible = true;
+            TempoVideoContinuarAssistindo.Visible = true;
+            ProgressoVideoContinuarAssistindo.Visible = true;
+
+            var item = ContinuarAssistindo.SelectedItems[0];
+
+            NomeVideoContinuarAssistindo.Text = item.Text;
+
+            if (item.Tag is VideoInfo info)
+            {
+                // Formata tempo atual e duração
+                string tempoAtual = FormatarTempo(info.Tempo);
+                string duracao = FormatarTempo(info.Duracao); // Assumindo que você adicionou esse campo
+                TempoVideoContinuarAssistindo.Text = $"{tempoAtual} / {duracao}";
+
+                // Calcula progresso como porcentagem
+                if (info.Duracao > 0)
+                {
+                    int progresso = (int)((info.Tempo * 100) / info.Duracao);
+                    ProgressoVideoContinuarAssistindo.Value = Math.Min(100, Math.Max(0, progresso));
+                }
+                else
+                {
+                    ProgressoVideoContinuarAssistindo.Value = 0;
+                }
+            }
+            else
+            {
+                TempoVideoContinuarAssistindo.Text = "-";
+                ProgressoVideoContinuarAssistindo.Value = 0;
             }
         }
     }

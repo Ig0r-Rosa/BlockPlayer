@@ -93,8 +93,9 @@ namespace BlockPlayer
             var paths = Properties.Settings.Default.VideoPaths;
             var tempos = Properties.Settings.Default.VideoTimes;
             var datas = Properties.Settings.Default.VideoDatas;
+            var duracoes = Properties.Settings.Default.VideoDuracao;
 
-            if (paths == null || tempos == null || datas == null)
+            if (paths == null || tempos == null || datas == null || duracoes == null)
                 return;
 
             var lista = new List<VideoInfo>();
@@ -104,6 +105,7 @@ namespace BlockPlayer
                 string path = paths[i];
                 string tempo = tempos[i];
                 string data = datas[i];
+                string duracao = duracoes[i]; 
 
                 if (File.Exists(path))
                 {
@@ -111,7 +113,8 @@ namespace BlockPlayer
                     {
                         Caminho = path,
                         Tempo = long.Parse(tempo),
-                        DataAtualizacao = DateTime.Parse(data)
+                        Duracao = long.Parse(duracao),
+                        DataAtualizacao = DateTime.Parse(data, null, System.Globalization.DateTimeStyles.RoundtripKind)
                     });
                 }
             }
@@ -134,12 +137,14 @@ namespace BlockPlayer
             Properties.Settings.Default.VideoPaths = new System.Collections.Specialized.StringCollection();
             Properties.Settings.Default.VideoTimes = new System.Collections.Specialized.StringCollection();
             Properties.Settings.Default.VideoDatas = new System.Collections.Specialized.StringCollection();
+            Properties.Settings.Default.VideoDuracao = new System.Collections.Specialized.StringCollection();
 
             foreach (var video in ordenados)
             {
                 Properties.Settings.Default.VideoPaths.Add(video.Caminho);
                 Properties.Settings.Default.VideoTimes.Add(video.Tempo.ToString());
                 Properties.Settings.Default.VideoDatas.Add(video.DataAtualizacao.ToString("o"));
+                Properties.Settings.Default.VideoDuracao.Add(video.Duracao.ToString());
             }
 
             Properties.Settings.Default.Save();

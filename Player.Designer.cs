@@ -38,7 +38,6 @@
             BarraVideo = new TrackBar();
             TimerVideo = new System.Windows.Forms.Timer(components);
             PainelSemVideo = new Panel();
-            ApagarContinuarAssistindo = new Button();
             pictureBox1 = new PictureBox();
             ContinuarAssistindo = new ListView();
             BotaoContinuarAssistindo = new Button();
@@ -46,6 +45,7 @@
             BotaoAjusteMinipayer = new Button();
             BotaoEscolhaVideo = new Button();
             panel1 = new Panel();
+            ApagarContinuarAssistindo = new Button();
             TempoVideoContinuarAssistindo = new Label();
             NomeVideoContinuarAssistindo = new Label();
             ProgressoVideoContinuarAssistindo = new ProgressBar();
@@ -167,20 +167,6 @@
             PainelSemVideo.Size = new Size(978, 544);
             PainelSemVideo.TabIndex = 2;
             // 
-            // ApagarContinuarAssistindo
-            // 
-            ApagarContinuarAssistindo.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            ApagarContinuarAssistindo.BackColor = Color.Red;
-            ApagarContinuarAssistindo.FlatStyle = FlatStyle.Flat;
-            ApagarContinuarAssistindo.Location = new Point(739, 60);
-            ApagarContinuarAssistindo.MaximumSize = new Size(40, 40);
-            ApagarContinuarAssistindo.Name = "ApagarContinuarAssistindo";
-            ApagarContinuarAssistindo.Size = new Size(40, 40);
-            ApagarContinuarAssistindo.TabIndex = 11;
-            ApagarContinuarAssistindo.Text = "🗑️";
-            ApagarContinuarAssistindo.UseVisualStyleBackColor = false;
-            ApagarContinuarAssistindo.Click += ApagarContinuarAssistindo_Click;
-            // 
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Transparent;
@@ -204,6 +190,7 @@
             ContinuarAssistindo.Size = new Size(777, 287);
             ContinuarAssistindo.TabIndex = 5;
             ContinuarAssistindo.UseCompatibleStateImageBehavior = false;
+            ContinuarAssistindo.SelectedIndexChanged += ContinuarAssistindo_SelectedIndexChanged;
             // 
             // BotaoContinuarAssistindo
             // 
@@ -284,6 +271,20 @@
             panel1.Size = new Size(938, 103);
             panel1.TabIndex = 9;
             // 
+            // ApagarContinuarAssistindo
+            // 
+            ApagarContinuarAssistindo.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            ApagarContinuarAssistindo.BackColor = Color.Red;
+            ApagarContinuarAssistindo.FlatStyle = FlatStyle.Flat;
+            ApagarContinuarAssistindo.Location = new Point(739, 60);
+            ApagarContinuarAssistindo.MaximumSize = new Size(40, 40);
+            ApagarContinuarAssistindo.Name = "ApagarContinuarAssistindo";
+            ApagarContinuarAssistindo.Size = new Size(40, 40);
+            ApagarContinuarAssistindo.TabIndex = 11;
+            ApagarContinuarAssistindo.Text = "🗑️";
+            ApagarContinuarAssistindo.UseVisualStyleBackColor = false;
+            ApagarContinuarAssistindo.Click += ApagarContinuarAssistindo_Click;
+            // 
             // TempoVideoContinuarAssistindo
             // 
             TempoVideoContinuarAssistindo.AutoSize = true;
@@ -294,6 +295,7 @@
             TempoVideoContinuarAssistindo.Size = new Size(139, 27);
             TempoVideoContinuarAssistindo.TabIndex = 8;
             TempoVideoContinuarAssistindo.Text = "00:00 / 00:00";
+            TempoVideoContinuarAssistindo.Visible = false;
             // 
             // NomeVideoContinuarAssistindo
             // 
@@ -306,6 +308,7 @@
             NomeVideoContinuarAssistindo.Size = new Size(69, 27);
             NomeVideoContinuarAssistindo.TabIndex = 7;
             NomeVideoContinuarAssistindo.Text = "Vídeo";
+            NomeVideoContinuarAssistindo.Visible = false;
             // 
             // ProgressoVideoContinuarAssistindo
             // 
@@ -316,6 +319,7 @@
             ProgressoVideoContinuarAssistindo.Name = "ProgressoVideoContinuarAssistindo";
             ProgressoVideoContinuarAssistindo.Size = new Size(600, 34);
             ProgressoVideoContinuarAssistindo.TabIndex = 6;
+            ProgressoVideoContinuarAssistindo.Visible = false;
             // 
             // Janela
             // 
