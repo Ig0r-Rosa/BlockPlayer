@@ -8,6 +8,8 @@ namespace BlockPlayer
         public Janela(string[] args = null)
         {
             // Melhorar codígo e iniciar frontend
+            // bugs: ao finalizar
+            // Melhorar o continuar assistindo
 
             InitializeComponent();
 
