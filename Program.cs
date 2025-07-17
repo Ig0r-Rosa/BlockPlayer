@@ -8,8 +8,7 @@ namespace BlockPlayer
         [STAThread]
         static void Main(string[] args)
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            ApplicationConfiguration.Initialize();
             Application.Run(new Janela(args)); // Passe os argumentos para o form
         }
     }
