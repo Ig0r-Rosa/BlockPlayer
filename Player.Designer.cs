@@ -275,6 +275,7 @@
             // 
             ApagarContinuarAssistindo.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             ApagarContinuarAssistindo.BackColor = Color.Red;
+            ApagarContinuarAssistindo.FlatAppearance.BorderColor = Color.Black;
             ApagarContinuarAssistindo.FlatStyle = FlatStyle.Flat;
             ApagarContinuarAssistindo.Location = new Point(739, 60);
             ApagarContinuarAssistindo.MaximumSize = new Size(40, 40);
@@ -287,25 +288,26 @@
             // 
             // TempoVideoContinuarAssistindo
             // 
-            TempoVideoContinuarAssistindo.AutoSize = true;
+            TempoVideoContinuarAssistindo.AutoEllipsis = true;
             TempoVideoContinuarAssistindo.Dock = DockStyle.Bottom;
             TempoVideoContinuarAssistindo.Font = new Font("Times New Roman", 12F);
             TempoVideoContinuarAssistindo.Location = new Point(0, 42);
+            TempoVideoContinuarAssistindo.MaximumSize = new Size(500, 80);
             TempoVideoContinuarAssistindo.Name = "TempoVideoContinuarAssistindo";
-            TempoVideoContinuarAssistindo.Size = new Size(139, 27);
+            TempoVideoContinuarAssistindo.Size = new Size(500, 27);
             TempoVideoContinuarAssistindo.TabIndex = 8;
             TempoVideoContinuarAssistindo.Text = "00:00 / 00:00";
             TempoVideoContinuarAssistindo.Visible = false;
             // 
             // NomeVideoContinuarAssistindo
             // 
-            NomeVideoContinuarAssistindo.AutoSize = true;
+            NomeVideoContinuarAssistindo.AutoEllipsis = true;
             NomeVideoContinuarAssistindo.Dock = DockStyle.Top;
             NomeVideoContinuarAssistindo.Font = new Font("Times New Roman", 12F);
             NomeVideoContinuarAssistindo.Location = new Point(0, 0);
             NomeVideoContinuarAssistindo.MaximumSize = new Size(700, 80);
             NomeVideoContinuarAssistindo.Name = "NomeVideoContinuarAssistindo";
-            NomeVideoContinuarAssistindo.Size = new Size(69, 27);
+            NomeVideoContinuarAssistindo.Size = new Size(700, 27);
             NomeVideoContinuarAssistindo.TabIndex = 7;
             NomeVideoContinuarAssistindo.Text = "Vídeo";
             NomeVideoContinuarAssistindo.Visible = false;
@@ -315,9 +317,9 @@
             ProgressoVideoContinuarAssistindo.BackColor = SystemColors.Control;
             ProgressoVideoContinuarAssistindo.Dock = DockStyle.Bottom;
             ProgressoVideoContinuarAssistindo.Location = new Point(0, 69);
-            ProgressoVideoContinuarAssistindo.MaximumSize = new Size(600, 34);
+            ProgressoVideoContinuarAssistindo.MaximumSize = new Size(650, 80);
             ProgressoVideoContinuarAssistindo.Name = "ProgressoVideoContinuarAssistindo";
-            ProgressoVideoContinuarAssistindo.Size = new Size(600, 34);
+            ProgressoVideoContinuarAssistindo.Size = new Size(650, 34);
             ProgressoVideoContinuarAssistindo.TabIndex = 6;
             ProgressoVideoContinuarAssistindo.Visible = false;
             // 
@@ -334,7 +336,7 @@
             Controls.Add(Video);
             ForeColor = SystemColors.Control;
             KeyPreview = true;
-            MinimumSize = new Size(850, 450);
+            MinimumSize = new Size(930, 450);
             Name = "Janela";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Block Player";
@@ -350,7 +352,6 @@
             PainelSemVideo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ResumeLayout(false);
         }
 

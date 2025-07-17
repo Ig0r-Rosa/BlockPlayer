@@ -9,6 +9,8 @@ namespace BlockPlayer
         static void Main(string[] args)
         {
             ApplicationConfiguration.Initialize();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Janela(args)); // Passe os argumentos para o form
         }
     }
