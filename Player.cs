@@ -64,6 +64,7 @@ namespace BlockPlayer
                 if (ext == ".mp4")
                 {
                     _mediaPlayer.Play(new Media(_libVLC, file, FromType.FromPath));
+                    _videoFinalizado = false;
                 }
                 else
                 {
@@ -90,6 +91,7 @@ namespace BlockPlayer
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 _mediaPlayer.Play(new Media(_libVLC, openFileDialog.FileName, FromType.FromPath));
+                _videoFinalizado = false;
                 AtualizarVisibilidadeVideo(true);
             }
         }

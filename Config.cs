@@ -21,6 +21,8 @@ namespace BlockPlayer
 
         private string _arquivoInicial;
 
+        private bool _videoFinalizado = false;
+
 
         private void ConfigVLC()
         {
@@ -28,12 +30,25 @@ namespace BlockPlayer
             _libVLC = new LibVLC();
             _mediaPlayer = new MediaPlayer(_libVLC);
             Video.MediaPlayer = _mediaPlayer;
+
+            _mediaPlayer.EndReached += (sender, args) =>
+            {
+                this.Invoke(() =>
+                {
+                    TimerVideo.Stop();
+                    _mediaPlayer.SetPause(true); // pausa no último frame
+                    AtualizarTempoVideo();
+
+                    // Marca o vídeo como finalizado
+                    _videoFinalizado = true;
+                });
+            };
         }
 
         private void ConfigInterface()
         {
             Painel.Dock = DockStyle.Fill;
-            Painel.BringToFront();
+            Painel.BringToFront();               
             Painel.BackColor = Color.Transparent;
 
             Interface = new List<Control>

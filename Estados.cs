@@ -51,6 +51,15 @@ namespace BlockPlayer
 
         public void Pause()
         {
+            if (_videoFinalizado)
+            {
+                _mediaPlayer.Stop(); // Reinicia
+                _mediaPlayer.Play();
+                _videoFinalizado = false;
+                TimerVideo.Start();
+                return;
+            }
+
             if (_mediaPlayer.IsPlaying)
             {
                 TimerVideo.Stop();
