@@ -93,6 +93,7 @@ namespace BlockPlayer
                 Pause();
 
             }
+
             else if (_mediaPlayer.Media != null)
             {
                 _mediaPlayer.Stop();
