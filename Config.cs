@@ -23,6 +23,8 @@ namespace BlockPlayer
 
         private bool _videoFinalizado = false;
 
+        private Panel painelSelecionado = null;
+
 
         private void ConfigVLC()
         {
@@ -105,64 +107,107 @@ namespace BlockPlayer
 
         private void CarregarContinuarAssistindo()
         {
-            var paths = Properties.Settings.Default.VideoPaths;
-            var tempos = Properties.Settings.Default.VideoTimes;
-            var datas = Properties.Settings.Default.VideoDatas;
-            var duracoes = Properties.Settings.Default.VideoDuracao;
+            List<string> paths = Properties.Settings.Default.VideoPaths.Cast<string>().ToList();
+            List<string> tempos = Properties.Settings.Default.VideoTimes.Cast<string>().ToList();
+            List<string> datas = Properties.Settings.Default.VideoDatas.Cast<string>().ToList();
+            List<string> duracoes = Properties.Settings.Default.VideoDuracao.Cast<string>().ToList();
 
-            if (paths == null || tempos == null || datas == null || duracoes == null)
-                return;
+            List<VideoInfo> lista = new List<VideoInfo>();
 
-            var lista = new List<VideoInfo>();
+            // Limpa os vídeos inválidos (removidos ou renomeados)
+            for (int i = 0; i < paths.Count; i++)
+            {
+                string path = paths[i];
+
+                if (!File.Exists(path))
+                {
+                    paths.RemoveAt(i);
+                    tempos.RemoveAt(i);
+                    datas.RemoveAt(i);
+                    duracoes.RemoveAt(i);
+                    i--; // Corrige o índice após remover
+                }
+            }
+
+            // Salva a configuração limpa
+            Properties.Settings.Default.VideoPaths = new System.Collections.Specialized.StringCollection();
+            Properties.Settings.Default.VideoTimes = new System.Collections.Specialized.StringCollection();
+            Properties.Settings.Default.VideoDatas = new System.Collections.Specialized.StringCollection();
+            Properties.Settings.Default.VideoDuracao = new System.Collections.Specialized.StringCollection();
 
             for (int i = 0; i < paths.Count; i++)
             {
                 string path = paths[i];
                 string tempo = tempos[i];
                 string data = datas[i];
-                string duracao = duracoes[i]; 
+                string duracao = duracoes[i];
 
-                if (File.Exists(path))
+                // Adiciona de volta nas configurações já ordenadas/limpas
+                Properties.Settings.Default.VideoPaths.Add(path);
+                Properties.Settings.Default.VideoTimes.Add(tempo);
+                Properties.Settings.Default.VideoDatas.Add(data);
+                Properties.Settings.Default.VideoDuracao.Add(duracao);
+
+                lista.Add(new VideoInfo
                 {
-                    lista.Add(new VideoInfo
-                    {
-                        Caminho = path,
-                        Tempo = long.Parse(tempo),
-                        Duracao = long.Parse(duracao),
-                        DataAtualizacao = DateTime.Parse(data, null, System.Globalization.DateTimeStyles.RoundtripKind)
-                    });
-                }
-            }
-
-            // Ordena do mais recente para o mais antigo
-            var ordenados = lista.OrderByDescending(v => v.DataAtualizacao).ToList();
-
-            ContinuarAssistindo.Items.Clear();
-
-            foreach (var video in ordenados)
-            {
-                var item = new ListViewItem(System.IO.Path.GetFileName(video.Caminho));
-                item.SubItems.Add(FormatarTempo(video.Tempo));
-                item.SubItems.Add(video.DataAtualizacao.ToString("dd/MM/yyyy HH:mm"));
-                item.Tag = video;
-                ContinuarAssistindo.Items.Add(item);
-            }
-
-            // Atualiza apenas com os que ainda existem
-            Properties.Settings.Default.VideoPaths = new System.Collections.Specialized.StringCollection();
-            Properties.Settings.Default.VideoTimes = new System.Collections.Specialized.StringCollection();
-            Properties.Settings.Default.VideoDatas = new System.Collections.Specialized.StringCollection();
-            Properties.Settings.Default.VideoDuracao = new System.Collections.Specialized.StringCollection();
-
-            foreach (var video in ordenados)
-            {
-                Properties.Settings.Default.VideoPaths.Add(video.Caminho);
-                Properties.Settings.Default.VideoTimes.Add(video.Tempo.ToString());
-                Properties.Settings.Default.VideoDatas.Add(video.DataAtualizacao.ToString("o"));
-                Properties.Settings.Default.VideoDuracao.Add(video.Duracao.ToString());
+                    Caminho = path,
+                    Tempo = long.Parse(tempo),
+                    Duracao = long.Parse(duracao),
+                    DataAtualizacao = DateTime.Parse(data, null, System.Globalization.DateTimeStyles.RoundtripKind)
+                });
             }
 
             Properties.Settings.Default.Save();
+
+            // Organiza por data de atualização
+            lista = lista.OrderByDescending(v => v.DataAtualizacao).ToList();
+
+            ContinuarAssistindo.Controls.Clear();
+
+            foreach (var info in lista)
+            {
+                Panel painel = CriarMiniatura(info);
+                ContinuarAssistindo.Controls.Add(painel);
+            }
+        }
+
+        private Panel CriarMiniatura(VideoInfo info)
+        {
+            Panel painel = new Panel
+            {
+                Tag = info,
+                Size = new Size(200, 100),
+                BackColor = Color.LightGray,
+                Margin = new Padding(5)
+            };
+            Label label = new Label
+            {
+                Text = Path.GetFileNameWithoutExtension(info.Caminho),
+                Dock = DockStyle.Top,
+                TextAlign = ContentAlignment.MiddleCenter
+            };
+            painel.Controls.Add(label);
+            painel.Click += (s, e) => SelecionarVideo(painel);
+            return painel;
+        }
+
+        private void SelecionarVideo(Panel painel)
+        {
+            // Remove destaque anterior
+            if (painelSelecionado != null)
+            {
+                painelSelecionado.BorderStyle = BorderStyle.None;
+                painelSelecionado.Size = new Size(200, 100);
+            }
+
+            painelSelecionado = painel;
+
+            // Destaca painel selecionado
+            painelSelecionado.BorderStyle = BorderStyle.FixedSingle;
+            painelSelecionado.Size = new Size(210, 110); // Ligeiramente maior para destaque
+
+            // Atualiza informações na interface
+            ContinuarAssistindo_SelectedIndexChanged(null, null);
         }
     }
 }

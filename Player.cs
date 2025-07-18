@@ -8,7 +8,6 @@ namespace BlockPlayer
         public Janela(string[] args = null)
         {
             // Melhorar codígo e iniciar frontend
-            // bugs: ao finalizar
             // Melhorar o continuar assistindo
 
             InitializeComponent();
@@ -144,16 +143,14 @@ namespace BlockPlayer
 
         private void BotaoContinuarAssistindo_Click(object sender, EventArgs e)
         {
-            if (ContinuarAssistindo.SelectedItems.Count == 0)
+            if (painelSelecionado == null)
             {
                 MessageBox.Show("Selecione um vídeo para continuar assistindo.");
                 CarregarContinuarAssistindo();
                 return;
             }
 
-            var itemSelecionado = ContinuarAssistindo.SelectedItems[0];
-
-            if (itemSelecionado.Tag is VideoInfo info && File.Exists(info.Caminho))
+            if (painelSelecionado.Tag is VideoInfo info && File.Exists(info.Caminho))
             {
                 var media = new Media(_libVLC, info.Caminho, FromType.FromPath);
                 _mediaPlayer.Play(media);
@@ -170,15 +167,13 @@ namespace BlockPlayer
 
         private void ApagarContinuarAssistindo_Click(object sender, EventArgs e)
         {
-            if (ContinuarAssistindo.SelectedItems.Count == 0)
+            if (painelSelecionado == null)
             {
                 MessageBox.Show("Selecione um item para apagar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            var item = ContinuarAssistindo.SelectedItems[0];
-
-            if (item.Tag is VideoInfo info)
+            if (painelSelecionado.Tag is VideoInfo info)
             {
                 var paths = Properties.Settings.Default.VideoPaths;
                 var tempos = Properties.Settings.Default.VideoTimes;
@@ -199,13 +194,13 @@ namespace BlockPlayer
                     }
                 }
 
-                ContinuarAssistindo.Items.Remove(item);
+                ContinuarAssistindo.Controls.Remove(painelSelecionado);
             }
         }
 
         private void ContinuarAssistindo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ContinuarAssistindo.SelectedItems.Count == 0)
+            if (painelSelecionado == null)
             {
                 NomeVideoContinuarAssistindo.Visible = false;
                 TempoVideoContinuarAssistindo.Visible = false;
@@ -217,11 +212,9 @@ namespace BlockPlayer
             TempoVideoContinuarAssistindo.Visible = true;
             ProgressoVideoContinuarAssistindo.Visible = true;
 
-            var item = ContinuarAssistindo.SelectedItems[0];
+            NomeVideoContinuarAssistindo.Text = painelSelecionado.Text;
 
-            NomeVideoContinuarAssistindo.Text = item.Text;
-
-            if (item.Tag is VideoInfo info)
+            if (painelSelecionado.Tag is VideoInfo info)
             {
                 // Formata tempo atual e duração
                 string tempoAtual = FormatarTempo(info.Tempo);

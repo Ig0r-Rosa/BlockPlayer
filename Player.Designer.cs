@@ -39,7 +39,6 @@
             TimerVideo = new System.Windows.Forms.Timer(components);
             PainelSemVideo = new Panel();
             pictureBox1 = new PictureBox();
-            ContinuarAssistindo = new ListView();
             BotaoContinuarAssistindo = new Button();
             BotaoAjuda = new Button();
             BotaoAjusteMinipayer = new Button();
@@ -49,6 +48,7 @@
             TempoVideoContinuarAssistindo = new Label();
             NomeVideoContinuarAssistindo = new Label();
             ProgressoVideoContinuarAssistindo = new ProgressBar();
+            ContinuarAssistindo = new FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)Video).BeginInit();
             Painel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)VolumeVideo).BeginInit();
@@ -154,12 +154,12 @@
             // 
             PainelSemVideo.BackColor = Color.FromArgb(21, 23, 66);
             PainelSemVideo.Controls.Add(pictureBox1);
-            PainelSemVideo.Controls.Add(ContinuarAssistindo);
             PainelSemVideo.Controls.Add(BotaoContinuarAssistindo);
             PainelSemVideo.Controls.Add(BotaoAjuda);
             PainelSemVideo.Controls.Add(BotaoAjusteMinipayer);
             PainelSemVideo.Controls.Add(BotaoEscolhaVideo);
             PainelSemVideo.Controls.Add(panel1);
+            PainelSemVideo.Controls.Add(ContinuarAssistindo);
             PainelSemVideo.Dock = DockStyle.Fill;
             PainelSemVideo.Location = new Point(0, 0);
             PainelSemVideo.Name = "PainelSemVideo";
@@ -180,17 +180,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 10;
             pictureBox1.TabStop = false;
-            // 
-            // ContinuarAssistindo
-            // 
-            ContinuarAssistindo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            ContinuarAssistindo.BackColor = SystemColors.Control;
-            ContinuarAssistindo.Location = new Point(100, 125);
-            ContinuarAssistindo.Name = "ContinuarAssistindo";
-            ContinuarAssistindo.Size = new Size(777, 287);
-            ContinuarAssistindo.TabIndex = 5;
-            ContinuarAssistindo.UseCompatibleStateImageBehavior = false;
-            ContinuarAssistindo.SelectedIndexChanged += ContinuarAssistindo_SelectedIndexChanged;
             // 
             // BotaoContinuarAssistindo
             // 
@@ -323,6 +312,16 @@
             ProgressoVideoContinuarAssistindo.TabIndex = 6;
             ProgressoVideoContinuarAssistindo.Visible = false;
             // 
+            // ContinuarAssistindo
+            // 
+            ContinuarAssistindo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            ContinuarAssistindo.AutoSize = true;
+            ContinuarAssistindo.BackColor = Color.White;
+            ContinuarAssistindo.Location = new Point(100, 125);
+            ContinuarAssistindo.Name = "ContinuarAssistindo";
+            ContinuarAssistindo.Size = new Size(777, 287);
+            ContinuarAssistindo.TabIndex = 11;
+            // 
             // Janela
             // 
             AllowDrop = true;
@@ -350,6 +349,7 @@
             ((System.ComponentModel.ISupportInitialize)VolumeVideo).EndInit();
             ((System.ComponentModel.ISupportInitialize)BarraVideo).EndInit();
             PainelSemVideo.ResumeLayout(false);
+            PainelSemVideo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             ResumeLayout(false);
@@ -369,12 +369,12 @@
         private Button BotaoAjusteMinipayer;
         private Button BotaoAjuda;
         private Button BotaoContinuarAssistindo;
-        private ListView ContinuarAssistindo;
         private ProgressBar ProgressoVideoContinuarAssistindo;
         private Label NomeVideoContinuarAssistindo;
         private Label TempoVideoContinuarAssistindo;
         private Panel panel1;
         private PictureBox pictureBox1;
         private Button ApagarContinuarAssistindo;
+        private FlowLayoutPanel ContinuarAssistindo;
     }
 }
