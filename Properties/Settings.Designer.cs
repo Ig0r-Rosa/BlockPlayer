@@ -126,5 +126,16 @@ namespace BlockPlayer.Properties {
                 this["VideoDuracao"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection VideoThumbs {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["VideoThumbs"]));
+            }
+            set {
+                this["VideoThumbs"] = value;
+            }
+        }
     }
 }

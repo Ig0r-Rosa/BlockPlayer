@@ -118,6 +118,13 @@ namespace BlockPlayer
             List<string> datas = Properties.Settings.Default.VideoDatas.Cast<string>().ToList();
             List<string> duracoes = Properties.Settings.Default.VideoDuracao.Cast<string>().ToList();
 
+            if (Properties.Settings.Default.VideoThumbs == null)
+            {
+                Properties.Settings.Default.VideoThumbs = new System.Collections.Specialized.StringCollection();
+            }
+
+            List<string> thumbs = Properties.Settings.Default.VideoThumbs.Cast<string>().ToList();
+
             List<VideoInfo> lista = new List<VideoInfo>();
 
             // Limpa os vídeos inválidos (removidos ou renomeados)
@@ -131,6 +138,7 @@ namespace BlockPlayer
                     tempos.RemoveAt(i);
                     datas.RemoveAt(i);
                     duracoes.RemoveAt(i);
+                    thumbs.RemoveAt(i);
                     i--; // Corrige o índice após remover
                 }
             }
@@ -140,6 +148,7 @@ namespace BlockPlayer
             Properties.Settings.Default.VideoTimes = new System.Collections.Specialized.StringCollection();
             Properties.Settings.Default.VideoDatas = new System.Collections.Specialized.StringCollection();
             Properties.Settings.Default.VideoDuracao = new System.Collections.Specialized.StringCollection();
+            Properties.Settings.Default.VideoThumbs = new System.Collections.Specialized.StringCollection();
 
             for (int i = 0; i < paths.Count; i++)
             {
@@ -147,19 +156,22 @@ namespace BlockPlayer
                 string tempo = tempos[i];
                 string data = datas[i];
                 string duracao = duracoes[i];
+                string thumb = thumbs[i];
 
                 // Adiciona de volta nas configurações já ordenadas/limpas
                 Properties.Settings.Default.VideoPaths.Add(path);
                 Properties.Settings.Default.VideoTimes.Add(tempo);
                 Properties.Settings.Default.VideoDatas.Add(data);
                 Properties.Settings.Default.VideoDuracao.Add(duracao);
+                Properties.Settings.Default.VideoThumbs.Add(thumb);
 
                 lista.Add(new VideoInfo
                 {
                     Caminho = path,
                     Tempo = long.Parse(tempo),
                     Duracao = long.Parse(duracao),
-                    DataAtualizacao = DateTime.Parse(data, null, System.Globalization.DateTimeStyles.RoundtripKind)
+                    DataAtualizacao = DateTime.Parse(data, null, System.Globalization.DateTimeStyles.RoundtripKind),
+                    CaminhoMiniatura = thumb
                 });
             }
 
@@ -182,18 +194,52 @@ namespace BlockPlayer
             Panel painel = new Panel
             {
                 Tag = info,
-                Size = new Size(200, 100),
-                BackColor = Color.LightGray,
+                Size = new Size(200, 130),
+                BackColor = Color.Black,
                 Margin = new Padding(5)
             };
+
+            PictureBox pictureBox = new PictureBox
+            {
+                Size = new Size(200, 100),
+                SizeMode = PictureBoxSizeMode.Zoom,
+                Dock = DockStyle.Top
+            };
+
+            string miniaturaPath = info.CaminhoMiniatura;
+
+            if (!File.Exists(miniaturaPath) && File.Exists(info.Caminho))
+            {
+                miniaturaPath = CapturarMiniatura(info.Caminho);
+                info.CaminhoMiniatura = miniaturaPath;
+            }
+
+            if (File.Exists(miniaturaPath))
+            {
+                pictureBox.Image = Image.FromFile(miniaturaPath);
+            }
+            else
+            {
+                pictureBox.Image = Image.FromFile(Path.Combine(Application.StartupPath, "Arquivos", "PlayIcon.png"));
+            }
+
             Label label = new Label
             {
                 Text = Path.GetFileNameWithoutExtension(info.Caminho),
-                Dock = DockStyle.Top,
-                TextAlign = ContentAlignment.MiddleCenter
+                Dock = DockStyle.Bottom,
+                Height = 30,
+                TextAlign = ContentAlignment.MiddleCenter,
+                ForeColor = Color.White,
+                BackColor = Color.FromArgb(30, 30, 30)
             };
+
+            painel.Controls.Add(pictureBox);
             painel.Controls.Add(label);
+
             painel.Click += (s, e) => SelecionarVideo(painel);
+            pictureBox.Click += (s, e) => SelecionarVideo(painel);
+            label.Click += (s, e) => SelecionarVideo(painel);
+
             return painel;
         }
 
@@ -214,6 +260,36 @@ namespace BlockPlayer
 
             // Atualiza informações na interface
             ContinuarAssistindo_SelectedIndexChanged(null, null);
+        }
+
+        private string CapturarMiniatura(string caminhoVideo)
+        {
+            try
+            {
+                using (var media = new Media(_libVLC, new Uri(caminhoVideo)))
+                using (var mp = new MediaPlayer(media))
+                {
+                    string thumbPath = Path.Combine(pastaMiniaturas, Path.GetFileNameWithoutExtension(caminhoVideo) + ".png");
+
+                    // Cria um contexto para renderizar a miniatura
+                    var bitmap = new Bitmap(320, 180);
+                    using (Graphics g = Graphics.FromImage(bitmap))
+                    {
+                        mp.Hwnd = g.GetHdc();
+                        mp.Play();
+                        Thread.Sleep(500); // Espera o frame carregar
+                        mp.Pause();
+                        g.ReleaseHdc();
+                    }
+
+                    bitmap.Save(thumbPath);
+                    return thumbPath;
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
     }
 }

@@ -59,6 +59,7 @@ namespace BlockPlayer
                 var tempos = Properties.Settings.Default.VideoTimes ?? new System.Collections.Specialized.StringCollection();
                 var datas = Properties.Settings.Default.VideoDatas ?? new System.Collections.Specialized.StringCollection();
                 var duracoes = Properties.Settings.Default.VideoDuracao ?? new System.Collections.Specialized.StringCollection();
+                var thumbs = Properties.Settings.Default.VideoThumbs ?? new System.Collections.Specialized.StringCollection();
 
                 int existingIndex = paths.IndexOf(path);
                 if (existingIndex >= 0)
@@ -67,17 +68,9 @@ namespace BlockPlayer
                     tempos.RemoveAt(existingIndex);
                     datas.RemoveAt(existingIndex);
                     duracoes.RemoveAt(existingIndex);
+                    thumbs.RemoveAt(existingIndex);
                 }
 
-                paths.Add(path);
-                tempos.Add(tempo.ToString());
-                datas.Add(agora.ToString("o"));
-                duracoes.Add(duracao.ToString());
-
-                Properties.Settings.Default.VideoPaths = paths;
-                Properties.Settings.Default.VideoTimes = tempos;
-                Properties.Settings.Default.VideoDatas = datas;
-                Properties.Settings.Default.VideoDuracao = duracoes;
 
                 // Salvar miniatura
                 string nomeArquivo = Path.GetFileNameWithoutExtension(_mediaPlayer.Media?.Mrl) + ".jpg";
@@ -85,6 +78,18 @@ namespace BlockPlayer
 
                 // Captura o frame atual
                 _mediaPlayer.TakeSnapshot(0, caminhoMiniatura, 320, 180); // Tamanho reduzido
+
+                paths.Add(path);
+                tempos.Add(tempo.ToString());
+                datas.Add(agora.ToString("o"));
+                duracoes.Add(duracao.ToString());
+                thumbs.Add(caminhoMiniatura.ToString());
+
+                Properties.Settings.Default.VideoPaths = paths;
+                Properties.Settings.Default.VideoTimes = tempos;
+                Properties.Settings.Default.VideoDatas = datas;
+                Properties.Settings.Default.VideoDuracao = duracoes;
+                Properties.Settings.Default.VideoThumbs = thumbs;
 
                 Properties.Settings.Default.Save();
             }
