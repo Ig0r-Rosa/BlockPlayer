@@ -200,7 +200,7 @@ namespace BlockPlayer
 
         private void ContinuarAssistindo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (painelSelecionado == null)
+            if (painelSelecionado == null || !(painelSelecionado.Tag is VideoInfo info))
             {
                 NomeVideoContinuarAssistindo.Visible = false;
                 TempoVideoContinuarAssistindo.Visible = false;
@@ -212,29 +212,22 @@ namespace BlockPlayer
             TempoVideoContinuarAssistindo.Visible = true;
             ProgressoVideoContinuarAssistindo.Visible = true;
 
-            NomeVideoContinuarAssistindo.Text = painelSelecionado.Text;
+            // Usa o nome do vídeo vindo do VideoInfo
+            NomeVideoContinuarAssistindo.Text = info.Nome;
 
-            if (painelSelecionado.Tag is VideoInfo info)
+            // Formata tempo atual e duração
+            string tempoAtual = FormatarTempo(info.Tempo);
+            string duracao = FormatarTempo(info.Duracao);
+            TempoVideoContinuarAssistindo.Text = $"{tempoAtual} / {duracao}";
+
+            // Calcula progresso como porcentagem
+            if (info.Duracao > 0)
             {
-                // Formata tempo atual e duração
-                string tempoAtual = FormatarTempo(info.Tempo);
-                string duracao = FormatarTempo(info.Duracao); // Assumindo que você adicionou esse campo
-                TempoVideoContinuarAssistindo.Text = $"{tempoAtual} / {duracao}";
-
-                // Calcula progresso como porcentagem
-                if (info.Duracao > 0)
-                {
-                    int progresso = (int)((info.Tempo * 100) / info.Duracao);
-                    ProgressoVideoContinuarAssistindo.Value = Math.Min(100, Math.Max(0, progresso));
-                }
-                else
-                {
-                    ProgressoVideoContinuarAssistindo.Value = 0;
-                }
+                int progresso = (int)((info.Tempo * 100) / info.Duracao);
+                ProgressoVideoContinuarAssistindo.Value = Math.Min(100, Math.Max(0, progresso));
             }
             else
             {
-                TempoVideoContinuarAssistindo.Text = "-";
                 ProgressoVideoContinuarAssistindo.Value = 0;
             }
         }
