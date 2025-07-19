@@ -78,6 +78,14 @@ namespace BlockPlayer
                 Properties.Settings.Default.VideoTimes = tempos;
                 Properties.Settings.Default.VideoDatas = datas;
                 Properties.Settings.Default.VideoDuracao = duracoes;
+
+                // Salvar miniatura
+                string nomeArquivo = Path.GetFileNameWithoutExtension(_mediaPlayer.Media?.Mrl) + ".jpg";
+                string caminhoMiniatura = Path.Combine(pastaMiniaturas, nomeArquivo);
+
+                // Captura o frame atual
+                _mediaPlayer.TakeSnapshot(0, caminhoMiniatura, 320, 180); // Tamanho reduzido
+
                 Properties.Settings.Default.Save();
             }
         }

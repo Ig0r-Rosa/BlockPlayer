@@ -173,6 +173,10 @@ namespace BlockPlayer
                 return;
             }
 
+            NomeVideoContinuarAssistindo.Visible = false;
+            TempoVideoContinuarAssistindo.Visible = false;
+            ProgressoVideoContinuarAssistindo.Visible = false;
+
             if (painelSelecionado.Tag is VideoInfo info)
             {
                 var paths = Properties.Settings.Default.VideoPaths;
@@ -196,6 +200,8 @@ namespace BlockPlayer
 
                 ContinuarAssistindo.Controls.Remove(painelSelecionado);
             }
+
+            painelSelecionado = null;
         }
 
         private void ContinuarAssistindo_SelectedIndexChanged(object sender, EventArgs e)

@@ -7,6 +7,7 @@ namespace BlockPlayer
         public long Tempo { get; set; }
         public long Duracao { get; set; }
         public DateTime DataAtualizacao { get; set; }
+        public string CaminhoMiniatura { get; set; }
 
 
         public string Nome => Path.GetFileName(Caminho);

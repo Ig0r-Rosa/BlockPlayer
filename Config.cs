@@ -25,6 +25,8 @@ namespace BlockPlayer
 
         private Panel painelSelecionado = null;
 
+        string pastaMiniaturas = "/";
+
 
         private void ConfigVLC()
         {
@@ -79,6 +81,10 @@ namespace BlockPlayer
         {
             _miniplayer = new Miniplayer(_mediaPlayer);
             _miniplayer.FormClosed += (s, e) => _miniplayer = null;
+
+            pastaMiniaturas = Path.Combine(Application.StartupPath, "Thumbs");
+            if (!Directory.Exists(pastaMiniaturas))
+                Directory.CreateDirectory(pastaMiniaturas);
         }
 
         private void ConfigHotKeys()
