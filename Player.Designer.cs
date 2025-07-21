@@ -66,7 +66,7 @@
             Video.Location = new Point(0, 0);
             Video.MediaPlayer = null;
             Video.Name = "Video";
-            Video.Size = new Size(978, 544);
+            Video.Size = new Size(1041, 544);
             Video.TabIndex = 0;
             Video.Text = "videoView1";
             Video.Visible = false;
@@ -84,7 +84,7 @@
             Painel.ForeColor = Color.Transparent;
             Painel.Location = new Point(0, 0);
             Painel.Name = "Painel";
-            Painel.Size = new Size(978, 544);
+            Painel.Size = new Size(1041, 544);
             Painel.TabIndex = 1;
             Painel.Click += Painel_Click;
             Painel.DoubleClick += Painel_DoubleClick;
@@ -95,7 +95,7 @@
             VolumeTexto.Dock = DockStyle.Right;
             VolumeTexto.Font = new Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             VolumeTexto.ForeColor = Color.Black;
-            VolumeTexto.Location = new Point(788, 20);
+            VolumeTexto.Location = new Point(851, 20);
             VolumeTexto.Name = "VolumeTexto";
             VolumeTexto.Size = new Size(40, 23);
             VolumeTexto.TabIndex = 5;
@@ -106,7 +106,7 @@
             // 
             VolumeVideo.BackColor = Color.FromArgb(64, 64, 64);
             VolumeVideo.Dock = DockStyle.Right;
-            VolumeVideo.Location = new Point(828, 20);
+            VolumeVideo.Location = new Point(891, 20);
             VolumeVideo.Maximum = 100;
             VolumeVideo.MaximumSize = new Size(150, 25);
             VolumeVideo.Name = "VolumeVideo";
@@ -138,7 +138,7 @@
             BarraVideo.Maximum = 1000;
             BarraVideo.MaximumSize = new Size(0, 20);
             BarraVideo.Name = "BarraVideo";
-            BarraVideo.Size = new Size(978, 20);
+            BarraVideo.Size = new Size(1041, 20);
             BarraVideo.TabIndex = 1;
             BarraVideo.TickStyle = TickStyle.None;
             BarraVideo.Visible = false;
@@ -164,7 +164,7 @@
             PainelSemVideo.Location = new Point(0, 0);
             PainelSemVideo.Name = "PainelSemVideo";
             PainelSemVideo.Padding = new Padding(20);
-            PainelSemVideo.Size = new Size(978, 544);
+            PainelSemVideo.Size = new Size(1041, 544);
             PainelSemVideo.TabIndex = 2;
             // 
             // pictureBox1
@@ -173,7 +173,7 @@
             pictureBox1.Dock = DockStyle.Right;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.InitialImage = (Image)resources.GetObject("pictureBox1.InitialImage");
-            pictureBox1.Location = new Point(878, 20);
+            pictureBox1.Location = new Point(941, 20);
             pictureBox1.MaximumSize = new Size(80, 80);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(80, 80);
@@ -189,7 +189,7 @@
             BotaoContinuarAssistindo.FlatStyle = FlatStyle.Flat;
             BotaoContinuarAssistindo.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             BotaoContinuarAssistindo.ForeColor = SystemColors.ActiveCaptionText;
-            BotaoContinuarAssistindo.Location = new Point(805, 441);
+            BotaoContinuarAssistindo.Location = new Point(868, 441);
             BotaoContinuarAssistindo.MaximumSize = new Size(150, 80);
             BotaoContinuarAssistindo.Name = "BotaoContinuarAssistindo";
             BotaoContinuarAssistindo.Size = new Size(150, 80);
@@ -257,7 +257,7 @@
             panel1.Dock = DockStyle.Bottom;
             panel1.Location = new Point(20, 421);
             panel1.Name = "panel1";
-            panel1.Size = new Size(938, 103);
+            panel1.Size = new Size(1001, 103);
             panel1.TabIndex = 9;
             // 
             // ApagarContinuarAssistindo
@@ -266,7 +266,7 @@
             ApagarContinuarAssistindo.BackColor = Color.Red;
             ApagarContinuarAssistindo.FlatAppearance.BorderColor = Color.Black;
             ApagarContinuarAssistindo.FlatStyle = FlatStyle.Flat;
-            ApagarContinuarAssistindo.Location = new Point(739, 60);
+            ApagarContinuarAssistindo.Location = new Point(802, 60);
             ApagarContinuarAssistindo.MaximumSize = new Size(40, 40);
             ApagarContinuarAssistindo.Name = "ApagarContinuarAssistindo";
             ApagarContinuarAssistindo.Size = new Size(40, 40);
@@ -319,7 +319,7 @@
             ContinuarAssistindo.BackColor = Color.White;
             ContinuarAssistindo.Location = new Point(100, 125);
             ContinuarAssistindo.Name = "ContinuarAssistindo";
-            ContinuarAssistindo.Size = new Size(777, 287);
+            ContinuarAssistindo.Size = new Size(840, 287);
             ContinuarAssistindo.TabIndex = 11;
             // 
             // Janela
@@ -329,7 +329,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackColor = Color.Black;
-            ClientSize = new Size(978, 544);
+            ClientSize = new Size(1041, 544);
             Controls.Add(PainelSemVideo);
             Controls.Add(Painel);
             Controls.Add(Video);
