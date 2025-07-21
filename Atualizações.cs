@@ -61,6 +61,7 @@ namespace BlockPlayer
                 var duracoes = Properties.Settings.Default.VideoDuracao ?? new System.Collections.Specialized.StringCollection();
                 var thumbs = Properties.Settings.Default.VideoThumbs ?? new System.Collections.Specialized.StringCollection();
 
+                // Remove se já existe para regravar
                 int existingIndex = paths.IndexOf(path);
                 if (existingIndex >= 0)
                 {
@@ -71,20 +72,24 @@ namespace BlockPlayer
                     thumbs.RemoveAt(existingIndex);
                 }
 
+                // Salvar miniatura como .jpg
+                string nomeArquivoMiniatura = Path.GetFileNameWithoutExtension(path) + ".jpg";
+                string caminhoMiniatura = Path.Combine(pastaMiniaturas, nomeArquivoMiniatura);
 
-                // Salvar miniatura
-                string nomeArquivo = Path.GetFileNameWithoutExtension(_mediaPlayer.Media?.Mrl) + ".jpg";
-                string caminhoMiniatura = Path.Combine(pastaMiniaturas, nomeArquivo);
+                // Tira snapshot atual
+                bool snapshotSucesso = _mediaPlayer.TakeSnapshot(0, caminhoMiniatura, 320, 180);
 
-                // Captura o frame atual
-                _mediaPlayer.TakeSnapshot(0, caminhoMiniatura, 320, 180); // Tamanho reduzido
+                // Só salva se o snapshot funcionou
+                if (snapshotSucesso)
+                {
+                    paths.Add(path);
+                    tempos.Add(tempo.ToString());
+                    datas.Add(agora.ToString("o"));
+                    duracoes.Add(duracao.ToString());
+                    thumbs.Add(caminhoMiniatura);
+                }
 
-                paths.Add(path);
-                tempos.Add(tempo.ToString());
-                datas.Add(agora.ToString("o"));
-                duracoes.Add(duracao.ToString());
-                thumbs.Add(caminhoMiniatura.ToString());
-
+                // Salva atualizações
                 Properties.Settings.Default.VideoPaths = paths;
                 Properties.Settings.Default.VideoTimes = tempos;
                 Properties.Settings.Default.VideoDatas = datas;

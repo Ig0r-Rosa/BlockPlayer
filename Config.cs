@@ -216,7 +216,10 @@ namespace BlockPlayer
 
             if (File.Exists(miniaturaPath))
             {
-                pictureBox.Image = Image.FromFile(miniaturaPath);
+                using (var fs = new FileStream(miniaturaPath, FileMode.Open, FileAccess.Read))
+                {
+                    pictureBox.Image = Image.FromStream(fs);
+                }
             }
             else
             {
