@@ -53,8 +53,9 @@ namespace BlockPlayer
 
         private void Video_DragDrop(object sender, DragEventArgs e)
         {
-            VolumeVideo.Value = 100;
             AtualizarVolume();
+
+            SalvarContinuarAssistindo();
 
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
             if (files != null && files.Length > 0)
