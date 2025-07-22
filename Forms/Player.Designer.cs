@@ -1,4 +1,6 @@
-﻿namespace BlockPlayer
+﻿using BlockPlayer.Classes;
+
+namespace BlockPlayer
 {
     partial class Janela
     {

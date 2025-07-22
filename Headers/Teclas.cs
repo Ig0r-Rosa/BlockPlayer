@@ -1,4 +1,6 @@
 ﻿
+using BlockPlayer.Classes;
+
 namespace BlockPlayer
 {
     public partial class Janela : Form
@@ -51,6 +53,30 @@ namespace BlockPlayer
             }
 
             return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        private void ConfigHotKeys()
+        {
+            _hotkey = new GlobalHotkey(this, 1, Keys.M);
+            _hotkey.OnHotkeyPressed += AlternarMiniplayer;
+
+            _hotkeyVoltar = new GlobalHotkey(this, 2, Keys.Oemcomma);
+            _hotkeyVoltar.OnHotkeyPressed += () =>
+            {
+                if (_miniplayer != null && _miniplayer.Visible)
+                {
+                    AjustarTempo(-10000);
+                }
+            };
+
+            _hotkeyAvancar = new GlobalHotkey(this, 3, Keys.OemPeriod);
+            _hotkeyAvancar.OnHotkeyPressed += () =>
+            {
+                if (_miniplayer != null && _miniplayer.Visible)
+                {
+                    AjustarTempo(10000);
+                }
+            };
         }
     }
 }

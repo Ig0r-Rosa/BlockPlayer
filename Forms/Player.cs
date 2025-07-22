@@ -1,4 +1,5 @@
 // BackgroundSemVideo.cs
+using BlockPlayer.Classes;
 using LibVLCSharp.Shared;
 
 namespace BlockPlayer
@@ -143,99 +144,17 @@ namespace BlockPlayer
 
         private void BotaoContinuarAssistindo_Click(object sender, EventArgs e)
         {
-            if (painelSelecionado == null)
-            {
-                MessageBox.Show("Selecione um vídeo para continuar assistindo.");
-                CarregarContinuarAssistindo();
-                return;
-            }
-
-            if (painelSelecionado.Tag is VideoInfo info && File.Exists(info.Caminho))
-            {
-                var media = new Media(_libVLC, info.Caminho, FromType.FromPath);
-                _mediaPlayer.Play(media);
-                _mediaPlayer.Time = info.Tempo;
-
-                AtualizarVisibilidadeVideo(true);
-            }
-            else
-            {
-                MessageBox.Show("Arquivo não encontrado ou informação inválida.");
-                CarregarContinuarAssistindo();
-            }
+            PlayContinuarAssistindo();
         }
 
         private void ApagarContinuarAssistindo_Click(object sender, EventArgs e)
         {
-            if (painelSelecionado == null)
-            {
-                MessageBox.Show("Selecione um item para apagar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            NomeVideoContinuarAssistindo.Visible = false;
-            TempoVideoContinuarAssistindo.Visible = false;
-            ProgressoVideoContinuarAssistindo.Visible = false;
-
-            if (painelSelecionado.Tag is VideoInfo info)
-            {
-                var paths = Properties.Settings.Default.VideoPaths;
-                var tempos = Properties.Settings.Default.VideoTimes;
-                var datas = Properties.Settings.Default.VideoDatas;
-                var duracoes = Properties.Settings.Default.VideoDuracao;
-
-                if (paths != null && tempos != null && datas != null && duracoes != null)
-                {
-                    int index = paths.IndexOf(info.Caminho);
-
-                    if (index >= 0)
-                    {
-                        paths.RemoveAt(index);
-                        tempos.RemoveAt(index);
-                        datas.RemoveAt(index);
-                        duracoes.RemoveAt(index);
-                        Properties.Settings.Default.Save();
-                    }
-                }
-
-                ContinuarAssistindo.Controls.Remove(painelSelecionado);
-            }
-
-            painelSelecionado = null;
+            ApagarContinuarAssistindoSelecionado();
         }
 
         private void ContinuarAssistindo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (painelSelecionado == null || !(painelSelecionado.Tag is VideoInfo info))
-            {
-                NomeVideoContinuarAssistindo.Visible = false;
-                TempoVideoContinuarAssistindo.Visible = false;
-                ProgressoVideoContinuarAssistindo.Visible = false;
-                return;
-            }
-
-            NomeVideoContinuarAssistindo.Visible = true;
-            TempoVideoContinuarAssistindo.Visible = true;
-            ProgressoVideoContinuarAssistindo.Visible = true;
-
-            // Usa o nome do vídeo vindo do VideoInfo
-            NomeVideoContinuarAssistindo.Text = info.Nome;
-
-            // Formata tempo atual e duração
-            string tempoAtual = FormatarTempo(info.Tempo);
-            string duracao = FormatarTempo(info.Duracao);
-            TempoVideoContinuarAssistindo.Text = $"{tempoAtual} / {duracao}";
-
-            // Calcula progresso como porcentagem
-            if (info.Duracao > 0)
-            {
-                int progresso = (int)((info.Tempo * 100) / info.Duracao);
-                ProgressoVideoContinuarAssistindo.Value = Math.Min(100, Math.Max(0, progresso));
-            }
-            else
-            {
-                ProgressoVideoContinuarAssistindo.Value = 0;
-            }
+            SelecionarContinuarAssistindo();
         }
     }
 }

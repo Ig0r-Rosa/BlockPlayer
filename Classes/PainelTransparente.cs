@@ -2,14 +2,14 @@
 using System.Windows.Forms;
 using System.Drawing;
 
-namespace BlockPlayer
+namespace BlockPlayer.Classes
 {
     public class TransparentPanel : Panel
     {
         public TransparentPanel()
         {
-            this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
-            this.BackColor = Color.Transparent;
+            SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            BackColor = Color.Transparent;
         }
 
         protected override CreateParams CreateParams

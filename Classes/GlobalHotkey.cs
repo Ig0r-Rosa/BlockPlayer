@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace BlockPlayer
+namespace BlockPlayer.Classes
 {
     public class GlobalHotkey : IMessageFilter
     {
@@ -10,9 +10,9 @@ namespace BlockPlayer
         public event Action OnHotkeyPressed;
 
         [DllImport("user32.dll")]
-        private static extern bool RegisterHotKey(IntPtr hWnd, int id, uint fsModifiers, uint vk);
+        private static extern bool RegisterHotKey(nint hWnd, int id, uint fsModifiers, uint vk);
         [DllImport("user32.dll")]
-        private static extern bool UnregisterHotKey(IntPtr hWnd, int id);
+        private static extern bool UnregisterHotKey(nint hWnd, int id);
 
         [Flags]
         public enum Modifiers : uint

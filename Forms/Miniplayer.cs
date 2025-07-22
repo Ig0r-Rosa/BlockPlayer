@@ -1,7 +1,7 @@
 ﻿using LibVLCSharp.Shared;
 using System.Runtime.InteropServices;
 using LibVLCSharp.WinForms;
-using BlockPlayer.Properties;
+using BlockPlayer.Propriedades;
 
 namespace BlockPlayer
 {
@@ -14,11 +14,11 @@ namespace BlockPlayer
         public Miniplayer(MediaPlayer mediaPlayer)
         {
             // Carregar configuração salva
-            this.Left = Properties.Settings.Default.MiniplayerX;
-            this.Top = Properties.Settings.Default.MiniplayerY;
-            this.Opacity = Properties.Settings.Default.MiniplayerOpacity;
-            this.Width = Properties.Settings.Default.MiniplayerSizeX;
-            this.Height = Properties.Settings.Default.MiniplayerSizeY;
+            this.Left = Propriedades.Settings.Default.MiniplayerX;
+            this.Top = Propriedades.Settings.Default.MiniplayerY;
+            this.Opacity = Propriedades.Settings.Default.MiniplayerOpacity;
+            this.Width = Propriedades.Settings.Default.MiniplayerSizeX;
+            this.Height = Propriedades.Settings.Default.MiniplayerSizeY;
             InitializeComponent();
 
             // Quando inicializo os componentes antes de definir os paramentros de tamanho, etc
@@ -51,11 +51,11 @@ namespace BlockPlayer
 
         public void AtualizarTamanho()
         {
-            this.Left = Properties.Settings.Default.MiniplayerX;
-            this.Top = Properties.Settings.Default.MiniplayerY;
-            this.Opacity = Properties.Settings.Default.MiniplayerOpacity;
-            this.Width = Properties.Settings.Default.MiniplayerSizeX;
-            this.Height = Properties.Settings.Default.MiniplayerSizeY;
+            this.Left = Propriedades.Settings.Default.MiniplayerX;
+            this.Top = Propriedades.Settings.Default.MiniplayerY;
+            this.Opacity = Propriedades.Settings.Default.MiniplayerOpacity;
+            this.Width = Propriedades.Settings.Default.MiniplayerSizeX;
+            this.Height = Propriedades.Settings.Default.MiniplayerSizeY;
             SetClickThrough();
         }
 

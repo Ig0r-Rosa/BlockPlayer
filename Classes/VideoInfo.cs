@@ -1,5 +1,4 @@
-﻿
-namespace BlockPlayer
+﻿namespace BlockPlayer.Classes
 {
     public class VideoInfo
     {
