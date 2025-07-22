@@ -50,6 +50,7 @@
             // BotaoConfirmarAjustes
             // 
             BotaoConfirmarAjustes.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            BotaoConfirmarAjustes.Font = new Font("Times New Roman", 10F);
             BotaoConfirmarAjustes.Location = new Point(538, 319);
             BotaoConfirmarAjustes.Name = "BotaoConfirmarAjustes";
             BotaoConfirmarAjustes.Size = new Size(228, 113);
@@ -61,6 +62,7 @@
             // proporcao16p9
             // 
             proporcao16p9.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            proporcao16p9.Font = new Font("Times New Roman", 10F);
             proporcao16p9.Location = new Point(12, 319);
             proporcao16p9.Name = "proporcao16p9";
             proporcao16p9.Size = new Size(112, 113);
@@ -72,6 +74,7 @@
             // proporcao9p16
             // 
             proporcao9p16.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            proporcao9p16.Font = new Font("Times New Roman", 10F);
             proporcao9p16.Location = new Point(142, 319);
             proporcao9p16.Name = "proporcao9p16";
             proporcao9p16.Size = new Size(112, 113);
