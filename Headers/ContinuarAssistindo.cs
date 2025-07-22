@@ -231,14 +231,26 @@ namespace BlockPlayer
                     thumbs.RemoveAt(existingIndex);
                 }
 
-                // Salvar miniatura como .jpg
+                // Nome do snapshot
                 string nomeArquivoMiniatura = Path.GetFileNameWithoutExtension(path) + ".jpg";
                 string caminhoMiniatura = Path.Combine(pastaMiniaturas, nomeArquivoMiniatura);
 
-                // Tira snapshot atual
+                // ➕ Verifica se está pausado e faz play temporário
+                bool estavaPausado = !_mediaPlayer.IsPlaying;
+                if (estavaPausado)
+                {
+                    _mediaPlayer.Play();
+                    Thread.Sleep(10);
+                }
+
                 bool snapshotSucesso = _mediaPlayer.TakeSnapshot(0, caminhoMiniatura, 320, 180);
 
-                // Só salva se o snapshot funcionou
+                if (estavaPausado)
+                {
+                    _mediaPlayer.Pause();
+                }
+
+                // Só salva se snapshot funcionou
                 if (snapshotSucesso)
                 {
                     paths.Add(path);
@@ -248,7 +260,6 @@ namespace BlockPlayer
                     thumbs.Add(caminhoMiniatura);
                 }
 
-                // Salva atualizações
                 Propriedades.Settings.Default.VideoPaths = paths;
                 Propriedades.Settings.Default.VideoTimes = tempos;
                 Propriedades.Settings.Default.VideoDatas = datas;
@@ -335,17 +346,35 @@ namespace BlockPlayer
                 var tempos = Propriedades.Settings.Default.VideoTimes;
                 var datas = Propriedades.Settings.Default.VideoDatas;
                 var duracoes = Propriedades.Settings.Default.VideoDuracao;
+                var thumbs = Propriedades.Settings.Default.VideoThumbs;
 
-                if (paths != null && tempos != null && datas != null && duracoes != null)
+                if (paths != null && tempos != null && datas != null && duracoes != null && thumbs != null)
                 {
                     int index = paths.IndexOf(info.Caminho);
 
                     if (index >= 0)
                     {
+                        // Exclui a miniatura fisicamente, se existir
+                        string thumbPath = thumbs[index];
+                        if (!string.IsNullOrEmpty(thumbPath) && File.Exists(thumbPath))
+                        {
+                            try
+                            {
+                                File.Delete(thumbPath);
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show($"Erro ao excluir miniatura: {ex.Message}");
+                            }
+                        }
+
+                        // Remove dados salvos
                         paths.RemoveAt(index);
                         tempos.RemoveAt(index);
                         datas.RemoveAt(index);
                         duracoes.RemoveAt(index);
+                        thumbs.RemoveAt(index);
+
                         Propriedades.Settings.Default.Save();
                     }
                 }

@@ -92,12 +92,11 @@ namespace BlockPlayer
                 this.Show();
                 this.Activate();
                 _mediaPlayer.Play();
+                _mediaPlayer.Time = tempoAtual;
 
                 Thread.Sleep(50);
 
                 _mediaPlayer.Time = tempoAtual;
-
-                Thread.Sleep(50);
 
                 Pause();
 

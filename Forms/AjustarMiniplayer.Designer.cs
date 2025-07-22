@@ -51,9 +51,9 @@
             // 
             BotaoConfirmarAjustes.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             BotaoConfirmarAjustes.Font = new Font("Times New Roman", 10F);
-            BotaoConfirmarAjustes.Location = new Point(538, 319);
+            BotaoConfirmarAjustes.Location = new Point(613, 319);
             BotaoConfirmarAjustes.Name = "BotaoConfirmarAjustes";
-            BotaoConfirmarAjustes.Size = new Size(228, 113);
+            BotaoConfirmarAjustes.Size = new Size(153, 113);
             BotaoConfirmarAjustes.TabIndex = 1;
             BotaoConfirmarAjustes.Text = "Confirmar ajustes";
             BotaoConfirmarAjustes.UseVisualStyleBackColor = true;
@@ -94,7 +94,7 @@
             Controls.Add(BotaoConfirmarAjustes);
             Controls.Add(BarraOpacidadeMiniplayer);
             FormBorderStyle = FormBorderStyle.None;
-            MinimumSize = new Size(550, 300);
+            MinimumSize = new Size(450, 300);
             Name = "AjustarMiniplayer";
             StartPosition = FormStartPosition.Manual;
             Text = "Ajustar Miniplayer";

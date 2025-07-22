@@ -57,7 +57,7 @@ namespace BlockPlayer
             AtualizarVolume();
 
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-            if (files.Length > 0)
+            if (files != null && files.Length > 0)
             {
                 string file = files[0];
                 string ext = Path.GetExtension(file).ToLower();
@@ -72,7 +72,7 @@ namespace BlockPlayer
                 }
             }
 
-            if (!Video.MediaPlayer.IsPlaying)
+            if (!_mediaPlayer.IsPlaying)
             {
                 Pause();
             }
@@ -133,15 +133,6 @@ namespace BlockPlayer
             form.ShowDialog();
         }
 
-        private void Player_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            HotKeysUnregister();
-            SalvarContinuarAssistindo();
-            _mediaPlayer.Stop();
-            _mediaPlayer.Dispose();
-            _libVLC.Dispose();
-        }
-
         private void BotaoContinuarAssistindo_Click(object sender, EventArgs e)
         {
             PlayContinuarAssistindo();
@@ -155,6 +146,15 @@ namespace BlockPlayer
         private void ContinuarAssistindo_SelectedIndexChanged(object sender, EventArgs e)
         {
             SelecionarContinuarAssistindo();
+        }
+
+        private void Player_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            HotKeysUnregister();
+            SalvarContinuarAssistindo();
+            _mediaPlayer.Stop();
+            _mediaPlayer.Dispose();
+            _libVLC.Dispose();
         }
     }
 }
