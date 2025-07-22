@@ -64,12 +64,14 @@
             ClientSize = new Size(778, 444);
             Controls.Add(BotaoConfirmarAjustes);
             Controls.Add(BarraOpacidadeMiniplayer);
-            FormBorderStyle = FormBorderStyle.SizableToolWindow;
+            FormBorderStyle = FormBorderStyle.None;
             MinimumSize = new Size(400, 250);
             Name = "AjustarMiniplayer";
             StartPosition = FormStartPosition.Manual;
             Text = "Ajustar Miniplayer";
             TopMost = true;
+            MouseDown += AjustarMiniplayer_MouseDown;
+            MouseMove += AjustarMiniplayer_MouseMove;
             ((System.ComponentModel.ISupportInitialize)BarraOpacidadeMiniplayer).EndInit();
             ResumeLayout(false);
             PerformLayout();

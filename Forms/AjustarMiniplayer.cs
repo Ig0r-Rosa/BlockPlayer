@@ -4,6 +4,8 @@ namespace BlockPlayer
 {
     public partial class AjustarMiniplayer : Form
     {
+        private bool isDragging = false;
+        private Point dragStartPoint;
 
         public AjustarMiniplayer()
         {
@@ -36,6 +38,30 @@ namespace BlockPlayer
         private void BarraOpacidadeMiniplayer_Scroll(object sender, EventArgs e)
         {
             this.Opacity = (double)BarraOpacidadeMiniplayer.Value / 100;
+        }
+
+        private void AjustarMiniplayer_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                isDragging = true;
+                dragStartPoint = new Point(e.X, e.Y);
+            }
+        }
+
+        private void AjustarMiniplayer_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isDragging)
+            {
+                this.Left += e.X - dragStartPoint.X;
+                this.Top += e.Y - dragStartPoint.Y;
+            }
+        }
+
+        protected override void OnMouseUp(MouseEventArgs e)
+        {
+            base.OnMouseUp(e);
+            isDragging = false;
         }
     }
 }

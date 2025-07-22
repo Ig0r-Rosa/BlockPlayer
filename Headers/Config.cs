@@ -1,5 +1,4 @@
-﻿using BlockPlayer.Classes;
-using LibVLCSharp.Shared;
+﻿using LibVLCSharp.Shared;
 
 namespace BlockPlayer
 {
@@ -7,11 +6,13 @@ namespace BlockPlayer
     {
         private void ConfigVLC()
         {
+            // Inicializa o LibVLC e o MediaPlayer
             Core.Initialize();
             _libVLC = new LibVLC();
             _mediaPlayer = new MediaPlayer(_libVLC);
             Video.MediaPlayer = _mediaPlayer;
 
+            // Ao acabar o vídeo, pausa no último frame
             _mediaPlayer.EndReached += (sender, args) =>
             {
                 this.Invoke(() =>
@@ -61,7 +62,9 @@ namespace BlockPlayer
 
             pastaMiniaturas = Path.Combine(Application.StartupPath, "Thumbs");
             if (!Directory.Exists(pastaMiniaturas))
+            {
                 Directory.CreateDirectory(pastaMiniaturas);
+            }
         }
     }
 }
