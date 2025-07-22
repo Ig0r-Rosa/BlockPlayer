@@ -6,17 +6,53 @@ namespace BlockPlayer
     {
         public void AlternarMaximizado()
         {
-            if (EstaFullscreen) AlternarFullscreen();
-            WindowState = EstaMaximizado ? FormWindowState.Normal : FormWindowState.Maximized;
-            EstaMaximizado = !EstaMaximizado;
+            if (EstaFullscreen) return;
+
+            if (WindowState == FormWindowState.Maximized)
+            {
+                WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+
+            EstaMaximizado = (WindowState == FormWindowState.Maximized);
         }
+
 
         public void AlternarFullscreen()
         {
-            if (EstaMaximizado) AlternarMaximizado();
-            FormBorderStyle = EstaFullscreen ? FormBorderStyle.Sizable : FormBorderStyle.None;
-            WindowState = EstaFullscreen ? FormWindowState.Normal : FormWindowState.Maximized;
-            EstaFullscreen = !EstaFullscreen;
+            if (!EstaFullscreen)
+            {
+                // Salva estado da janela antes do fullscreen (tamanho e posição apenas)
+                if (WindowState == FormWindowState.Normal)
+                    _boundsAntesFullscreen = Bounds;
+                else
+                    _boundsAntesFullscreen = RestoreBounds;
+
+                _bordaAnterior = this.FormBorderStyle;
+                _topMostAnterior = this.TopMost;
+
+                // Entra em fullscreen
+                FormBorderStyle = FormBorderStyle.None;
+                WindowState = FormWindowState.Normal;
+                Bounds = Screen.FromControl(this).Bounds;
+                TopMost = true;
+
+                EstaFullscreen = true;
+            }
+            else
+            {
+                // Sai do fullscreen e volta ao estado "normal", sempre
+                FormBorderStyle = _bordaAnterior;
+                TopMost = _topMostAnterior;
+
+                WindowState = FormWindowState.Normal;
+                Bounds = _boundsAntesFullscreen;
+
+                EstaFullscreen = false;
+            }
         }
 
         public void AtualizarVisibilidadeVideo(bool visivel)

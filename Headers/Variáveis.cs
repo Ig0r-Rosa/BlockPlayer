@@ -27,5 +27,9 @@ namespace BlockPlayer
         private Panel painelSelecionado = null;
 
         string pastaMiniaturas = "/";
+
+        private Rectangle _boundsAntesFullscreen;
+        private FormBorderStyle _bordaAnterior;
+        private bool _topMostAnterior;
     }
 }
