@@ -58,7 +58,7 @@ namespace BlockPlayer
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show($"Erro ao excluir miniatura: {ex.Message}");
+                            MessageBox.Show($"Erro ao excluir miniatura: {ex.Message}", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                     thumbs.RemoveAt(i);
@@ -287,7 +287,7 @@ namespace BlockPlayer
         {
             if (painelSelecionado == null)
             {
-                MessageBox.Show("Selecione um vídeo para continuar assistindo.");
+                MessageBox.Show("Selecione um vídeo para continuar assistindo.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 CarregarContinuarAssistindo();
                 return;
             }
@@ -302,7 +302,7 @@ namespace BlockPlayer
             }
             else
             {
-                MessageBox.Show("Arquivo não encontrado ou informação inválida.");
+                MessageBox.Show("Arquivo não encontrado ou informação inválida.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 CarregarContinuarAssistindo();
             }
         }
@@ -377,7 +377,7 @@ namespace BlockPlayer
                             }
                             catch (Exception ex)
                             {
-                                MessageBox.Show($"Erro ao excluir miniatura: {ex.Message}");
+                                MessageBox.Show($"Erro ao excluir miniatura: {ex.Message}", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                         }
 

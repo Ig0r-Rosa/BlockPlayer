@@ -135,7 +135,6 @@ namespace BlockPlayer
                 _mediaPlayer.Time = tempoAtual;
 
                 Pause();
-
             }
 
             else if (_mediaPlayer.Media != null)

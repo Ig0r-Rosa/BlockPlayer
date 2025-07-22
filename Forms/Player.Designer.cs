@@ -187,6 +187,8 @@ namespace BlockPlayer
             // 
             BotaoContinuarAssistindo.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             BotaoContinuarAssistindo.BackColor = Color.SteelBlue;
+            BotaoContinuarAssistindo.Cursor = Cursors.Hand;
+            BotaoContinuarAssistindo.FlatAppearance.BorderSize = 0;
             BotaoContinuarAssistindo.FlatAppearance.MouseDownBackColor = Color.LightSteelBlue;
             BotaoContinuarAssistindo.FlatStyle = FlatStyle.Flat;
             BotaoContinuarAssistindo.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -203,7 +205,9 @@ namespace BlockPlayer
             // BotaoAjuda
             // 
             BotaoAjuda.BackColor = Color.SteelBlue;
+            BotaoAjuda.Cursor = Cursors.Help;
             BotaoAjuda.Dock = DockStyle.Left;
+            BotaoAjuda.FlatAppearance.BorderSize = 0;
             BotaoAjuda.FlatAppearance.MouseDownBackColor = Color.LightSteelBlue;
             BotaoAjuda.FlatStyle = FlatStyle.Flat;
             BotaoAjuda.Font = new Font("Times New Roman", 12F);
@@ -219,7 +223,9 @@ namespace BlockPlayer
             // BotaoAjusteMinipayer
             // 
             BotaoAjusteMinipayer.BackColor = Color.SteelBlue;
+            BotaoAjusteMinipayer.Cursor = Cursors.Hand;
             BotaoAjusteMinipayer.Dock = DockStyle.Left;
+            BotaoAjusteMinipayer.FlatAppearance.BorderSize = 0;
             BotaoAjusteMinipayer.FlatAppearance.MouseDownBackColor = Color.LightSteelBlue;
             BotaoAjusteMinipayer.FlatStyle = FlatStyle.Flat;
             BotaoAjusteMinipayer.Font = new Font("Times New Roman", 12F);
@@ -236,7 +242,9 @@ namespace BlockPlayer
             // BotaoEscolhaVideo
             // 
             BotaoEscolhaVideo.BackColor = Color.SteelBlue;
+            BotaoEscolhaVideo.Cursor = Cursors.Hand;
             BotaoEscolhaVideo.Dock = DockStyle.Left;
+            BotaoEscolhaVideo.FlatAppearance.BorderSize = 0;
             BotaoEscolhaVideo.FlatAppearance.MouseDownBackColor = Color.LightSteelBlue;
             BotaoEscolhaVideo.FlatStyle = FlatStyle.Flat;
             BotaoEscolhaVideo.Font = new Font("Times New Roman", 12F);
@@ -266,7 +274,10 @@ namespace BlockPlayer
             // 
             ApagarContinuarAssistindo.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             ApagarContinuarAssistindo.BackColor = Color.Red;
+            ApagarContinuarAssistindo.Cursor = Cursors.Hand;
             ApagarContinuarAssistindo.FlatAppearance.BorderColor = Color.Black;
+            ApagarContinuarAssistindo.FlatAppearance.BorderSize = 0;
+            ApagarContinuarAssistindo.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 128);
             ApagarContinuarAssistindo.FlatStyle = FlatStyle.Flat;
             ApagarContinuarAssistindo.Location = new Point(802, 60);
             ApagarContinuarAssistindo.MaximumSize = new Size(40, 40);
