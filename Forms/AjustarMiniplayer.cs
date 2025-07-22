@@ -28,10 +28,6 @@ namespace BlockPlayer
             int opacidade = (int)(this.Opacity * 100);
             if (opacidade < 50 || opacidade > 100) opacidade = 50;
             BarraOpacidadeMiniplayer.Value = opacidade;
-
-            this.MouseDown += AjustarMiniplayer_MouseDown;
-            this.MouseUp += AjustarMiniplayer_MouseUp;
-            this.MouseMove += AjustarMiniplayer_MouseMove;
         }
 
         private void BotaoConfirmarAjustes_Click(object sender, EventArgs e)
@@ -63,7 +59,7 @@ namespace BlockPlayer
                 }
                 else
                 {
-                    // mover janela se não estiver redimensionando
+                    // Mover janela se não estiver redimensionando
                     ReleaseCapture();
                     SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
                 }

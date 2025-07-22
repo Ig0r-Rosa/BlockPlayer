@@ -70,6 +70,9 @@
             StartPosition = FormStartPosition.Manual;
             Text = "Ajustar Miniplayer";
             TopMost = true;
+            MouseDown += AjustarMiniplayer_MouseDown;
+            MouseMove += AjustarMiniplayer_MouseMove;
+            MouseUp += AjustarMiniplayer_MouseUp;
             ((System.ComponentModel.ISupportInitialize)BarraOpacidadeMiniplayer).EndInit();
             ResumeLayout(false);
             PerformLayout();
