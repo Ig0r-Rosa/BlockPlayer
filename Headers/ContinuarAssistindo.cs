@@ -1,7 +1,6 @@
 ﻿
 using BlockPlayer.Classes;
 using LibVLCSharp.Shared;
-using System;
 
 namespace BlockPlayer
 {
@@ -126,7 +125,17 @@ namespace BlockPlayer
             {
                 Size = new Size(200, 100),
                 SizeMode = PictureBoxSizeMode.Zoom,
-                Dock = DockStyle.Top
+                Location = new Point(0, 0)
+            };
+
+            Label label = new Label
+            {
+                Text = Path.GetFileNameWithoutExtension(info.Caminho),
+                Size = new Size(200, 30),
+                Location = new Point(0, 100),
+                TextAlign = ContentAlignment.MiddleCenter,
+                ForeColor = Color.White,
+                BackColor = Color.Transparent,
             };
 
             string miniaturaPath = info.CaminhoMiniatura;
@@ -149,19 +158,10 @@ namespace BlockPlayer
                 pictureBox.Image = Image.FromFile(Path.Combine(Application.StartupPath, "Arquivos", "PlayIcon.png"));
             }
 
-            Label label = new Label
-            {
-                Text = Path.GetFileNameWithoutExtension(info.Caminho),
-                Dock = DockStyle.Bottom,
-                Height = 30,
-                TextAlign = ContentAlignment.MiddleCenter,
-                ForeColor = Color.White,
-                BackColor = Color.FromArgb(30, 30, 30)
-            };
-
             painel.Controls.Add(pictureBox);
             painel.Controls.Add(label);
 
+            // Clique em qualquer parte do painel
             painel.Click += (s, e) => SelecionarVideo(painel);
             pictureBox.Click += (s, e) => SelecionarVideo(painel);
             label.Click += (s, e) => SelecionarVideo(painel);
@@ -175,16 +175,17 @@ namespace BlockPlayer
             if (painelSelecionado != null)
             {
                 painelSelecionado.BorderStyle = BorderStyle.None;
-                painelSelecionado.Size = new Size(200, 100);
+                painelSelecionado.Padding = new Padding(0);
+                painelSelecionado.BackColor = Color.Black;
             }
 
             painelSelecionado = painel;
 
-            // Destaca painel selecionado
+            // Destaca o painel com borda e leve padding
+            painelSelecionado.Padding = new Padding(5);
             painelSelecionado.BorderStyle = BorderStyle.FixedSingle;
-            painelSelecionado.Size = new Size(210, 110); // Ligeiramente maior para destaque
+            painelSelecionado.BackColor = Color.FromArgb(125, 125, 125);
 
-            // Atualiza informações na interface
             ContinuarAssistindo_SelectedIndexChanged(null, null);
         }
 
