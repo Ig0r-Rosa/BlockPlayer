@@ -116,7 +116,7 @@ namespace BlockPlayer
             Panel painel = new Panel
             {
                 Tag = info,
-                Size = new Size(200, 130),
+                Size = new Size(200, 140),
                 BackColor = Color.Black,
                 Margin = new Padding(5)
             };
@@ -125,14 +125,14 @@ namespace BlockPlayer
             {
                 Size = new Size(200, 100),
                 SizeMode = PictureBoxSizeMode.Zoom,
-                Location = new Point(0, 0)
+                Location = new Point(0, 10),
             };
 
             Label label = new Label
             {
                 Text = Path.GetFileNameWithoutExtension(info.Caminho),
                 Size = new Size(200, 30),
-                Location = new Point(0, 100),
+                Location = new Point(0, 110),
                 TextAlign = ContentAlignment.MiddleCenter,
                 ForeColor = Color.White,
                 BackColor = Color.Transparent,
@@ -175,14 +175,12 @@ namespace BlockPlayer
             if (painelSelecionado != null)
             {
                 painelSelecionado.BorderStyle = BorderStyle.None;
-                painelSelecionado.Padding = new Padding(0);
                 painelSelecionado.BackColor = Color.Black;
             }
 
             painelSelecionado = painel;
 
             // Destaca o painel com borda e leve padding
-            painelSelecionado.Padding = new Padding(5);
             painelSelecionado.BorderStyle = BorderStyle.FixedSingle;
             painelSelecionado.BackColor = Color.FromArgb(125, 125, 125);
 
