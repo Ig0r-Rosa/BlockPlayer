@@ -1,6 +1,7 @@
 ﻿
 using BlockPlayer.Classes;
 using LibVLCSharp.Shared;
+using System;
 
 namespace BlockPlayer
 {
@@ -48,6 +49,18 @@ namespace BlockPlayer
                     tempos.RemoveAt(i);
                     datas.RemoveAt(i);
                     duracoes.RemoveAt(i);
+                    string thumbPath = thumbs[i];
+                    if (!string.IsNullOrEmpty(thumbPath) && File.Exists(thumbPath))
+                    {
+                        try
+                        {
+                            File.Delete(thumbPath);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Erro ao excluir miniatura: {ex.Message}");
+                        }
+                    }
                     thumbs.RemoveAt(i);
                     i--; // Corrige o índice após remover
                 }
