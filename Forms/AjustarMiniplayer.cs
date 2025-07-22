@@ -1,7 +1,4 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
-using BlockPlayer.Propriedades;
+﻿using BlockPlayer.Propriedades;
 using System.Runtime.InteropServices;
 
 namespace BlockPlayer
@@ -189,6 +186,80 @@ namespace BlockPlayer
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
+
+        private void proporcao16p9_Click(object sender, EventArgs e)
+        {
+            const double proporcao = 16.0 / 9.0;
+            int larguraAtual = this.Width;
+            int alturaAtual = this.Height;
+
+            // Ajustar mantendo a largura e recalculando altura
+            int alturaCalculada = (int)(larguraAtual / proporcao);
+
+            if (alturaCalculada < this.MinimumSize.Height)
+            {
+                // Ajusta largura para manter a proporção e altura mínima
+                alturaCalculada = this.MinimumSize.Height;
+                larguraAtual = (int)(alturaCalculada * proporcao);
+            }
+
+            if (alturaCalculada <= alturaAtual)
+            {
+                this.Height = alturaCalculada;
+                this.Width = larguraAtual;
+            }
+            else
+            {
+                // Ajusta pela altura, respeitando altura mínima
+                int larguraCalculada = (int)(alturaAtual * proporcao);
+
+                if (larguraCalculada < this.MinimumSize.Width)
+                {
+                    larguraCalculada = this.MinimumSize.Width;
+                    alturaAtual = (int)(larguraCalculada / proporcao);
+                }
+
+                this.Width = larguraCalculada;
+                this.Height = alturaAtual;
+            }
+        }
+
+        private void proporcao9p16_Click(object sender, EventArgs e)
+        {
+            const double proporcao = 9.0 / 16.0;
+            int larguraAtual = this.Width;
+            int alturaAtual = this.Height;
+
+            // Ajustar mantendo a altura e recalculando largura
+            int larguraCalculada = (int)(alturaAtual * proporcao);
+
+            if (larguraCalculada < this.MinimumSize.Width)
+            {
+                // Ajusta altura para manter proporção e largura mínima
+                larguraCalculada = this.MinimumSize.Width;
+                alturaAtual = (int)(larguraCalculada / proporcao);
+            }
+
+            if (larguraCalculada <= larguraAtual)
+            {
+                this.Width = larguraCalculada;
+                this.Height = alturaAtual;
+            }
+            else
+            {
+                // Ajusta pela largura, respeitando largura mínima
+                int alturaCalculada = (int)(larguraAtual / proporcao);
+
+                if (alturaCalculada < this.MinimumSize.Height)
+                {
+                    alturaCalculada = this.MinimumSize.Height;
+                    larguraAtual = (int)(alturaCalculada * proporcao);
+                }
+
+                this.Width = larguraAtual;
+                this.Height = alturaCalculada;
+            }
+        }
 
         private enum ResizeDirection
         {

@@ -30,6 +30,8 @@
         {
             BarraOpacidadeMiniplayer = new TrackBar();
             BotaoConfirmarAjustes = new Button();
+            proporcao16p9 = new Button();
+            proporcao9p16 = new Button();
             ((System.ComponentModel.ISupportInitialize)BarraOpacidadeMiniplayer).BeginInit();
             SuspendLayout();
             // 
@@ -56,16 +58,40 @@
             BotaoConfirmarAjustes.UseVisualStyleBackColor = true;
             BotaoConfirmarAjustes.Click += BotaoConfirmarAjustes_Click;
             // 
+            // proporcao16p9
+            // 
+            proporcao16p9.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            proporcao16p9.Location = new Point(12, 319);
+            proporcao16p9.Name = "proporcao16p9";
+            proporcao16p9.Size = new Size(112, 113);
+            proporcao16p9.TabIndex = 2;
+            proporcao16p9.Text = "16:9";
+            proporcao16p9.UseVisualStyleBackColor = true;
+            proporcao16p9.Click += proporcao16p9_Click;
+            // 
+            // proporcao9p16
+            // 
+            proporcao9p16.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            proporcao9p16.Location = new Point(142, 319);
+            proporcao9p16.Name = "proporcao9p16";
+            proporcao9p16.Size = new Size(112, 113);
+            proporcao9p16.TabIndex = 3;
+            proporcao9p16.Text = "9:16";
+            proporcao9p16.UseVisualStyleBackColor = true;
+            proporcao9p16.Click += proporcao9p16_Click;
+            // 
             // AjustarMiniplayer
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(778, 444);
+            Controls.Add(proporcao9p16);
+            Controls.Add(proporcao16p9);
             Controls.Add(BotaoConfirmarAjustes);
             Controls.Add(BarraOpacidadeMiniplayer);
             FormBorderStyle = FormBorderStyle.None;
-            MinimumSize = new Size(400, 250);
+            MinimumSize = new Size(550, 300);
             Name = "AjustarMiniplayer";
             StartPosition = FormStartPosition.Manual;
             Text = "Ajustar Miniplayer";
@@ -82,5 +108,7 @@
 
         private TrackBar BarraOpacidadeMiniplayer;
         private Button BotaoConfirmarAjustes;
+        private Button proporcao16p9;
+        private Button proporcao9p16;
     }
 }
