@@ -114,11 +114,16 @@ namespace BlockPlayer
             }
         }
 
+        // --- Constantes e imports para manipulação de janelas Win32 ---
         private const int GWL_EXSTYLE = -20;
         private const int WS_EX_NOACTIVATE = 0x08000000;
         private const int WS_EX_TRANSPARENT = 0x00000020;
         private const int WS_EX_TOOLWINDOW = 0x00000080;
         private const int WS_EX_TOPMOST = 0x00000008;
+
+        private const int GWL_STYLE = -16;
+        private const int WS_POPUP = unchecked((int)0x80000000);
+        private const int WS_VISIBLE = 0x10000000;
 
         [DllImport("user32.dll", SetLastError = true)]
         private static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
@@ -126,6 +131,27 @@ namespace BlockPlayer
         [DllImport("user32.dll", SetLastError = true)]
         private static extern int GetWindowLong(IntPtr hWnd, int nIndex);
 
+        [DllImport("user32.dll")]
+        private static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter,
+            int X, int Y, int cx, int cy, uint uFlags);
+
+        [DllImport("user32.dll")]
+        static extern int SetWindowLongPtr(IntPtr hWnd, int nIndex, IntPtr dwNewLong);
+
+        [DllImport("user32.dll")]
+        static extern IntPtr GetWindowLongPtr(IntPtr hWnd, int nIndex);
+
+        static readonly IntPtr HWND_TOPMOST = new IntPtr(-1);
+
+        const uint SWP_NOSIZE = 0x0001;
+        const uint SWP_NOMOVE = 0x0002;
+        const uint SWP_NOACTIVATE = 0x0010;
+        const uint SWP_SHOWWINDOW = 0x0040;
+        const uint SWP_NOZORDER = 0x0004;
+        const uint SWP_FRAMECHANGED = 0x0020;
+        const uint SWP_NOSENDCHANGING = 0x0400;
+
+        // --- Configura miniplayer para overlay sem foco ---
         private void TornarMiniplayerOverlay()
         {
             int exStyle = GetWindowLong(_miniplayer.Handle, GWL_EXSTYLE);
@@ -133,6 +159,24 @@ namespace BlockPlayer
             SetWindowLong(_miniplayer.Handle, GWL_EXSTYLE, exStyle);
         }
 
+        // --- Remove WS_EX_TRANSPARENT para permitir clique (se quiser ativar isso) ---
+        private void TornarMiniplayerCompatível()
+        {
+            int exStyle = GetWindowLong(_miniplayer.Handle, GWL_EXSTYLE);
+            exStyle &= ~WS_EX_TRANSPARENT;
+            exStyle |= WS_EX_NOACTIVATE | WS_EX_TOPMOST | WS_EX_TOOLWINDOW;
+            SetWindowLong(_miniplayer.Handle, GWL_EXSTYLE, exStyle);
+        }
+
+        // --- Força estilo popup e visível para overlay ---
+        private void ForcarOverlayCompleto()
+        {
+            int style = (int)GetWindowLongPtr(_miniplayer.Handle, GWL_STYLE);
+            style |= WS_POPUP | WS_VISIBLE;
+            SetWindowLongPtr(_miniplayer.Handle, GWL_STYLE, (IntPtr)style);
+        }
+
+        // --- Alterna miniplayer ---
         private void AlternarMiniplayer()
         {
             long tempoAtual = _mediaPlayer.Time;
@@ -143,30 +187,48 @@ namespace BlockPlayer
             {
                 _mediaPlayer.Stop();
                 _miniplayer.Video.MediaPlayer = null;
-                Video.MediaPlayer = _mediaPlayer;
+
+                // Esconde o miniplayer e força atualização para evitar tela preta
                 _miniplayer.Hide();
+                _miniplayer.Invalidate();
+
+                // Força estilo e posição para overlay principal
+                ForcarOverlayCompleto();
+                SetWindowPos(_miniplayer.Handle, HWND_TOPMOST, 0, 0, 0, 0,
+                    SWP_NOMOVE | SWP_NOSIZE | SWP_NOACTIVATE | SWP_SHOWWINDOW);
+
+                // Mostra o player principal e traz para frente
                 this.Show();
+                this.BringToFront();
                 this.Activate();
+
+                Video.MediaPlayer = _mediaPlayer; // reassocia player de vídeo
                 _mediaPlayer.Play();
                 _mediaPlayer.Time = tempoAtual;
+
+                _miniplayer.Hide();
+                _miniplayer.Invalidate();
 
                 Thread.Sleep(50);
 
                 _mediaPlayer.Time = tempoAtual;
-
                 Pause();
             }
-
             else if (_mediaPlayer.Media != null)
             {
                 _mediaPlayer.Stop();
+
                 Video.MediaPlayer = null;
                 _miniplayer.Video.MediaPlayer = _mediaPlayer;
                 _miniplayer.AtualizarTamanho();
-                _miniplayer.Show();
+
                 TornarMiniplayerOverlay();
+
+                _miniplayer.Show();
                 this.Hide();
+
                 _miniplayer.Activate();
+
                 _mediaPlayer.Play();
 
                 Thread.Sleep(50);
