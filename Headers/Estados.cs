@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System.Runtime.InteropServices;
+using System.Threading;
 
 namespace BlockPlayer
 {
@@ -113,6 +114,25 @@ namespace BlockPlayer
             }
         }
 
+        private const int GWL_EXSTYLE = -20;
+        private const int WS_EX_NOACTIVATE = 0x08000000;
+        private const int WS_EX_TRANSPARENT = 0x00000020;
+        private const int WS_EX_TOOLWINDOW = 0x00000080;
+        private const int WS_EX_TOPMOST = 0x00000008;
+
+        [DllImport("user32.dll", SetLastError = true)]
+        private static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        private static extern int GetWindowLong(IntPtr hWnd, int nIndex);
+
+        private void TornarMiniplayerOverlay()
+        {
+            int exStyle = GetWindowLong(_miniplayer.Handle, GWL_EXSTYLE);
+            exStyle |= WS_EX_NOACTIVATE | WS_EX_TRANSPARENT | WS_EX_TOPMOST | WS_EX_TOOLWINDOW;
+            SetWindowLong(_miniplayer.Handle, GWL_EXSTYLE, exStyle);
+        }
+
         private void AlternarMiniplayer()
         {
             long tempoAtual = _mediaPlayer.Time;
@@ -144,6 +164,7 @@ namespace BlockPlayer
                 _miniplayer.Video.MediaPlayer = _mediaPlayer;
                 _miniplayer.AtualizarTamanho();
                 _miniplayer.Show();
+                TornarMiniplayerOverlay();
                 this.Hide();
                 _miniplayer.Activate();
                 _mediaPlayer.Play();
