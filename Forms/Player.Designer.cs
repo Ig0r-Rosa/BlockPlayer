@@ -122,6 +122,7 @@ namespace BlockPlayer
             // VolumeVideo
             // 
             VolumeVideo.BackColor = Color.Black;
+            VolumeVideo.Cursor = Cursors.Hand;
             VolumeVideo.Dock = DockStyle.Left;
             VolumeVideo.Location = new Point(40, 0);
             VolumeVideo.Maximum = 100;
