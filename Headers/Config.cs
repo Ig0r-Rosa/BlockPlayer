@@ -37,6 +37,8 @@ namespace BlockPlayer
             Interface = new List<Control>
             {
                 BarraVideo,
+                PainelInterface,
+                PainelVolume,
                 TempoAtualFinal,
                 VolumeVideo,
                 VolumeTexto
@@ -48,6 +50,14 @@ namespace BlockPlayer
                 item.BringToFront();
                 item.Invalidate();
             }
+
+            TempoAtualFinal.Parent = PainelInterface;
+            PainelVolume.Parent = PainelInterface;
+            PainelVolume.Dock = DockStyle.Right;
+            VolumeVideo.Parent = PainelVolume;
+            VolumeTexto.Parent = PainelVolume;
+            VolumeVideo.Dock = DockStyle.Right;
+            VolumeTexto.Dock = DockStyle.Right;
         }
 
         private void ConfigSemVideo()
