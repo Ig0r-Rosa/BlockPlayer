@@ -206,8 +206,8 @@ namespace BlockPlayer
                 _mediaPlayer.Play();
                 _mediaPlayer.Time = tempoAtual;
 
-                _miniplayer.Hide();
-                _miniplayer.Invalidate();
+                _miniplayer.Visible = false;
+                _miniplayer.Video.MediaPlayer = null;
 
                 Thread.Sleep(50);
 
@@ -222,9 +222,17 @@ namespace BlockPlayer
                 _miniplayer.Video.MediaPlayer = _mediaPlayer;
                 _miniplayer.AtualizarTamanho();
 
+                TornarMiniplayerCompatível();
                 TornarMiniplayerOverlay();
+                ForcarOverlayCompleto();
+
+                SetWindowPos(_miniplayer.Handle, HWND_TOPMOST, 0, 0, 0, 0,
+                    SWP_NOMOVE | SWP_NOSIZE | SWP_NOACTIVATE | SWP_SHOWWINDOW);
 
                 _miniplayer.Show();
+                _miniplayer.BringToFront();
+                _miniplayer.Video.Invalidate();
+                _miniplayer.Video.Update();
                 this.Hide();
 
                 _miniplayer.Activate();
