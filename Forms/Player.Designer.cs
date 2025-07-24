@@ -87,7 +87,6 @@ namespace BlockPlayer
             // 
             Painel.BackColor = Color.Transparent;
             Painel.Controls.Add(PainelInterface);
-            Painel.Controls.Add(BarraVideo);
             Painel.Dock = DockStyle.Fill;
             Painel.ForeColor = Color.Transparent;
             Painel.Location = new Point(0, 0);
@@ -101,11 +100,12 @@ namespace BlockPlayer
             // 
             PainelInterface.Controls.Add(PainelVolume);
             PainelInterface.Controls.Add(TempoAtualFinal);
+            PainelInterface.Controls.Add(BarraVideo);
             PainelInterface.Dock = DockStyle.Top;
-            PainelInterface.Location = new Point(0, 20);
+            PainelInterface.Location = new Point(0, 0);
             PainelInterface.Name = "PainelInterface";
             PainelInterface.Padding = new Padding(10);
-            PainelInterface.Size = new Size(1055, 59);
+            PainelInterface.Size = new Size(1055, 84);
             PainelInterface.TabIndex = 6;
             // 
             // PainelVolume
@@ -116,7 +116,7 @@ namespace BlockPlayer
             PainelVolume.Dock = DockStyle.Right;
             PainelVolume.Location = new Point(855, 10);
             PainelVolume.Name = "PainelVolume";
-            PainelVolume.Size = new Size(190, 39);
+            PainelVolume.Size = new Size(190, 44);
             PainelVolume.TabIndex = 6;
             // 
             // VolumeVideo
@@ -164,13 +164,13 @@ namespace BlockPlayer
             // 
             BarraVideo.BackColor = Color.Black;
             BarraVideo.Cursor = Cursors.Hand;
-            BarraVideo.Dock = DockStyle.Top;
+            BarraVideo.Dock = DockStyle.Bottom;
             BarraVideo.LargeChange = 10;
-            BarraVideo.Location = new Point(0, 0);
+            BarraVideo.Location = new Point(10, 54);
             BarraVideo.Maximum = 1000;
             BarraVideo.MaximumSize = new Size(0, 20);
             BarraVideo.Name = "BarraVideo";
-            BarraVideo.Size = new Size(1055, 20);
+            BarraVideo.Size = new Size(1035, 20);
             BarraVideo.TabIndex = 1;
             BarraVideo.TickStyle = TickStyle.None;
             BarraVideo.Visible = false;
@@ -420,7 +420,6 @@ namespace BlockPlayer
             DragEnter += Video_DragEnter;
             ((System.ComponentModel.ISupportInitialize)Video).EndInit();
             Painel.ResumeLayout(false);
-            Painel.PerformLayout();
             PainelInterface.ResumeLayout(false);
             PainelInterface.PerformLayout();
             PainelVolume.ResumeLayout(false);
