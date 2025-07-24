@@ -33,6 +33,10 @@ namespace BlockPlayer
                 _mediaPlayer.Play(media);
                 AtualizarVisibilidadeVideo(true);
             }
+
+            Thread.Sleep(100);
+
+            this.TopMost = false;
         }
 
         private void Painel_Click(object sender, EventArgs e)
