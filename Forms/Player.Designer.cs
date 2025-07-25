@@ -39,7 +39,7 @@ namespace BlockPlayer
             VolumeVideo = new Panel();
             VolumeTexto = new Label();
             TempoAtualFinal = new Label();
-            BarraVideo = new Panel();
+            BarraVideo = new DoubleBufferedPanel();
             TimerVideo = new System.Windows.Forms.Timer(components);
             PainelSemVideo = new Panel();
             ApagarContinuarAssistindo = new Button();
@@ -160,13 +160,12 @@ namespace BlockPlayer
             // BarraVideo
             // 
             BarraVideo.BackColor = Color.DimGray;
-            BarraVideo.Cursor = Cursors.Hand;
             BarraVideo.Dock = DockStyle.Bottom;
             BarraVideo.Location = new Point(10, 59);
             BarraVideo.MaximumSize = new Size(0, 15);
             BarraVideo.Name = "BarraVideo";
             BarraVideo.Size = new Size(1035, 15);
-            BarraVideo.TabIndex = 7;
+            BarraVideo.TabIndex = 8;
             BarraVideo.MouseDown += BarraVideo_MouseDown;
             BarraVideo.MouseMove += BarraVideo_MouseMove;
             BarraVideo.MouseUp += BarraVideo_MouseUp;
@@ -449,7 +448,7 @@ namespace BlockPlayer
         private Panel panel4;
         private Panel PainelInterface;
         private Panel PainelVolume;
-        private Panel BarraVideo;
         private Panel VolumeVideo;
+        private DoubleBufferedPanel BarraVideo;
     }
 }
