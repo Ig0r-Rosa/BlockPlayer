@@ -212,7 +212,7 @@ namespace BlockPlayer
         private void AtualizarTempoComMouse(int mouseX)
         {
             float pos = (float)mouseX / BarraVideo.Width;
-            pos = Math.Max(0, Math.Min(1, pos)); // limitar entre 0 e 1
+            pos = Math.Max(0, Math.Min(1, pos)); 
             _mediaPlayer.Time = (long)(_mediaPlayer.Length * pos);
             AtualizarTempoVideo();
             BarraVideo.Invalidate();

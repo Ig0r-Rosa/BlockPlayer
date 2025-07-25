@@ -36,7 +36,7 @@ namespace BlockPlayer
             Painel = new TransparentPanel();
             PainelInterface = new Panel();
             PainelVolume = new Panel();
-            VolumeVideo = new Panel();
+            VolumeVideo = new DoubleBufferedPanel();
             VolumeTexto = new Label();
             TempoAtualFinal = new Label();
             BarraVideo = new DoubleBufferedPanel();
@@ -112,20 +112,21 @@ namespace BlockPlayer
             PainelVolume.Controls.Add(VolumeVideo);
             PainelVolume.Controls.Add(VolumeTexto);
             PainelVolume.Dock = DockStyle.Right;
-            PainelVolume.Location = new Point(859, 15);
+            PainelVolume.Location = new Point(839, 15);
             PainelVolume.Name = "PainelVolume";
-            PainelVolume.Size = new Size(186, 44);
+            PainelVolume.Padding = new Padding(10);
+            PainelVolume.Size = new Size(206, 44);
             PainelVolume.TabIndex = 6;
             // 
             // VolumeVideo
             // 
             VolumeVideo.BackColor = Color.DimGray;
             VolumeVideo.Dock = DockStyle.Right;
-            VolumeVideo.Location = new Point(36, 0);
+            VolumeVideo.Location = new Point(46, 10);
             VolumeVideo.MaximumSize = new Size(150, 15);
             VolumeVideo.Name = "VolumeVideo";
             VolumeVideo.Size = new Size(150, 15);
-            VolumeVideo.TabIndex = 6;
+            VolumeVideo.TabIndex = 7;
             VolumeVideo.MouseDown += VolumeVideo_MouseDown;
             VolumeVideo.MouseMove += VolumeVideo_MouseMove;
             VolumeVideo.MouseUp += VolumeVideo_MouseUp;
@@ -136,7 +137,7 @@ namespace BlockPlayer
             VolumeTexto.Dock = DockStyle.Left;
             VolumeTexto.Font = new Font("Times New Roman", 8.5F, FontStyle.Bold);
             VolumeTexto.ForeColor = Color.White;
-            VolumeTexto.Location = new Point(0, 0);
+            VolumeTexto.Location = new Point(10, 10);
             VolumeTexto.MaximumSize = new Size(0, 15);
             VolumeTexto.Name = "VolumeTexto";
             VolumeTexto.Size = new Size(36, 15);
@@ -429,7 +430,6 @@ namespace BlockPlayer
         private LibVLCSharp.WinForms.VideoView Video;
         private TransparentPanel Painel;
         private System.Windows.Forms.Timer TimerVideo;
-        private Label VolumeTexto;
         private Label TempoAtualFinal;
         private Panel PainelSemVideo;
         private Button BotaoEscolhaVideo;
@@ -447,8 +447,9 @@ namespace BlockPlayer
         private Panel panel3;
         private Panel panel4;
         private Panel PainelInterface;
-        private Panel PainelVolume;
-        private Panel VolumeVideo;
         private DoubleBufferedPanel BarraVideo;
+        private Panel PainelVolume;
+        private DoubleBufferedPanel VolumeVideo;
+        private Label VolumeTexto;
     }
 }
