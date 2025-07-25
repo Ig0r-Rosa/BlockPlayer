@@ -1,49 +1,47 @@
 ﻿
-namespace BlockPlayer
-{
-    public partial class Janela : Form
+    namespace BlockPlayer
     {
-        private string FormatarTempo(long ms)
+        public partial class Janela : Form
         {
-            var totalSeconds = ms / 1000;
-            var minutes = totalSeconds / 60;
-            var seconds = totalSeconds % 60;
-            return $"{minutes:D2}:{seconds:D2}";
-        }
-
-        public void AtualizarTempoVideo()
-        {
-            if (_mediaPlayer.Length > 0)
+            private string FormatarTempo(long ms)
             {
-                long pos = _mediaPlayer.Time;
-                long len = _mediaPlayer.Length;
-                int progress = (int)((double)pos / len * BarraVideo.Maximum);
-                BarraVideo.Value = Math.Min(progress, BarraVideo.Maximum);
-                TempoAtualFinal.Text = $"{FormatarTempo(pos)} / {FormatarTempo(len)}";
+                var totalSeconds = ms / 1000;
+                var minutes = totalSeconds / 60;
+                var seconds = totalSeconds % 60;
+                return $"{minutes:D2}:{seconds:D2}";
             }
-        }
 
-        public void AtualizarVolume()
-        {
-            _mediaPlayer.Volume = VolumeVideo.Value;
-            VolumeTexto.Text = VolumeVideo.Value.ToString();
-        }
-
-        private void AjustarTempo(int deltaMs)
-        {
-            if (_mediaPlayer != null && _mediaPlayer.Media != null)
+            public void AtualizarTempoVideo()
             {
-                long novoTempo = Math.Max(0, _mediaPlayer.Time + deltaMs);
-                _mediaPlayer.Time = novoTempo;
-                AtualizarTempoVideo();
+                if (_mediaPlayer.Length > 0)
+                {
+                    long pos = _mediaPlayer.Time;
+                    long len = _mediaPlayer.Length;
+                    TempoAtualFinal.Text = $"{FormatarTempo(pos)} / {FormatarTempo(len)}";
+                }
             }
-        }
 
-        private void HotKeysUnregister()
-        {
-            _hotkey?.Unregister();
-            _hotkeyVoltar?.Unregister();
-            _hotkeyAvancar?.Unregister();
+            public void AtualizarVolume()
+            {
+                _mediaPlayer.Volume = VolumeVideo.Value;
+                VolumeTexto.Text = VolumeVideo.Value.ToString();
+            }
+
+            private void AjustarTempo(int deltaMs)
+            {
+                if (_mediaPlayer != null && _mediaPlayer.Media != null)
+                {
+                    long novoTempo = Math.Max(0, _mediaPlayer.Time + deltaMs);
+                    _mediaPlayer.Time = novoTempo;
+                    AtualizarTempoVideo();
+                }
+            }
+
+            private void HotKeysUnregister()
+            {
+                _hotkey?.Unregister();
+                _hotkeyVoltar?.Unregister();
+                _hotkeyAvancar?.Unregister();
+            }
         }
     }
-}

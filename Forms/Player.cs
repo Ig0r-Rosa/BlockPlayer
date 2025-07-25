@@ -36,6 +36,8 @@ namespace BlockPlayer
 
             Thread.Sleep(100);
 
+            BarraVideo.Paint += BarraVideo_Paint;
+
             this.TopMost = false;
         }
 
@@ -100,16 +102,7 @@ namespace BlockPlayer
 
         private void TimerVideo_Tick(object sender, EventArgs e)
         {
-            AtualizarTempoVideo();
-        }
-
-        private void BarraVideo_Scroll(object sender, EventArgs e)
-        {
-            if (_mediaPlayer.Length > 0)
-            {
-                float pos = (float)BarraVideo.Value / BarraVideo.Maximum;
-                _mediaPlayer.Time = (long)(_mediaPlayer.Length * pos);
-            }
+            BarraVideo.Invalidate();
             AtualizarTempoVideo();
         }
 
@@ -157,6 +150,43 @@ namespace BlockPlayer
             _mediaPlayer.Stop();
             _mediaPlayer.Dispose();
             _libVLC.Dispose();
+        }
+
+        private void BarraVideo_Paint(object sender, PaintEventArgs e)
+        {
+            var g = e.Graphics;
+            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            int barraAltura = BarraVideo.Height;
+
+            // Fundo
+            using (var fundo = new SolidBrush(Color.FromArgb(40, 40, 40)))
+                g.FillRectangle(fundo, 0, 0, BarraVideo.Width, barraAltura);
+
+            if (_mediaPlayer.Length <= 0) return;
+
+            float progresso = _mediaPlayer.Time / (float)_mediaPlayer.Length;
+            int larguraProgresso = (int)(BarraVideo.Width * progresso);
+
+            // Progresso azul
+            using (var progressoBrush = new SolidBrush(Color.DeepSkyBlue))
+                g.FillRectangle(progressoBrush, 0, 0, larguraProgresso, barraAltura);
+
+            // Círculo branco indicador (tamanho levemente maior que a barra)
+            int tamanhoCirculo = (int)(barraAltura * 0.95f);
+            int offsetY = (barraAltura - tamanhoCirculo) / 2;
+
+            using (var circuloBrush = new SolidBrush(Color.White))
+                g.FillEllipse(circuloBrush, larguraProgresso - (tamanhoCirculo / 2), offsetY, tamanhoCirculo, tamanhoCirculo);
+        }
+
+        private void BarraVideo_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (_mediaPlayer.Length <= 0) return;
+
+            float pos = (float)e.X / BarraVideo.Width;
+            _mediaPlayer.Time = (long)(_mediaPlayer.Length * pos);
+            BarraVideo.Invalidate();
         }
     }
 }

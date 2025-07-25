@@ -39,7 +39,7 @@ namespace BlockPlayer
             VolumeVideo = new TrackBar();
             VolumeTexto = new Label();
             TempoAtualFinal = new Label();
-            BarraVideo = new TrackBar();
+            BarraVideo = new Panel();
             TimerVideo = new System.Windows.Forms.Timer(components);
             PainelSemVideo = new Panel();
             ApagarContinuarAssistindo = new Button();
@@ -61,7 +61,6 @@ namespace BlockPlayer
             PainelInterface.SuspendLayout();
             PainelVolume.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)VolumeVideo).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)BarraVideo).BeginInit();
             PainelSemVideo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ContinuarAssistindo.SuspendLayout();
@@ -116,7 +115,7 @@ namespace BlockPlayer
             PainelVolume.Dock = DockStyle.Right;
             PainelVolume.Location = new Point(855, 10);
             PainelVolume.Name = "PainelVolume";
-            PainelVolume.Size = new Size(190, 44);
+            PainelVolume.Size = new Size(190, 49);
             PainelVolume.TabIndex = 6;
             // 
             // VolumeVideo
@@ -162,19 +161,15 @@ namespace BlockPlayer
             // 
             // BarraVideo
             // 
-            BarraVideo.BackColor = Color.Black;
+            BarraVideo.BackColor = Color.DimGray;
             BarraVideo.Cursor = Cursors.Hand;
             BarraVideo.Dock = DockStyle.Bottom;
-            BarraVideo.LargeChange = 10;
-            BarraVideo.Location = new Point(10, 54);
-            BarraVideo.Maximum = 1000;
-            BarraVideo.MaximumSize = new Size(0, 20);
+            BarraVideo.Location = new Point(10, 59);
+            BarraVideo.MaximumSize = new Size(0, 15);
             BarraVideo.Name = "BarraVideo";
-            BarraVideo.Size = new Size(1035, 20);
-            BarraVideo.TabIndex = 1;
-            BarraVideo.TickStyle = TickStyle.None;
-            BarraVideo.Visible = false;
-            BarraVideo.Scroll += BarraVideo_Scroll;
+            BarraVideo.Size = new Size(1035, 15);
+            BarraVideo.TabIndex = 7;
+            BarraVideo.MouseDown += BarraVideo_MouseDown;
             BarraVideo.MouseUp += BarraVideo_MouseUp;
             // 
             // TimerVideo
@@ -425,7 +420,6 @@ namespace BlockPlayer
             PainelVolume.ResumeLayout(false);
             PainelVolume.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)VolumeVideo).EndInit();
-            ((System.ComponentModel.ISupportInitialize)BarraVideo).EndInit();
             PainelSemVideo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ContinuarAssistindo.ResumeLayout(false);
@@ -437,7 +431,6 @@ namespace BlockPlayer
 
         private LibVLCSharp.WinForms.VideoView Video;
         private TransparentPanel Painel;
-        private TrackBar BarraVideo;
         private System.Windows.Forms.Timer TimerVideo;
         private Label VolumeTexto;
         private TrackBar VolumeVideo;
@@ -459,5 +452,6 @@ namespace BlockPlayer
         private Panel panel4;
         private Panel PainelInterface;
         private Panel PainelVolume;
+        private Panel BarraVideo;
     }
 }

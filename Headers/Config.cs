@@ -52,6 +52,7 @@ namespace BlockPlayer
             }
 
             BarraVideo.Parent = PainelInterface;
+
             TempoAtualFinal.Parent = PainelInterface;
             PainelVolume.Parent = PainelInterface;
             PainelVolume.Dock = DockStyle.Right;
