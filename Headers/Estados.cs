@@ -94,6 +94,7 @@ namespace BlockPlayer
                 _mediaPlayer.Play();
                 _videoFinalizado = false;
                 TimerVideo.Start();
+                ExibirInterface(false);
                 return;
             }
 

@@ -22,6 +22,8 @@ namespace BlockPlayer
                     _mediaPlayer.SetPause(true); // pausa no último frame
                     AtualizarTempoVideo();
 
+                    ExibirInterface(true); // Exibe a interface
+
                     // Marca o vídeo como finalizado
                     _videoFinalizado = true;
                 });

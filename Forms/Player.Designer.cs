@@ -43,7 +43,6 @@ namespace BlockPlayer
             TimerVideo = new System.Windows.Forms.Timer(components);
             PainelSemVideo = new Panel();
             ApagarContinuarAssistindo = new Button();
-            BotaoAjuda = new Button();
             panel2 = new Panel();
             pictureBox1 = new PictureBox();
             BotaoContinuarAssistindo = new Button();
@@ -180,7 +179,6 @@ namespace BlockPlayer
             // 
             PainelSemVideo.BackColor = Color.FromArgb(21, 23, 66);
             PainelSemVideo.Controls.Add(ApagarContinuarAssistindo);
-            PainelSemVideo.Controls.Add(BotaoAjuda);
             PainelSemVideo.Controls.Add(panel2);
             PainelSemVideo.Controls.Add(pictureBox1);
             PainelSemVideo.Controls.Add(BotaoContinuarAssistindo);
@@ -213,24 +211,6 @@ namespace BlockPlayer
             ApagarContinuarAssistindo.Text = "🗑️";
             ApagarContinuarAssistindo.UseVisualStyleBackColor = false;
             ApagarContinuarAssistindo.Click += ApagarContinuarAssistindo_Click;
-            // 
-            // BotaoAjuda
-            // 
-            BotaoAjuda.BackColor = Color.SteelBlue;
-            BotaoAjuda.Cursor = Cursors.Help;
-            BotaoAjuda.Dock = DockStyle.Left;
-            BotaoAjuda.FlatAppearance.BorderSize = 0;
-            BotaoAjuda.FlatAppearance.MouseDownBackColor = Color.LightSteelBlue;
-            BotaoAjuda.FlatStyle = FlatStyle.Flat;
-            BotaoAjuda.Font = new Font("Times New Roman", 12F);
-            BotaoAjuda.ForeColor = SystemColors.ActiveCaptionText;
-            BotaoAjuda.Location = new Point(360, 20);
-            BotaoAjuda.MaximumSize = new Size(150, 80);
-            BotaoAjuda.Name = "BotaoAjuda";
-            BotaoAjuda.Size = new Size(150, 80);
-            BotaoAjuda.TabIndex = 2;
-            BotaoAjuda.Text = "Ajuda\r\n";
-            BotaoAjuda.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -399,9 +379,9 @@ namespace BlockPlayer
             AutoSize = true;
             BackColor = Color.Black;
             ClientSize = new Size(1055, 544);
+            Controls.Add(PainelSemVideo);
             Controls.Add(Painel);
             Controls.Add(Video);
-            Controls.Add(PainelSemVideo);
             ForeColor = SystemColors.Control;
             KeyPreview = true;
             MinimumSize = new Size(930, 450);
@@ -434,7 +414,6 @@ namespace BlockPlayer
         private Panel PainelSemVideo;
         private Button BotaoEscolhaVideo;
         private Button BotaoAjusteMinipayer;
-        private Button BotaoAjuda;
         private Button BotaoContinuarAssistindo;
         private ProgressBar ProgressoVideoContinuarAssistindo;
         private Label NomeVideoContinuarAssistindo;
