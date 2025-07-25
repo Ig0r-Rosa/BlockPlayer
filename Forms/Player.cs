@@ -37,6 +37,7 @@ namespace BlockPlayer
             Thread.Sleep(100);
 
             BarraVideo.Paint += BarraVideo_Paint;
+            VolumeVideo.Paint += VolumeVideo_Paint;
 
             this.TopMost = false;
         }
@@ -103,6 +104,7 @@ namespace BlockPlayer
         private void TimerVideo_Tick(object sender, EventArgs e)
         {
             BarraVideo.Invalidate();
+            AtualizarVolume();
             AtualizarTempoVideo();
         }
 
@@ -187,6 +189,46 @@ namespace BlockPlayer
             float pos = (float)e.X / BarraVideo.Width;
             _mediaPlayer.Time = (long)(_mediaPlayer.Length * pos);
             BarraVideo.Invalidate();
+        }
+
+        private void VolumeVideo_Paint(object sender, PaintEventArgs e)
+        {
+            var g = e.Graphics;
+            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            int barraAltura = VolumeVideo.Height;
+
+            // Fundo escuro
+            using (var fundo = new SolidBrush(Color.FromArgb(40, 40, 40)))
+                g.FillRectangle(fundo, 0, 0, VolumeVideo.Width, barraAltura);
+
+            // Progresso baseado no volumeAtual
+            int larguraProgresso = (int)(VolumeVideo.Width * (VolumeAtual / (float)VolumeMaximo));
+
+            // Barra azul do volume
+            using (var progressoBrush = new SolidBrush(Color.DeepSkyBlue))
+                g.FillRectangle(progressoBrush, 0, 0, larguraProgresso, barraAltura);
+
+            // Círculo branco no fim da barra
+            int tamanhoCirculo = (int)(barraAltura * 0.95f);
+            int offsetY = (barraAltura - tamanhoCirculo) / 2;
+
+            using (var circuloBrush = new SolidBrush(Color.White))
+                g.FillEllipse(circuloBrush, larguraProgresso - (tamanhoCirculo / 2), offsetY, tamanhoCirculo, tamanhoCirculo);
+        }
+
+        private void VolumeVideo_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (VolumeMaximo <= 0) return;
+
+            float pos = (float)e.X / VolumeVideo.Width;
+            pos = Math.Max(0, Math.Min(1, pos)); // Garante que o valor esteja entre 0 e 1
+
+            VolumeAtual = (int)(VolumeMaximo * pos);
+            _mediaPlayer.Volume = VolumeAtual;
+
+            VolumeVideo.Invalidate(); 
+            AtualizarVolume();
         }
     }
 }

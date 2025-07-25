@@ -36,7 +36,7 @@ namespace BlockPlayer
             Painel = new TransparentPanel();
             PainelInterface = new Panel();
             PainelVolume = new Panel();
-            VolumeVideo = new TrackBar();
+            VolumeVideo = new Panel();
             VolumeTexto = new Label();
             TempoAtualFinal = new Label();
             BarraVideo = new Panel();
@@ -60,7 +60,6 @@ namespace BlockPlayer
             Painel.SuspendLayout();
             PainelInterface.SuspendLayout();
             PainelVolume.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)VolumeVideo).BeginInit();
             PainelSemVideo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ContinuarAssistindo.SuspendLayout();
@@ -103,7 +102,7 @@ namespace BlockPlayer
             PainelInterface.Dock = DockStyle.Top;
             PainelInterface.Location = new Point(0, 0);
             PainelInterface.Name = "PainelInterface";
-            PainelInterface.Padding = new Padding(10);
+            PainelInterface.Padding = new Padding(10, 15, 10, 10);
             PainelInterface.Size = new Size(1055, 84);
             PainelInterface.TabIndex = 6;
             // 
@@ -113,35 +112,32 @@ namespace BlockPlayer
             PainelVolume.Controls.Add(VolumeVideo);
             PainelVolume.Controls.Add(VolumeTexto);
             PainelVolume.Dock = DockStyle.Right;
-            PainelVolume.Location = new Point(855, 10);
+            PainelVolume.Location = new Point(862, 15);
             PainelVolume.Name = "PainelVolume";
-            PainelVolume.Size = new Size(190, 49);
+            PainelVolume.Size = new Size(183, 44);
             PainelVolume.TabIndex = 6;
             // 
             // VolumeVideo
             // 
-            VolumeVideo.BackColor = Color.Black;
-            VolumeVideo.Cursor = Cursors.Hand;
-            VolumeVideo.Dock = DockStyle.Left;
-            VolumeVideo.Location = new Point(40, 0);
-            VolumeVideo.Maximum = 100;
-            VolumeVideo.MaximumSize = new Size(150, 25);
+            VolumeVideo.BackColor = Color.DimGray;
+            VolumeVideo.Dock = DockStyle.Right;
+            VolumeVideo.Location = new Point(33, 0);
+            VolumeVideo.MaximumSize = new Size(150, 15);
             VolumeVideo.Name = "VolumeVideo";
-            VolumeVideo.Size = new Size(150, 25);
-            VolumeVideo.TabIndex = 3;
-            VolumeVideo.Value = 50;
-            VolumeVideo.Visible = false;
-            VolumeVideo.Scroll += VolumeVideo_Scroll;
+            VolumeVideo.Size = new Size(150, 15);
+            VolumeVideo.TabIndex = 6;
+            VolumeVideo.MouseDown += VolumeVideo_MouseDown;
             // 
             // VolumeTexto
             // 
             VolumeTexto.AutoSize = true;
             VolumeTexto.Dock = DockStyle.Left;
-            VolumeTexto.Font = new Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            VolumeTexto.Font = new Font("Times New Roman", 8F, FontStyle.Bold);
             VolumeTexto.ForeColor = Color.White;
             VolumeTexto.Location = new Point(0, 0);
+            VolumeTexto.MaximumSize = new Size(0, 15);
             VolumeTexto.Name = "VolumeTexto";
-            VolumeTexto.Size = new Size(40, 23);
+            VolumeTexto.Size = new Size(33, 15);
             VolumeTexto.TabIndex = 5;
             VolumeTexto.Text = "100";
             VolumeTexto.Visible = false;
@@ -152,7 +148,7 @@ namespace BlockPlayer
             TempoAtualFinal.Dock = DockStyle.Left;
             TempoAtualFinal.Font = new Font("Times New Roman", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TempoAtualFinal.ForeColor = Color.White;
-            TempoAtualFinal.Location = new Point(10, 10);
+            TempoAtualFinal.Location = new Point(10, 15);
             TempoAtualFinal.Name = "TempoAtualFinal";
             TempoAtualFinal.Size = new Size(179, 35);
             TempoAtualFinal.TabIndex = 2;
@@ -419,7 +415,6 @@ namespace BlockPlayer
             PainelInterface.PerformLayout();
             PainelVolume.ResumeLayout(false);
             PainelVolume.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)VolumeVideo).EndInit();
             PainelSemVideo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ContinuarAssistindo.ResumeLayout(false);
@@ -433,7 +428,6 @@ namespace BlockPlayer
         private TransparentPanel Painel;
         private System.Windows.Forms.Timer TimerVideo;
         private Label VolumeTexto;
-        private TrackBar VolumeVideo;
         private Label TempoAtualFinal;
         private Panel PainelSemVideo;
         private Button BotaoEscolhaVideo;
@@ -453,5 +447,6 @@ namespace BlockPlayer
         private Panel PainelInterface;
         private Panel PainelVolume;
         private Panel BarraVideo;
+        private Panel VolumeVideo;
     }
 }

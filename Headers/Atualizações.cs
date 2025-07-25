@@ -23,8 +23,8 @@
 
             public void AtualizarVolume()
             {
-                _mediaPlayer.Volume = VolumeVideo.Value;
-                VolumeTexto.Text = VolumeVideo.Value.ToString();
+                _mediaPlayer.Volume = VolumeAtual;
+                VolumeTexto.Text = VolumeAtual.ToString();
             }
 
             private void AjustarTempo(int deltaMs)

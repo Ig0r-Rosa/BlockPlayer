@@ -34,12 +34,12 @@ namespace BlockPlayer
                     return true;
 
                 case Keys.Up:
-                    VolumeVideo.Value = Math.Min(VolumeVideo.Value + 5, VolumeVideo.Maximum);
+                    VolumeAtual = Math.Min(VolumeAtual + 5, VolumeMaximo);
                     AtualizarVolume();
                     return true;
 
                 case Keys.Down:
-                    VolumeVideo.Value = Math.Max(VolumeVideo.Value - 5, VolumeVideo.Minimum);
+                    VolumeAtual = Math.Max(VolumeAtual - 5, VolumeMaximo);
                     AtualizarVolume();
                     return true;
 

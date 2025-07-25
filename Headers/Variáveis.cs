@@ -31,5 +31,9 @@ namespace BlockPlayer
         private Rectangle _boundsAntesFullscreen;
         private FormBorderStyle _bordaAnterior;
         private bool _topMostAnterior;
+
+        private int VolumeAtual = 50; // valor entre 0 e 100
+        private const int VolumeMaximo = 100;
+
     }
 }
