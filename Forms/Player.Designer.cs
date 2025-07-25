@@ -166,6 +166,7 @@ namespace BlockPlayer
             BarraVideo.Size = new Size(1035, 15);
             BarraVideo.TabIndex = 7;
             BarraVideo.MouseDown += BarraVideo_MouseDown;
+            BarraVideo.MouseMove += BarraVideo_MouseMove;
             BarraVideo.MouseUp += BarraVideo_MouseUp;
             // 
             // TimerVideo

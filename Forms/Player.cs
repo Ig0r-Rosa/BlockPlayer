@@ -108,11 +108,6 @@ namespace BlockPlayer
             AtualizarTempoVideo();
         }
 
-        private void BarraVideo_MouseUp(object sender, MouseEventArgs e)
-        {
-            AtualizarTempoVideo();
-        }
-
         private void VolumeVideo_Scroll(object sender, EventArgs e)
         {
             AtualizarVolume();
@@ -195,7 +190,34 @@ namespace BlockPlayer
             float pos = (float)e.X / BarraVideo.Width;
             _mediaPlayer.Time = (long)(_mediaPlayer.Length * pos);
             BarraVideo.Invalidate();
+
+            _arrastandoBarra = true;
+            AtualizarTempoComMouse(e.X);
         }
+
+        private void BarraVideo_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (_arrastandoBarra && _mediaPlayer.Length > 0)
+            {
+                AtualizarTempoComMouse(e.X);
+            }
+        }
+
+        private void BarraVideo_MouseUp(object sender, MouseEventArgs e)
+        {
+            _arrastandoBarra = false;
+            AtualizarTempoComMouse(e.X);
+        }
+
+        private void AtualizarTempoComMouse(int mouseX)
+        {
+            float pos = (float)mouseX / BarraVideo.Width;
+            pos = Math.Max(0, Math.Min(1, pos)); // limitar entre 0 e 1
+            _mediaPlayer.Time = (long)(_mediaPlayer.Length * pos);
+            AtualizarTempoVideo();
+            BarraVideo.Invalidate();
+        }
+
 
         private void VolumeVideo_Paint(object sender, PaintEventArgs e)
         {
