@@ -174,12 +174,18 @@ namespace BlockPlayer
             using (var progressoBrush = new SolidBrush(Color.DeepSkyBlue))
                 g.FillRectangle(progressoBrush, 0, 0, larguraProgresso, barraAltura);
 
-            // Círculo branco indicador (tamanho levemente maior que a barra)
-            int tamanhoCirculo = (int)(barraAltura * 0.95f);
+            // Círculo branco indicador (levemente maior que a barra)
+            int tamanhoCirculo = (int)(barraAltura * 0.95f); // aumente ligeiramente se quiser destaque
             int offsetY = (barraAltura - tamanhoCirculo) / 2;
 
+            int centroX = larguraProgresso;
+
+            // Garante que o círculo não ultrapasse os limites da barra
+            centroX = Math.Max(centroX, tamanhoCirculo / 2);
+            centroX = Math.Min(centroX, BarraVideo.Width - tamanhoCirculo / 2);
+
             using (var circuloBrush = new SolidBrush(Color.White))
-                g.FillEllipse(circuloBrush, larguraProgresso - (tamanhoCirculo / 2), offsetY, tamanhoCirculo, tamanhoCirculo);
+                g.FillEllipse(circuloBrush, centroX - (tamanhoCirculo / 2), offsetY, tamanhoCirculo, tamanhoCirculo);
         }
 
         private void BarraVideo_MouseDown(object sender, MouseEventArgs e)
@@ -198,23 +204,25 @@ namespace BlockPlayer
 
             int barraAltura = VolumeVideo.Height;
 
-            // Fundo escuro
+            // Fundo
             using (var fundo = new SolidBrush(Color.FromArgb(40, 40, 40)))
                 g.FillRectangle(fundo, 0, 0, VolumeVideo.Width, barraAltura);
 
-            // Progresso baseado no volumeAtual
             int larguraProgresso = (int)(VolumeVideo.Width * (VolumeAtual / (float)VolumeMaximo));
 
-            // Barra azul do volume
             using (var progressoBrush = new SolidBrush(Color.DeepSkyBlue))
                 g.FillRectangle(progressoBrush, 0, 0, larguraProgresso, barraAltura);
 
-            // Círculo branco no fim da barra
             int tamanhoCirculo = (int)(barraAltura * 0.95f);
             int offsetY = (barraAltura - tamanhoCirculo) / 2;
 
+            int centroX = larguraProgresso;
+
+            centroX = Math.Max(centroX, tamanhoCirculo / 2);
+            centroX = Math.Min(centroX, VolumeVideo.Width - tamanhoCirculo / 2);
+
             using (var circuloBrush = new SolidBrush(Color.White))
-                g.FillEllipse(circuloBrush, larguraProgresso - (tamanhoCirculo / 2), offsetY, tamanhoCirculo, tamanhoCirculo);
+                g.FillEllipse(circuloBrush, centroX - (tamanhoCirculo / 2), offsetY, tamanhoCirculo, tamanhoCirculo);
         }
 
         private void VolumeVideo_MouseDown(object sender, MouseEventArgs e)

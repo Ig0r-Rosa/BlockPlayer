@@ -112,16 +112,16 @@ namespace BlockPlayer
             PainelVolume.Controls.Add(VolumeVideo);
             PainelVolume.Controls.Add(VolumeTexto);
             PainelVolume.Dock = DockStyle.Right;
-            PainelVolume.Location = new Point(862, 15);
+            PainelVolume.Location = new Point(859, 15);
             PainelVolume.Name = "PainelVolume";
-            PainelVolume.Size = new Size(183, 44);
+            PainelVolume.Size = new Size(186, 44);
             PainelVolume.TabIndex = 6;
             // 
             // VolumeVideo
             // 
             VolumeVideo.BackColor = Color.DimGray;
             VolumeVideo.Dock = DockStyle.Right;
-            VolumeVideo.Location = new Point(33, 0);
+            VolumeVideo.Location = new Point(36, 0);
             VolumeVideo.MaximumSize = new Size(150, 15);
             VolumeVideo.Name = "VolumeVideo";
             VolumeVideo.Size = new Size(150, 15);
@@ -132,12 +132,12 @@ namespace BlockPlayer
             // 
             VolumeTexto.AutoSize = true;
             VolumeTexto.Dock = DockStyle.Left;
-            VolumeTexto.Font = new Font("Times New Roman", 8F, FontStyle.Bold);
+            VolumeTexto.Font = new Font("Times New Roman", 8.5F, FontStyle.Bold);
             VolumeTexto.ForeColor = Color.White;
             VolumeTexto.Location = new Point(0, 0);
             VolumeTexto.MaximumSize = new Size(0, 15);
             VolumeTexto.Name = "VolumeTexto";
-            VolumeTexto.Size = new Size(33, 15);
+            VolumeTexto.Size = new Size(36, 15);
             VolumeTexto.TabIndex = 5;
             VolumeTexto.Text = "100";
             VolumeTexto.Visible = false;

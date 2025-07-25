@@ -24,23 +24,34 @@ namespace BlockPlayer
                     return true;
 
                 case Keys.Right:
-                    _mediaPlayer.Time += 5000;
+                    if(_mediaPlayer.Time + 5000 < _mediaPlayer.Length)
+                    {
+                        _mediaPlayer.Time += 5000;
+                    }
+                    else
+                    {
+                        _mediaPlayer.Time = _mediaPlayer.Length;
+                    }
                     AtualizarTempoVideo();
+                    BarraVideo.Invalidate();
                     return true;
 
                 case Keys.Left:
                     _mediaPlayer.Time = Math.Max(0, _mediaPlayer.Time - 5000);
                     AtualizarTempoVideo();
+                    BarraVideo.Invalidate();
                     return true;
 
                 case Keys.Up:
                     VolumeAtual = Math.Min(VolumeAtual + 5, VolumeMaximo);
                     AtualizarVolume();
+                    VolumeVideo.Invalidate();
                     return true;
 
                 case Keys.Down:
-                    VolumeAtual = Math.Max(VolumeAtual - 5, VolumeMaximo);
+                    VolumeAtual = Math.Max(VolumeAtual - 5, 0);
                     AtualizarVolume();
+                    VolumeVideo.Invalidate();
                     return true;
 
                 case Keys.Enter:
