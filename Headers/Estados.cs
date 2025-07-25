@@ -181,8 +181,6 @@ namespace BlockPlayer
         {
             long tempoAtual = _mediaPlayer.Time;
 
-            Thread.Sleep(50);
-
             if (_miniplayer.Visible)
             {
                 _mediaPlayer.Stop();

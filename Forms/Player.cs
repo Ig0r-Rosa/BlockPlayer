@@ -257,8 +257,36 @@ namespace BlockPlayer
             VolumeAtual = (int)(VolumeMaximo * pos);
             _mediaPlayer.Volume = VolumeAtual;
 
-            VolumeVideo.Invalidate(); 
+            _arrastandoBarraVolume = true;
+
+            VolumeVideo.Invalidate();
             AtualizarVolume();
+        }
+
+        private void VolumeVideo_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (VolumeMaximo <= 0) return;
+            if (!_arrastandoBarraVolume) return;
+
+            float pos = (float)e.X / VolumeVideo.Width;
+            pos = Math.Max(0, Math.Min(1, pos)); // Garante que o valor esteja entre 0 e 1
+            VolumeAtual = (int)(VolumeMaximo * pos);
+            _mediaPlayer.Volume = VolumeAtual;
+            VolumeVideo.Invalidate();
+            AtualizarVolume();
+        }
+
+        private void VolumeVideo_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (VolumeMaximo <= 0) return;
+            if (!_arrastandoBarraVolume) return;
+            float pos = (float)e.X / VolumeVideo.Width;
+            pos = Math.Max(0, Math.Min(1, pos)); // Garante que o valor esteja entre 0 e 1
+            VolumeAtual = (int)(VolumeMaximo * pos);
+            _mediaPlayer.Volume = VolumeAtual;
+            VolumeVideo.Invalidate();
+            AtualizarVolume();
+            _arrastandoBarraVolume = false;
         }
     }
 }

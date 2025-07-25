@@ -127,6 +127,8 @@ namespace BlockPlayer
             VolumeVideo.Size = new Size(150, 15);
             VolumeVideo.TabIndex = 6;
             VolumeVideo.MouseDown += VolumeVideo_MouseDown;
+            VolumeVideo.MouseMove += VolumeVideo_MouseMove;
+            VolumeVideo.MouseUp += VolumeVideo_MouseUp;
             // 
             // VolumeTexto
             // 
