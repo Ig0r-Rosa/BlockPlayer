@@ -328,16 +328,56 @@ namespace BlockPlayer
             string duracao = FormatarTempo(info.Duracao);
             TempoVideoContinuarAssistindo.Text = $"{tempoAtual} / {duracao}";
 
-            // Calcula progresso como porcentagem
-            if (info.Duracao > 0)
-            {
-                int progresso = (int)((info.Tempo * 100) / info.Duracao);
-                ProgressoVideoContinuarAssistindo.Value = Math.Min(100, Math.Max(0, progresso));
-            }
-            else
-            {
-                ProgressoVideoContinuarAssistindo.Value = 0;
-            }
+            AtualizarBarraTempoContinuarAssistindo();
+        }
+
+        private void AtualizarBarraTempoContinuarAssistindo()
+        {
+            if (painelSelecionado == null || !(painelSelecionado.Tag is VideoInfo info))
+                return;
+
+            float progresso = (info.Duracao > 0) ? (info.Tempo / (float)info.Duracao) * 100f : 0f;
+
+            ProgressoVideoContinuarAssistindo.Paint -= ProgressoVideoContinuarAssistindo_Paint;
+            ProgressoVideoContinuarAssistindo.Paint += ProgressoVideoContinuarAssistindo_Paint;
+
+            // Força o redraw
+            ProgressoVideoContinuarAssistindo.Invalidate();
+        }
+
+        private void ProgressoVideoContinuarAssistindo_Paint(object sender, PaintEventArgs e)
+        {
+            if (painelSelecionado == null || !(painelSelecionado.Tag is VideoInfo info))
+                return;
+
+            var g = e.Graphics;
+            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            int barraAltura = ProgressoVideoContinuarAssistindo.Height;
+            int barraLargura = ProgressoVideoContinuarAssistindo.Width;
+
+            float progresso = (info.Duracao > 0) ? (info.Tempo / (float)info.Duracao) : 0f;
+
+            // Fundo
+            using (var fundo = new SolidBrush(Color.FromArgb(40, 40, 40)))
+                g.FillRectangle(fundo, 0, 0, barraLargura, barraAltura);
+
+            // Barra de progresso (DeepSkyBlue)
+            int larguraProgresso = (int)(barraLargura * progresso);
+            using (var progressoBrush = new SolidBrush(Color.DeepSkyBlue))
+                g.FillRectangle(progressoBrush, 0, 0, larguraProgresso, barraAltura);
+
+            // Círculo branco indicador
+            int tamanhoCirculo = (int)(barraAltura * 0.95f);
+            int offsetY = (barraAltura - tamanhoCirculo) / 2;
+            int centroX = larguraProgresso;
+
+            // Garante que o círculo não ultrapasse os limites
+            centroX = Math.Max(centroX, tamanhoCirculo / 2);
+            centroX = Math.Min(centroX, barraLargura - tamanhoCirculo / 2);
+
+            using (var circuloBrush = new SolidBrush(Color.White))
+                g.FillEllipse(circuloBrush, centroX - (tamanhoCirculo / 2), offsetY, tamanhoCirculo, tamanhoCirculo);
         }
 
         private void ApagarContinuarAssistindoSelecionado()

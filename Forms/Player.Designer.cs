@@ -54,7 +54,7 @@ namespace BlockPlayer
             panel1 = new Panel();
             TempoVideoContinuarAssistindo = new Label();
             NomeVideoContinuarAssistindo = new Label();
-            ProgressoVideoContinuarAssistindo = new ProgressBar();
+            ProgressoVideoContinuarAssistindo = new Panel();
             ((System.ComponentModel.ISupportInitialize)Video).BeginInit();
             Painel.SuspendLayout();
             PainelInterface.SuspendLayout();
@@ -177,7 +177,7 @@ namespace BlockPlayer
             // 
             // PainelSemVideo
             // 
-            PainelSemVideo.BackColor = Color.FromArgb(21, 23, 66);
+            PainelSemVideo.BackColor = Color.Black;
             PainelSemVideo.Controls.Add(ApagarContinuarAssistindo);
             PainelSemVideo.Controls.Add(panel2);
             PainelSemVideo.Controls.Add(pictureBox1);
@@ -331,6 +331,7 @@ namespace BlockPlayer
             panel1.Dock = DockStyle.Bottom;
             panel1.Location = new Point(20, 424);
             panel1.Name = "panel1";
+            panel1.Padding = new Padding(5, 5, 270, 5);
             panel1.Size = new Size(1015, 100);
             panel1.TabIndex = 9;
             // 
@@ -339,10 +340,10 @@ namespace BlockPlayer
             TempoVideoContinuarAssistindo.AutoEllipsis = true;
             TempoVideoContinuarAssistindo.Dock = DockStyle.Bottom;
             TempoVideoContinuarAssistindo.Font = new Font("Times New Roman", 12F);
-            TempoVideoContinuarAssistindo.Location = new Point(0, 39);
-            TempoVideoContinuarAssistindo.MaximumSize = new Size(500, 80);
+            TempoVideoContinuarAssistindo.Location = new Point(5, 53);
+            TempoVideoContinuarAssistindo.MaximumSize = new Size(0, 80);
             TempoVideoContinuarAssistindo.Name = "TempoVideoContinuarAssistindo";
-            TempoVideoContinuarAssistindo.Size = new Size(500, 27);
+            TempoVideoContinuarAssistindo.Size = new Size(740, 27);
             TempoVideoContinuarAssistindo.TabIndex = 8;
             TempoVideoContinuarAssistindo.Text = "00:00 / 00:00";
             TempoVideoContinuarAssistindo.Visible = false;
@@ -352,23 +353,24 @@ namespace BlockPlayer
             NomeVideoContinuarAssistindo.AutoEllipsis = true;
             NomeVideoContinuarAssistindo.Dock = DockStyle.Top;
             NomeVideoContinuarAssistindo.Font = new Font("Times New Roman", 12F);
-            NomeVideoContinuarAssistindo.Location = new Point(0, 0);
-            NomeVideoContinuarAssistindo.MaximumSize = new Size(700, 80);
+            NomeVideoContinuarAssistindo.Location = new Point(5, 5);
+            NomeVideoContinuarAssistindo.MaximumSize = new Size(0, 80);
             NomeVideoContinuarAssistindo.Name = "NomeVideoContinuarAssistindo";
-            NomeVideoContinuarAssistindo.Size = new Size(700, 27);
+            NomeVideoContinuarAssistindo.Size = new Size(740, 27);
             NomeVideoContinuarAssistindo.TabIndex = 7;
             NomeVideoContinuarAssistindo.Text = "Vídeo";
             NomeVideoContinuarAssistindo.Visible = false;
             // 
             // ProgressoVideoContinuarAssistindo
             // 
-            ProgressoVideoContinuarAssistindo.BackColor = SystemColors.Control;
+            ProgressoVideoContinuarAssistindo.AutoSize = true;
+            ProgressoVideoContinuarAssistindo.BackColor = Color.DimGray;
             ProgressoVideoContinuarAssistindo.Dock = DockStyle.Bottom;
-            ProgressoVideoContinuarAssistindo.Location = new Point(0, 66);
-            ProgressoVideoContinuarAssistindo.MaximumSize = new Size(650, 80);
+            ProgressoVideoContinuarAssistindo.Location = new Point(5, 80);
+            ProgressoVideoContinuarAssistindo.MinimumSize = new Size(0, 15);
             ProgressoVideoContinuarAssistindo.Name = "ProgressoVideoContinuarAssistindo";
-            ProgressoVideoContinuarAssistindo.Size = new Size(650, 34);
-            ProgressoVideoContinuarAssistindo.TabIndex = 6;
+            ProgressoVideoContinuarAssistindo.Size = new Size(740, 15);
+            ProgressoVideoContinuarAssistindo.TabIndex = 9;
             ProgressoVideoContinuarAssistindo.Visible = false;
             // 
             // Janela
@@ -392,6 +394,7 @@ namespace BlockPlayer
             FormClosed += Player_FormClosed;
             DragDrop += Video_DragDrop;
             DragEnter += Video_DragEnter;
+            Resize += Janela_Resize;
             ((System.ComponentModel.ISupportInitialize)Video).EndInit();
             Painel.ResumeLayout(false);
             PainelInterface.ResumeLayout(false);
@@ -402,6 +405,7 @@ namespace BlockPlayer
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ContinuarAssistindo.ResumeLayout(false);
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -415,7 +419,6 @@ namespace BlockPlayer
         private Button BotaoEscolhaVideo;
         private Button BotaoAjusteMinipayer;
         private Button BotaoContinuarAssistindo;
-        private ProgressBar ProgressoVideoContinuarAssistindo;
         private Label NomeVideoContinuarAssistindo;
         private Label TempoVideoContinuarAssistindo;
         private Panel panel1;
@@ -430,5 +433,6 @@ namespace BlockPlayer
         private Panel PainelVolume;
         private DoubleBufferedPanel VolumeVideo;
         private Label VolumeTexto;
+        private Panel ProgressoVideoContinuarAssistindo;
     }
 }

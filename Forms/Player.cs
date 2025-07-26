@@ -148,5 +148,10 @@ namespace BlockPlayer
             _mediaPlayer.Dispose();
             _libVLC.Dispose();
         }
+
+        private void Janela_Resize(object sender, EventArgs e)
+        {
+            AtualizarBarraTempoContinuarAssistindo();
+        }
     }
 }
