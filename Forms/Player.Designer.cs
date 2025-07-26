@@ -385,6 +385,7 @@ namespace BlockPlayer
             Controls.Add(Painel);
             Controls.Add(Video);
             ForeColor = SystemColors.Control;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             KeyPreview = true;
             MinimumSize = new Size(930, 450);
             Name = "Janela";
