@@ -26,7 +26,7 @@ namespace BlockPlayer
 
         private Panel painelSelecionado = null;
 
-        string pastaMiniaturas = "/";
+        string pastaMiniaturas = "./";
 
         private Rectangle _boundsAntesFullscreen;
         private FormBorderStyle _bordaAnterior;

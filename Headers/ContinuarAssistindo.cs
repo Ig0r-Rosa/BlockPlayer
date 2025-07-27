@@ -29,6 +29,12 @@ namespace BlockPlayer
                 Propriedades.Settings.Default.VideoThumbs = new System.Collections.Specialized.StringCollection();
             }
 
+            pastaMiniaturas = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Thumbs");
+            if (!Directory.Exists(pastaMiniaturas))
+            {
+                Directory.CreateDirectory(pastaMiniaturas);
+            }
+
             List<string> paths = Propriedades.Settings.Default.VideoPaths.Cast<string>().ToList();
             List<string> tempos = Propriedades.Settings.Default.VideoTimes.Cast<string>().ToList();
             List<string> datas = Propriedades.Settings.Default.VideoDatas.Cast<string>().ToList();
@@ -146,6 +152,7 @@ namespace BlockPlayer
                 info.CaminhoMiniatura = miniaturaPath;
             }
 
+
             if (File.Exists(miniaturaPath))
             {
                 using (var fs = new FileStream(miniaturaPath, FileMode.Open, FileAccess.Read))
@@ -187,33 +194,29 @@ namespace BlockPlayer
             ContinuarAssistindo_SelectedIndexChanged(null, null);
         }
 
-        private string CapturarMiniatura(string caminhoVideo)
+        private string CapturarMiniatura(string caminhoImagem)
         {
+            if (_mediaPlayer == null || !_mediaPlayer.IsPlaying)
+                return "";
+
             try
             {
-                using (var media = new Media(_libVLC, new Uri(caminhoVideo)))
-                using (var mp = new MediaPlayer(media))
+                uint largura = 320;
+                uint altura = 180;
+
+                bool sucesso = _mediaPlayer.TakeSnapshot(0, caminhoImagem, largura, altura);
+
+                if (!sucesso)
                 {
-                    string thumbPath = Path.Combine(pastaMiniaturas, Path.GetFileNameWithoutExtension(caminhoVideo) + ".png");
-
-                    // Cria um contexto para renderizar a miniatura
-                    var bitmap = new Bitmap(320, 180);
-                    using (Graphics g = Graphics.FromImage(bitmap))
-                    {
-                        mp.Hwnd = g.GetHdc();
-                        mp.Play();
-                        Thread.Sleep(500); // Espera o frame carregar
-                        mp.Pause();
-                        g.ReleaseHdc();
-                    }
-
-                    bitmap.Save(thumbPath);
-                    return thumbPath;
+                    MessageBox.Show("Falha ao capturar miniatura.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+
+                return caminhoImagem;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return null;
+                MessageBox.Show("Erro ao capturar miniatura:\n" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return "";
             }
         }
 

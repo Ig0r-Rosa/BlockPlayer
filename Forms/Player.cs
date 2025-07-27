@@ -34,6 +34,12 @@ namespace BlockPlayer
                 AtualizarVisibilidadeVideo(true);
             }
 
+            pastaMiniaturas = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Thumbs");
+            if (!Directory.Exists(pastaMiniaturas))
+            {
+                Directory.CreateDirectory(pastaMiniaturas);
+            }
+
             Thread.Sleep(100);
 
             BarraVideo.Paint += BarraVideo_Paint;
