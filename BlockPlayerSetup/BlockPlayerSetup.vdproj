@@ -23709,7 +23709,7 @@
             {
             "DefaultLocation" = "8:[ProgramFiles64Folder][Manufacturer]\\[ProductName]"
             "Name" = "8:#1925"
-            "AlwaysCreate" = "11:TRUE"
+            "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Property" = "8:TARGETDIR"
@@ -24809,7 +24809,7 @@
             "{1525181F-901A-416C-8A58-119130FE478E}:_D7794A1E97C54E9F83C94CD39348B738"
             {
             "Name" = "8:#1916"
-            "AlwaysCreate" = "11:TRUE"
+            "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Property" = "8:DesktopFolder"
@@ -24820,7 +24820,7 @@
             "{1525181F-901A-416C-8A58-119130FE478E}:_F00051729AAE4B21A37853A6A9EBD3AD"
             {
             "Name" = "8:#1919"
-            "AlwaysCreate" = "11:TRUE"
+            "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Property" = "8:ProgramMenuFolder"
@@ -24829,7 +24829,7 @@
                     "{9EF0B969-E518-4E46-987F-47570745A589}:_22CEB20FE1ED498EB53F09975520B8AD"
                     {
                     "Name" = "8:BlockPlayer"
-                    "AlwaysCreate" = "11:TRUE"
+                    "AlwaysCreate" = "11:FALSE"
                     "Condition" = "8:"
                     "Transitive" = "11:FALSE"
                     "Property" = "8:_37A48C338CEB4EA8B4BA739CB8CFCA6F"
@@ -24856,7 +24856,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Block Player"
         "ProductCode" = "8:{E5FA4D5F-8FED-463F-BB1A-F19D30BC6A10}"
-        "PackageCode" = "8:{D75F7554-9EA3-4104-A732-B27CCE3092F1}"
+        "PackageCode" = "8:{3EEA8A3D-7C91-4970-8D13-908D99D4CA8A}"
         "UpgradeCode" = "8:{85CDD982-17E0-438A-8929-DD07EB8B3AD1}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -24976,32 +24976,32 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_C0CAA1B1736B4526BCB3D6CC456354AE"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_107B2FD8594F4B929E2621785B8BED2C"
             {
             "Name" = "8:Block Player"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_A4649055C6624799A3AB647DE1BD6AE3"
-            "Folder" = "8:_D7794A1E97C54E9F83C94CD39348B738"
-            "WorkingFolder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
-            "Icon" = "8:_B279E8B1641B48D491F41A1802DD9756"
-            "Feature" = "8:"
-            }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_D2B37E2A0BCC49BAA3EEED209E0451CD"
-            {
-            "Name" = "8:Block Player"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
+            "IconIndex" = "3:32512"
             "Transitive" = "11:FALSE"
             "Target" = "8:_A4649055C6624799A3AB647DE1BD6AE3"
             "Folder" = "8:_22CEB20FE1ED498EB53F09975520B8AD"
             "WorkingFolder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
-            "Icon" = "8:_B279E8B1641B48D491F41A1802DD9756"
+            "Icon" = "8:_A4649055C6624799A3AB647DE1BD6AE3"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_63854222001F49E2A9AC1948B616D9EA"
+            {
+            "Name" = "8:Block Player"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:32512"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_A4649055C6624799A3AB647DE1BD6AE3"
+            "Folder" = "8:_D7794A1E97C54E9F83C94CD39348B738"
+            "WorkingFolder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
+            "Icon" = "8:_A4649055C6624799A3AB647DE1BD6AE3"
             "Feature" = "8:"
             }
         }

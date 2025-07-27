@@ -7,6 +7,8 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <AppDesignerFolder>Propriedades</AppDesignerFolder>
+    <ApplicationIcon>Arquivos\Icon.ico</ApplicationIcon>
+    <PackageIcon>Icon.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -49,6 +51,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Arquivos\Icon.ico" />
     <Content Include="Arquivos\PlayIcon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -82,6 +85,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Arquivos\Icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Update="Propriedades\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -32,7 +32,7 @@ namespace BlockPlayer
         private FormBorderStyle _bordaAnterior;
         private bool _topMostAnterior;
 
-        private int VolumeAtual = 50; // valor entre 0 e 100
+        private int VolumeAtual = 50;
         private const int VolumeMaximo = 100;
         private bool _arrastandoBarra = false;
         private bool _arrastandoBarraVolume = false;
