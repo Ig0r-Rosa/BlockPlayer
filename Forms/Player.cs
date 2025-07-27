@@ -34,7 +34,9 @@ namespace BlockPlayer
                 AtualizarVisibilidadeVideo(true);
             }
 
-            pastaMiniaturas = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Thumbs");
+            pastaMiniaturas = Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+            "BlockPlayer", "Thumbs");
             if (!Directory.Exists(pastaMiniaturas))
             {
                 Directory.CreateDirectory(pastaMiniaturas);

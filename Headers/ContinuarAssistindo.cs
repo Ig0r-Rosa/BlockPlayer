@@ -29,7 +29,9 @@ namespace BlockPlayer
                 Propriedades.Settings.Default.VideoThumbs = new System.Collections.Specialized.StringCollection();
             }
 
-            pastaMiniaturas = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Thumbs");
+            pastaMiniaturas = Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+            "BlockPlayer", "Thumbs");
             if (!Directory.Exists(pastaMiniaturas))
             {
                 Directory.CreateDirectory(pastaMiniaturas);
@@ -211,6 +213,8 @@ namespace BlockPlayer
                     MessageBox.Show("Falha ao capturar miniatura.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
+                Task.Delay(50);
+
                 return caminhoImagem;
             }
             catch (Exception ex)
@@ -255,7 +259,7 @@ namespace BlockPlayer
                 if (estavaPausado)
                 {
                     _mediaPlayer.Play();
-                    Thread.Sleep(10);
+                    Thread.Sleep(50);
                 }
 
                 bool snapshotSucesso = _mediaPlayer.TakeSnapshot(0, caminhoMiniatura, 320, 180);
