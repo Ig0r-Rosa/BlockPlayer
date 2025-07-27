@@ -381,9 +381,9 @@ namespace BlockPlayer
             AutoSize = true;
             BackColor = Color.Black;
             ClientSize = new Size(1055, 544);
-            Controls.Add(PainelSemVideo);
             Controls.Add(Painel);
             Controls.Add(Video);
+            Controls.Add(PainelSemVideo);
             ForeColor = SystemColors.Control;
             Icon = (Icon)resources.GetObject("$this.Icon");
             KeyPreview = true;

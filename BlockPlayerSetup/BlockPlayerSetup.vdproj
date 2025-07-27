@@ -465,12 +465,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_127206AD2D6E47F6A1DFB5D550ACF35C"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_12793A5767E2413086C971B6474FE412"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -922,12 +916,6 @@
         "Entry"
         {
         "MsmKey" = "8:_252E825385D34E5EB3D9B5391B69B169"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_253B90568D62438C94863AB189586049"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1462,12 +1450,6 @@
         "Entry"
         {
         "MsmKey" = "8:_3EFBEDC0B4FB43798B4C6C60F4421DB1"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_3F4618253CD04EF0B1AABDA114B10AC4"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -3897,12 +3879,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_B279E8B1641B48D491F41A1802DD9756"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_B289B2A686D64CDAB1269FD2963D9D75"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -4510,6 +4486,12 @@
         "Entry"
         {
         "MsmKey" = "8:_D4B0F3D906904BFC9C16945676007B03"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D50B096964044ABC8D2B5929E240AE87"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -7191,26 +7173,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_127206AD2D6E47F6A1DFB5D550ACF35C"
-            {
-            "SourcePath" = "8:..\\Arquivos\\Icon16x16.ico"
-            "TargetName" = "8:Icon16x16.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_1B232B3599BE49EA8563D34B48239859"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_12793A5767E2413086C971B6474FE412"
             {
             "SourcePath" = "8:..\\bin\\Release\\net8.0-windows\\libvlc\\win-x86\\plugins\\video_filter\\libcanvas_plugin.dll"
@@ -8743,26 +8705,6 @@
             "TargetName" = "8:libconsole_logger_plugin.dll"
             "Tag" = "8:"
             "Folder" = "8:_C902FC5D745F496D9C229169963AE4FA"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_253B90568D62438C94863AB189586049"
-            {
-            "SourcePath" = "8:..\\Arquivos\\favicon.ico"
-            "TargetName" = "8:favicon.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_1B232B3599BE49EA8563D34B48239859"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -10579,26 +10521,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3F4618253CD04EF0B1AABDA114B10AC4"
-            {
-            "SourcePath" = "8:..\\Arquivos\\favicon_2.ico"
-            "TargetName" = "8:favicon_2.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_1B232B3599BE49EA8563D34B48239859"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3F8EBCD3AE623308032C18E17028B258"
             {
             "AssemblyRegister" = "3:1"
@@ -11660,7 +11582,7 @@
                     "_4C7CC044D1A9059C8B31D9BCE880440D"
                     {
                     "Name" = "8:System.Security.SecureString.dll"
-                    "Attributes" = "3:512"
+                    "Attributes" = "3:516"
                     }
                 }
             "SourcePath" = "8:System.Security.SecureString.dll"
@@ -11672,7 +11594,7 @@
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
+            "System" = "11:TRUE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
@@ -17849,11 +17771,11 @@
             "Tag" = "8:"
             "Folder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
             "Condition" = "8:"
-            "Transitive" = "11:FALSE"
+            "Transitive" = "11:TRUE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
+            "System" = "11:TRUE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
@@ -18739,26 +18661,6 @@
             "TargetName" = "8:libsdl_image_plugin.dll"
             "Tag" = "8:"
             "Folder" = "8:_E7164799B02F43E3A6D2A449689B3EB2"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B279E8B1641B48D491F41A1802DD9756"
-            {
-            "SourcePath" = "8:..\\Arquivos\\Icon.ico"
-            "TargetName" = "8:Icon.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_1B232B3599BE49EA8563D34B48239859"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -20801,6 +20703,26 @@
             "TargetName" = "8:ui-bg_diagonals-thick_18_b81900_40x40.png"
             "Tag" = "8:"
             "Folder" = "8:_1DBDDD194F7E418F9A770C0F7A4F5EC5"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D50B096964044ABC8D2B5929E240AE87"
+            {
+            "SourcePath" = "8:..\\Arquivos\\favicon.ico"
+            "TargetName" = "8:favicon.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_1B232B3599BE49EA8563D34B48239859"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -23804,12 +23726,35 @@
         }
         "FileType"
         {
+            "{5EB83D71-FA18-4901-BE56-DE22E13CC478}:_AF0431158FCB4A499878CAE5DF6A8856"
+            {
+            "Name" = "8:mp4"
+            "Description" = "8:"
+            "Extensions" = "8:.mp4"
+            "MIME" = "8:"
+            "Icon" = "8:_D50B096964044ABC8D2B5929E240AE87"
+            "IconIndex" = "3:0"
+                "Command"
+                {
+                "Command" = "8:_A4649055C6624799A3AB647DE1BD6AE3"
+                }
+                "Verbs"
+                {
+                    "{95C0C507-CBF0-42B8-B119-07219E384A4A}:_FB93425E77574A3189261720E0CC5697"
+                    {
+                    "Command" = "8:&Open"
+                    "Verb" = "8:open"
+                    "Arguments" = "8:\"%1\""
+                    "Order" = "3:0"
+                    }
+                }
+            }
         }
         "Folder"
         {
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_37EC4C04CDA24FC0B44987394C8C19AF"
             {
-            "DefaultLocation" = "8:[ProgramFiles64Folder][Manufacturer]\\[ProductName]"
+            "DefaultLocation" = "8:[ProgramFiles64Folder][Manufacturer]\\BlockPlayer"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -24947,7 +24892,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Block Player"
         "ProductCode" = "8:{E5FA4D5F-8FED-463F-BB1A-F19D30BC6A10}"
-        "PackageCode" = "8:{308D52B3-94E3-4BAC-8C8A-35E0C00B2D0C}"
+        "PackageCode" = "8:{4F4CBC53-C64C-4DA7-980C-6D0A144E3E97}"
         "UpgradeCode" = "8:{85CDD982-17E0-438A-8929-DD07EB8B3AD1}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -25069,7 +25014,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_3F60266015944E839170CD2A9740C558"
             {
-            "Name" = "8:BlockPlayer"
+            "Name" = "8:Block Player"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -25078,12 +25023,12 @@
             "Target" = "8:_A4649055C6624799A3AB647DE1BD6AE3"
             "Folder" = "8:_F00051729AAE4B21A37853A6A9EBD3AD"
             "WorkingFolder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
-            "Icon" = "8:_127206AD2D6E47F6A1DFB5D550ACF35C"
+            "Icon" = "8:_D50B096964044ABC8D2B5929E240AE87"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_9D779962787C4122A8D3F85E698AE5F0"
             {
-            "Name" = "8:BlockPlayer"
+            "Name" = "8:Block Player"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -25092,21 +25037,7 @@
             "Target" = "8:_A4649055C6624799A3AB647DE1BD6AE3"
             "Folder" = "8:_8EEBB598DB6E471EA43C30A2BC045476"
             "WorkingFolder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
-            "Icon" = "8:_3F4618253CD04EF0B1AABDA114B10AC4"
-            "Feature" = "8:"
-            }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_9D96EF6B590B47638ADAAD87D3E8B9BA"
-            {
-            "Name" = "8:Shortcut to %sBlockPlayer.exe"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:32512"
-            "Transitive" = "11:TRUE"
-            "Target" = "8:_A4649055C6624799A3AB647DE1BD6AE3"
-            "Folder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
-            "WorkingFolder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
-            "Icon" = "8:_A4649055C6624799A3AB647DE1BD6AE3"
+            "Icon" = "8:_D50B096964044ABC8D2B5929E240AE87"
             "Feature" = "8:"
             }
         }

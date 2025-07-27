@@ -16,16 +16,35 @@ namespace BlockPlayer
             // Ao acabar o vídeo, pausa no último frame
             _mediaPlayer.EndReached += (sender, args) =>
             {
-                this.Invoke(() =>
+                this.BeginInvoke(() =>
                 {
-                    TimerVideo.Stop();
-                    _mediaPlayer.SetPause(true); // pausa no último frame
-                    AtualizarTempoVideo();
-
-                    ExibirInterface(true); // Exibe a interface
-
-                    // Marca o vídeo como finalizado
-                    _videoFinalizado = true;
+                    if (_miniplayer.Visible)
+                    {
+                        _mediaPlayer.SetPause(true);
+                        // Evita conflito com threads do VLC
+                        Task.Delay(1).ContinueWith(_ =>
+                        {
+                            this.BeginInvoke(() =>
+                            {
+                                AlternarMiniplayer();
+                                Thread.Sleep(10);
+                                TimerVideo.Stop();
+                                _mediaPlayer.SetPause(true);
+                                ExibirInterface(true);
+                                TempoAtualFinal.Text = "Vídeo finalizado!";
+                                _videoFinalizado = true;
+                            });
+                        });
+                    }
+                    else
+                    {
+                        TimerVideo.Stop();
+                        _mediaPlayer.SetPause(true);
+                        AtualizarTempoVideo();
+                        ExibirInterface(true);
+                        TempoAtualFinal.Text = "Vídeo finalizado!";
+                        _videoFinalizado = true;
+                    }
                 });
             };
         }
