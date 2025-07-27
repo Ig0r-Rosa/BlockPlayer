@@ -369,7 +369,7 @@ namespace BlockPlayer
             using (var fundo = new SolidBrush(Color.FromArgb(40, 40, 40)))
                 g.FillRectangle(fundo, 0, 0, barraLargura, barraAltura);
 
-            // Barra de progresso (DeepSkyBlue)
+            // Barra de progresso
             int larguraProgresso = (int)(barraLargura * progresso);
             using (var progressoBrush = new SolidBrush(Color.DeepSkyBlue))
                 g.FillRectangle(progressoBrush, 0, 0, larguraProgresso, barraAltura);

@@ -26,7 +26,9 @@ namespace BlockPlayer
 
         private Panel painelSelecionado = null;
 
-        string pastaMiniaturas = "./";
+        string pastaMiniaturas = Path.Combine(
+        Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+        "BlockPlayer", "Thumbs");
 
         private Rectangle _boundsAntesFullscreen;
         private FormBorderStyle _bordaAnterior;
