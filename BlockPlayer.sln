@@ -5,7 +5,7 @@ VisualStudioVersion = 17.14.36221.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlockPlayer", "BlockPlayer.csproj", "{658E8D58-33F7-42A3-A674-54431A252AAC}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "BlockPlayerSetup", "..\BlockPlayerSetup\BlockPlayerSetup.vdproj", "{DB66572B-A3A5-E082-DB1E-39681B1A9B01}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "BlockPlayerSetup", "BlockPlayerSetup\BlockPlayerSetup.vdproj", "{790E00A6-A065-8C80-151D-6A47C76F0EEE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,14 @@ Global
 		{658E8D58-33F7-42A3-A674-54431A252AAC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{658E8D58-33F7-42A3-A674-54431A252AAC}.Release|x64.ActiveCfg = Release|Any CPU
 		{658E8D58-33F7-42A3-A674-54431A252AAC}.Release|x64.Build.0 = Release|Any CPU
-		{DB66572B-A3A5-E082-DB1E-39681B1A9B01}.Debug|Any CPU.ActiveCfg = Debug
-		{DB66572B-A3A5-E082-DB1E-39681B1A9B01}.Debug|x64.ActiveCfg = Debug
-		{DB66572B-A3A5-E082-DB1E-39681B1A9B01}.Release|Any CPU.ActiveCfg = Release
-		{DB66572B-A3A5-E082-DB1E-39681B1A9B01}.Release|x64.ActiveCfg = Release
+		{790E00A6-A065-8C80-151D-6A47C76F0EEE}.Debug|Any CPU.ActiveCfg = Debug
+		{790E00A6-A065-8C80-151D-6A47C76F0EEE}.Debug|Any CPU.Build.0 = Debug
+		{790E00A6-A065-8C80-151D-6A47C76F0EEE}.Debug|x64.ActiveCfg = Debug
+		{790E00A6-A065-8C80-151D-6A47C76F0EEE}.Debug|x64.Build.0 = Debug
+		{790E00A6-A065-8C80-151D-6A47C76F0EEE}.Release|Any CPU.ActiveCfg = Release
+		{790E00A6-A065-8C80-151D-6A47C76F0EEE}.Release|Any CPU.Build.0 = Release
+		{790E00A6-A065-8C80-151D-6A47C76F0EEE}.Release|x64.ActiveCfg = Release
+		{790E00A6-A065-8C80-151D-6A47C76F0EEE}.Release|x64.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
