@@ -10,9 +10,32 @@ namespace BlockPlayer
             switch (keyData)
             {
                 case Keys.Delete:
+                    if (_videoFinalizado)
+                    {
+                        // Seleciona o painel do video atual
+                        // Procura o painel do vídeo atual na lista "ContinuarAssistindo"
+                        foreach (Control ctrl in ContinuarAssistindo.Controls)
+                        {
+                            if (ctrl is Panel painel && painel.Tag is VideoInfo info && info.Caminho == _mediaPlayer?.Media?.Mrl)
+                            {
+                                painelSelecionado = painel;
+                                break;
+                            }
+                        }
+
+                        ApagarContinuarAssistindoSelecionado();
+                        _videoFinalizado = false;
+                        _mediaPlayer.Stop();
+                        _mediaPlayer.Media = null;
+                        AtualizarVisibilidadeVideo(false);
+                        return true;
+                    }
+
+                    // Caso contrário, apenas oculta os elementos
                     NomeVideoContinuarAssistindo.Visible = false;
                     ProgressoVideoContinuarAssistindo.Visible = false;
                     TempoVideoContinuarAssistindo.Visible = false;
+
                     SalvarContinuarAssistindo();
                     _mediaPlayer.Stop();
                     _mediaPlayer.Media = null;

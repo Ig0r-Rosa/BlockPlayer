@@ -150,8 +150,27 @@ namespace BlockPlayer
 
         private void Player_FormClosed(object sender, FormClosedEventArgs e)
         {
+            if (_videoFinalizado)
+            {
+                // Seleciona o painel do video atual
+                // Procura o painel do vídeo atual na lista "ContinuarAssistindo"
+                foreach (Control ctrl in ContinuarAssistindo.Controls)
+                {
+                    if (ctrl is Panel painel && painel.Tag is VideoInfo info && info.Caminho == _mediaPlayer?.Media?.Mrl)
+                    {
+                        painelSelecionado = painel;
+                        break;
+                    }
+                }
+
+                ApagarContinuarAssistindoSelecionado();
+            }
+            else
+            {
+                SalvarContinuarAssistindo();
+            }
+
             HotKeysUnregister();
-            SalvarContinuarAssistindo();
             _mediaPlayer.Stop();
             _mediaPlayer.Dispose();
             _libVLC.Dispose();
