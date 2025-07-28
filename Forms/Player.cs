@@ -78,11 +78,31 @@ namespace BlockPlayer
                 SalvarContinuarAssistindo();
             }
 
-            var media = new Media(_libVLC, caminho, FromType.FromPath);
-            _mediaPlayer.Play(media);
+            painelSelecionado = null;
 
-            AtualizarVisibilidadeVideo(true);
-            _videoFinalizado = false;
+            foreach (Control ctrl in ContinuarAssistindo.Controls)
+            {
+                if (ctrl is Panel painel && painel.Tag is VideoInfo info && info.Caminho == caminho)
+                {
+                    painelSelecionado = painel;
+                    break;
+                }
+            }
+
+            if (painelSelecionado != null)
+            {
+                PlayContinuarAssistindo();
+                AtualizarVisibilidadeVideo(true);
+                _videoFinalizado = false;
+
+            }
+            else
+            {
+                var media = new Media(_libVLC, caminho, FromType.FromPath);
+                _mediaPlayer.Play(media);
+                AtualizarVisibilidadeVideo(true);
+                _videoFinalizado = false;
+            }
 
             this.TopMost = true;
 
