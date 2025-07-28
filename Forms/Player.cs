@@ -58,12 +58,37 @@ namespace BlockPlayer
                 return;
             }
 
+            if (_videoFinalizado)
+            {
+                // Seleciona o painel do video atual
+                // Procura o painel do vídeo atual na lista "ContinuarAssistindo"
+                foreach (Control ctrl in ContinuarAssistindo.Controls)
+                {
+                    if (ctrl is Panel painel && painel.Tag is VideoInfo info && info.Caminho == _mediaPlayer?.Media?.Mrl)
+                    {
+                        painelSelecionado = painel;
+                        break;
+                    }
+                }
+
+                ApagarContinuarAssistindoSelecionado();
+            }
+            else
+            {
+                SalvarContinuarAssistindo();
+            }
+
             var media = new Media(_libVLC, caminho, FromType.FromPath);
             _mediaPlayer.Play(media);
 
             AtualizarVisibilidadeVideo(true);
             _videoFinalizado = false;
-            // Caso queira resetar tempo, interface, etc, faça aqui
+
+            this.TopMost = true;
+
+            Thread.Sleep(20);
+
+            this.TopMost = false;
         }
 
         private void Painel_Click(object sender, EventArgs e)
