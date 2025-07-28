@@ -50,6 +50,22 @@ namespace BlockPlayer
             this.TopMost = false;
         }
 
+        public void AbrirVideo(string caminho)
+        {
+            if (string.IsNullOrWhiteSpace(caminho) || !File.Exists(caminho))
+            {
+                MessageBox.Show("Arquivo inválido ou não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var media = new Media(_libVLC, caminho, FromType.FromPath);
+            _mediaPlayer.Play(media);
+
+            AtualizarVisibilidadeVideo(true);
+            _videoFinalizado = false;
+            // Caso queira resetar tempo, interface, etc, faça aqui
+        }
+
         private void Painel_Click(object sender, EventArgs e)
         {
             Pause();
