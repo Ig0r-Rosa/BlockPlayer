@@ -25,6 +25,8 @@
   <img src="Arquivos/ExemploMiniplayer.png" alt="Exemplo Miniplayer" width="75%">
 </p>
 
+> Caso utilize o Lossless Scaling, para funcionar corretamente, verifique com a API de captura **WGC**.
+
 * ⏸️ **Continuar assistindo**
 
   * Retoma seu episódio exatamente de onde parou
