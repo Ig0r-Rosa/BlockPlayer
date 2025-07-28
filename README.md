@@ -21,10 +21,14 @@
   * **Não captura cliques**, permitindo interagir com o jogo normalmente
   * Possui **tamanho e opacidade ajustáveis**
 
+![Exemplo miniplayer](Arquivos/ExemploMiniplayer.png)
+
 * ⏸️ **Continuar assistindo**
 
   * Retoma seu episódio exatamente de onde parou
   * Histórico rápido e acessível
+  
+![Exemplo continuar assistindo](Arquivos/ExemploContinuarAssistindo.png)
 
 * 🖱️ **Arraste seu vídeo**
 
