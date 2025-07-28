@@ -45,12 +45,12 @@
 | `←`      | Voltar 5 segundos                                    |
 | `↑`      | Aumentar volume                                      |
 | `↓`      | Diminuir volume                                      |
-| `Delete` | Remover vídeo atual da lista de continuar assistindo |
+| `Delete` | Volta do vídeo assistido para a tela inicial         |
 | `Enter`  | Maximizar / Restaurar                                |
 | `F11`    | Alternar tela cheia                                  |
-| `M`      | Atalho global para abrir o miniplayer                |
-| `,`      | Retroceder 10 segundos (no miniplayer)               |
-| `.`      | Avançar 10 segundos (no miniplayer)                  |
+| `ctrl`+`shift`+`M`      | Atalho global para abrir o miniplayer                |
+| `ctrl`+`shift`+`,`      | Retroceder 10 segundos (no miniplayer)               |
+| `ctrl`+`shift`+`.`      | Avançar 10 segundos (no miniplayer)                  |
 
 ---
 
