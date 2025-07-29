@@ -23,20 +23,19 @@ namespace BlockPlayer
                             }
                         }
 
-                        ApagarContinuarAssistindoSelecionado();
-                        _videoFinalizado = false;
-                        _mediaPlayer.Stop();
-                        _mediaPlayer.Media = null;
-                        AtualizarVisibilidadeVideo(false);
-                        return true;
+                        if(painelSelecionado != null)
+                        {
+                            ApagarContinuarAssistindoSelecionado();
+                        }
                     }
-
-                    // Caso contrário, apenas oculta os elementos
+                    else
+                    {
+                        SalvarContinuarAssistindo();
+                    }
                     NomeVideoContinuarAssistindo.Visible = false;
                     ProgressoVideoContinuarAssistindo.Visible = false;
                     TempoVideoContinuarAssistindo.Visible = false;
-
-                    SalvarContinuarAssistindo();
+                    _videoFinalizado = false;
                     _mediaPlayer.Stop();
                     _mediaPlayer.Media = null;
                     AtualizarVisibilidadeVideo(false);
