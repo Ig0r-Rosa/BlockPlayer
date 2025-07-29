@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using LibVLCSharp.Shared;
+using System.Runtime.InteropServices;
 using System.Threading;
 
 namespace BlockPlayer
@@ -100,6 +101,14 @@ namespace BlockPlayer
 
             if (_mediaPlayer.IsPlaying)
             {
+
+                int tentativas = 0;
+                while (_mediaPlayer.Time == 0 && tentativas < 15)
+                {
+                    Thread.Sleep(20);
+                    tentativas++;
+                }
+
                 TimerVideo.Stop();
                 ExibirInterface(true);
                 AtualizarTempoVideo();
