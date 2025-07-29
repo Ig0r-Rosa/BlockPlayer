@@ -72,7 +72,7 @@
 [🔗 Download Block Player (Google Drive)](https://drive.google.com/drive/folders/1SUB9jDSPsZCXWqLadggrI9bIlGbfZ9EY?usp=sharing)
 
 1. Extraia o `.zip`
-2. Execute o `BlockPlayer.exe`
+2. Execute o `BlockPlayerSetup.msi`
 3. **Pronto!**
 
 ---
