@@ -75,6 +75,8 @@
 2. Execute o `BlockPlayerSetup.msi`
 3. **Pronto!**
 
+> Caso note lentidão ao abrir pela primeira vez, experimente excluir da verificação do antivírus.
+
 ---
 
 ## 🐞 Encontrou um bug? Tem sugestões?
