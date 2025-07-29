@@ -58,10 +58,10 @@ namespace BlockPlayer
                 return;
             }
 
+            painelSelecionado = null;
+
             if (_videoFinalizado)
             {
-                // Seleciona o painel do video atual
-                // Procura o painel do vídeo atual na lista "ContinuarAssistindo"
                 foreach (Control ctrl in ContinuarAssistindo.Controls)
                 {
                     if (ctrl is Panel painel && painel.Tag is VideoInfo info && info.Caminho == _mediaPlayer?.Media?.Mrl)
@@ -71,7 +71,10 @@ namespace BlockPlayer
                     }
                 }
 
-                ApagarContinuarAssistindoSelecionado();
+                if(painelSelecionado != null)
+                {
+                    ApagarContinuarAssistindoSelecionado();
+                }
             }
             else
             {
@@ -93,6 +96,7 @@ namespace BlockPlayer
             {
                 PlayContinuarAssistindo();
                 AtualizarVisibilidadeVideo(true);
+                ExibirInterface(false);
                 _videoFinalizado = false;
 
             }
@@ -101,6 +105,7 @@ namespace BlockPlayer
                 var media = new Media(_libVLC, caminho, FromType.FromPath);
                 _mediaPlayer.Play(media);
                 AtualizarVisibilidadeVideo(true);
+                ExibirInterface(false);
                 _videoFinalizado = false;
             }
 
