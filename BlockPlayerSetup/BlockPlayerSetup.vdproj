@@ -69,12 +69,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_0209D1BA7B82DD809DF12CE815D4785F"
-        "OwnerKey" = "8:_03EB35D462C1460484CAD80BF90D4075"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_020FED2052294DB9BDC9DC7B0CD6488F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -221,18 +215,6 @@
         {
         "MsmKey" = "8:_07905B3F7CE14AC19B28C011D3AC0056"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_07EB237002324DC5D01B9EFB2F6E5453"
-        "OwnerKey" = "8:_1B6567CB5ACA4B91846BDC321F0393A5"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_07EB237002324DC5D01B9EFB2F6E5453"
-        "OwnerKey" = "8:_20F612F241DE03AD98F0F8754272043D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -453,12 +435,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_1208D38E5E90A6AF5C1C1435D5633831"
-        "OwnerKey" = "8:_F76C3BF32D75C2E5EAD24BFCDF2D424F"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_124A725ADB5E4EF3860B65487E651049"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -563,12 +539,6 @@
         {
         "MsmKey" = "8:_166F454C87D74826AF045B3D9D0246A2"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_16B1140C62201D95B3E835FAE6F32692"
-        "OwnerKey" = "8:_F76C3BF32D75C2E5EAD24BFCDF2D424F"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -717,24 +687,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_1CD7FF8E24C9948799CCB60C44148823"
-        "OwnerKey" = "8:_74514DEA5BE14EE9B39FA2FE571F160F"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_1CD7FF8E24C9948799CCB60C44148823"
-        "OwnerKey" = "8:_8638FCFDF6A74B27951653B886F9C8BD"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_1CD7FF8E24C9948799CCB60C44148823"
-        "OwnerKey" = "8:_8F573BD06CC65A93324E910765738174"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_1CF3CB2263824D1889E7A41BB8AC8835"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -779,12 +731,6 @@
         {
         "MsmKey" = "8:_1E90AA149B6841EFB6EC99743E1907D2"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_1EA3CD9B8055E996EB0FDD6E454E00F5"
-        "OwnerKey" = "8:_F76C3BF32D75C2E5EAD24BFCDF2D424F"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -837,12 +783,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_20F612F241DE03AD98F0F8754272043D"
-        "OwnerKey" = "8:_AB443061F45547538AF3FEB317958D29"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_210BC3F2189D418BBCAD0D9469E1904B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -891,12 +831,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_24435F6EA60D39D32466C966E3FBB033"
-        "OwnerKey" = "8:_F76C3BF32D75C2E5EAD24BFCDF2D424F"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_24CBA0D44ABB48DA9C0C3CD368DAD92A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -923,12 +857,6 @@
         {
         "MsmKey" = "8:_25C92406248444C1857393C8D0B95661"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_2663BD1E3B374906B4A3E9E917C83142"
-        "OwnerKey" = "8:_F76C3BF32D75C2E5EAD24BFCDF2D424F"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1215,12 +1143,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_3365F4C57AD6F23AFB8801D255B5FDF9"
-        "OwnerKey" = "8:_F76C3BF32D75C2E5EAD24BFCDF2D424F"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_33EDAF80EA7343539F2C89E1810E667C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1451,18 +1373,6 @@
         {
         "MsmKey" = "8:_3EFBEDC0B4FB43798B4C6C60F4421DB1"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_3F8EBCD3AE623308032C18E17028B258"
-        "OwnerKey" = "8:_F6EA91BA2407B2CE4D27B6D984912902"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_3F8EBCD3AE623308032C18E17028B258"
-        "OwnerKey" = "8:_F76C3BF32D75C2E5EAD24BFCDF2D424F"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1773,12 +1683,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_4C7CC044D1A9059C8B31D9BCE880440D"
-        "OwnerKey" = "8:_F76C3BF32D75C2E5EAD24BFCDF2D424F"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_4CD5CF92C45145A7A4A4CA7CBC0F8AC7"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -2043,12 +1947,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_5A7E85E15A61D29BEC91CCDD21404869"
-        "OwnerKey" = "8:_F76C3BF32D75C2E5EAD24BFCDF2D424F"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_5AB80C16722A40CF804AF106BFF16708"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -2135,12 +2033,6 @@
         {
         "MsmKey" = "8:_5F316DAB86074102B864330CB7B95AF3"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_5F3C828BF4A2FF903D8328B8C2D70EAE"
-        "OwnerKey" = "8:_F76C3BF32D75C2E5EAD24BFCDF2D424F"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -2315,12 +2207,6 @@
         {
         "MsmKey" = "8:_67108A7ABFF840259B6EE94149328E2C"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_6714BA1ED93B19A2383E2988AC1D172F"
-        "OwnerKey" = "8:_F76C3BF32D75C2E5EAD24BFCDF2D424F"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -3225,12 +3111,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_8F573BD06CC65A93324E910765738174"
-        "OwnerKey" = "8:_74514DEA5BE14EE9B39FA2FE571F160F"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_8F75054B16584EA4BA88DB5C8EA1B410"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -3501,30 +3381,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_9E78F8B0E4005A53785F6FDDDE1674BF"
-        "OwnerKey" = "8:_03EB35D462C1460484CAD80BF90D4075"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_9E78F8B0E4005A53785F6FDDDE1674BF"
-        "OwnerKey" = "8:_74514DEA5BE14EE9B39FA2FE571F160F"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_9E78F8B0E4005A53785F6FDDDE1674BF"
-        "OwnerKey" = "8:_622B4179B0E64942AC7FE9FBACE5638C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_9E78F8B0E4005A53785F6FDDDE1674BF"
-        "OwnerKey" = "8:_0209D1BA7B82DD809DF12CE815D4785F"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_9E8C6620AD714AD38C392118EAD87B33"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -3569,12 +3425,6 @@
         {
         "MsmKey" = "8:_A05DF54D0C8A4F558D1CB938BAC80707"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_A095AD667A02DDD49CA1014E79E44877"
-        "OwnerKey" = "8:_F76C3BF32D75C2E5EAD24BFCDF2D424F"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -4335,18 +4185,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_CC16D3A0B247C64ED9238531DD5CF46C"
-        "OwnerKey" = "8:_1CD7FF8E24C9948799CCB60C44148823"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_CC16D3A0B247C64ED9238531DD5CF46C"
-        "OwnerKey" = "8:_8B332DD2E3DC4DD0952D2A84D8604966"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_CC47458A9B9C4B04BC9C15C65D8D21CE"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -4713,12 +4551,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_E16DC90359C8133D1E981950C59610F8"
-        "OwnerKey" = "8:_F76C3BF32D75C2E5EAD24BFCDF2D424F"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_E18385F42FA74B6FADA4B708F6294929"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -4745,12 +4577,6 @@
         {
         "MsmKey" = "8:_E2B542D55792428E98392685C446569D"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_E322CACF0FABF550E40117DB54542A40"
-        "OwnerKey" = "8:_F76C3BF32D75C2E5EAD24BFCDF2D424F"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -4983,12 +4809,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_EE633986F194EDC1FF1F9535E3DA0A3B"
-        "OwnerKey" = "8:_F76C3BF32D75C2E5EAD24BFCDF2D424F"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_EE908B6BA18E44859F66F85D867A5CE9"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -5169,56 +4989,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_F6EA91BA2407B2CE4D27B6D984912902"
-        "OwnerKey" = "8:_F76C3BF32D75C2E5EAD24BFCDF2D424F"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_F73854102D6B449AAFF4E0BAF7148B81"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F76C3BF32D75C2E5EAD24BFCDF2D424F"
-        "OwnerKey" = "8:_8B332DD2E3DC4DD0952D2A84D8604966"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F76C3BF32D75C2E5EAD24BFCDF2D424F"
-        "OwnerKey" = "8:_8F573BD06CC65A93324E910765738174"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F76C3BF32D75C2E5EAD24BFCDF2D424F"
-        "OwnerKey" = "8:_1CD7FF8E24C9948799CCB60C44148823"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F76C3BF32D75C2E5EAD24BFCDF2D424F"
-        "OwnerKey" = "8:_CC16D3A0B247C64ED9238531DD5CF46C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F76C3BF32D75C2E5EAD24BFCDF2D424F"
-        "OwnerKey" = "8:_74514DEA5BE14EE9B39FA2FE571F160F"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F76C3BF32D75C2E5EAD24BFCDF2D424F"
-        "OwnerKey" = "8:_8638FCFDF6A74B27951653B886F9C8BD"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F76C3BF32D75C2E5EAD24BFCDF2D424F"
-        "OwnerKey" = "8:_DC36C342BB1C49B3AA18002634A2240F"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -5407,162 +5179,6 @@
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_622B4179B0E64942AC7FE9FBACE5638C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_F76C3BF32D75C2E5EAD24BFCDF2D424F"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_F6EA91BA2407B2CE4D27B6D984912902"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_EE633986F194EDC1FF1F9535E3DA0A3B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_E322CACF0FABF550E40117DB54542A40"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_E16DC90359C8133D1E981950C59610F8"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_AB443061F45547538AF3FEB317958D29"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_20F612F241DE03AD98F0F8754272043D"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_A095AD667A02DDD49CA1014E79E44877"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_8B332DD2E3DC4DD0952D2A84D8604966"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1CD7FF8E24C9948799CCB60C44148823"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_68EE5FF1F7A445EFBEEFB22B74607192"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_6714BA1ED93B19A2383E2988AC1D172F"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_5F3C828BF4A2FF903D8328B8C2D70EAE"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_5A7E85E15A61D29BEC91CCDD21404869"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_4C7CC044D1A9059C8B31D9BCE880440D"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_3F8EBCD3AE623308032C18E17028B258"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_3365F4C57AD6F23AFB8801D255B5FDF9"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2663BD1E3B374906B4A3E9E917C83142"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_24435F6EA60D39D32466C966E3FBB033"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1EA3CD9B8055E996EB0FDD6E454E00F5"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1B6567CB5ACA4B91846BDC321F0393A5"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_16B1140C62201D95B3E835FAE6F32692"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1208D38E5E90A6AF5C1C1435D5633831"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_03EB35D462C1460484CAD80BF90D4075"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_0209D1BA7B82DD809DF12CE815D4785F"
-        "MsmSig" = "8:_UNDEFINED"
-        }
     }
     "Configurations"
     {
@@ -5588,6 +5204,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -5840,37 +5464,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0209D1BA7B82DD809DF12CE815D4785F"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:LibVLCSharp.WinForms, Version=3.9.3.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_0209D1BA7B82DD809DF12CE815D4785F"
-                    {
-                    "Name" = "8:LibVLCSharp.WinForms.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:LibVLCSharp.WinForms.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_020FED2052294DB9BDC9DC7B0CD6488F"
             {
             "SourcePath" = "8:..\\bin\\Release\\net8.0-windows\\libvlc\\win-x86\\plugins\\demux\\libh26x_plugin.dll"
@@ -6098,11 +5691,6 @@
             "AssemblyAsmDisplayName" = "8:BlockPlayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_03EB35D462C1460484CAD80BF90D4075"
-                    {
-                    "Name" = "8:BlockPlayer.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\bin\\Release\\net8.0-windows\\BlockPlayer.dll"
             "TargetName" = "8:"
@@ -6380,26 +5968,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_07EB237002324DC5D01B9EFB2F6E5453"
-            {
-            "SourcePath" = "8:wmp.dll"
-            "TargetName" = "8:wmp.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_084D69321B0B4E6AB915DBC7A067F4CD"
@@ -7122,37 +6690,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1208D38E5E90A6AF5C1C1435D5633831"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:System.Threading.Overlapped, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_1208D38E5E90A6AF5C1C1435D5633831"
-                    {
-                    "Name" = "8:System.Threading.Overlapped.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Threading.Overlapped.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_124A725ADB5E4EF3860B65487E651049"
             {
             "SourcePath" = "8:..\\bin\\Release\\net8.0-windows\\libvlc\\win-x86\\plugins\\codec\\libcdg_plugin.dll"
@@ -7513,37 +7050,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_16B1140C62201D95B3E835FAE6F32692"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:System.Xml.XPath.XDocument, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_16B1140C62201D95B3E835FAE6F32692"
-                    {
-                    "Name" = "8:System.Xml.XPath.XDocument.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Xml.XPath.XDocument.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_16C080A7013B4902B92EA575B0FD6FAB"
             {
             "SourcePath" = "8:..\\bin\\Release\\net8.0-windows\\libvlc\\win-x86\\plugins\\demux\\libogg_plugin.dll"
@@ -7891,11 +7397,6 @@
             "AssemblyAsmDisplayName" = "8:Interop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_1B6567CB5ACA4B91846BDC321F0393A5"
-                    {
-                    "Name" = "8:Interop.WMPLib.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\bin\\Release\\net8.0-windows\\Interop.WMPLib.dll"
             "TargetName" = "8:"
@@ -8033,37 +7534,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1CD7FF8E24C9948799CCB60C44148823"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_1CD7FF8E24C9948799CCB60C44148823"
-                    {
-                    "Name" = "8:Xamarin.Forms.Core.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Xamarin.Forms.Core.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1CF3CB2263824D1889E7A41BB8AC8835"
@@ -8226,37 +7696,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1EA3CD9B8055E996EB0FDD6E454E00F5"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:System.ValueTuple, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_1EA3CD9B8055E996EB0FDD6E454E00F5"
-                    {
-                    "Name" = "8:System.ValueTuple.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.ValueTuple.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1EDB866153F34EEAA40741B9168E0512"
             {
             "SourcePath" = "8:..\\bin\\Release\\net8.0-windows\\libvlc\\win-x64\\plugins\\access\\libdtv_plugin.dll"
@@ -8415,37 +7854,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_20F612F241DE03AD98F0F8754272043D"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Interop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_20F612F241DE03AD98F0F8754272043D"
-                    {
-                    "Name" = "8:Interop.WMPLib.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Interop.WMPLib.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_210BC3F2189D418BBCAD0D9469E1904B"
@@ -8608,37 +8016,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_24435F6EA60D39D32466C966E3FBB033"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:System.Net.Sockets, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_24435F6EA60D39D32466C966E3FBB033"
-                    {
-                    "Name" = "8:System.Net.Sockets.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Net.Sockets.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_24CBA0D44ABB48DA9C0C3CD368DAD92A"
             {
             "SourcePath" = "8:..\\bin\\Release\\net8.0-windows\\libvlc\\win-x86\\plugins\\video_filter\\libextract_plugin.dll"
@@ -8737,37 +8114,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2663BD1E3B374906B4A3E9E917C83142"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_2663BD1E3B374906B4A3E9E917C83142"
-                    {
-                    "Name" = "8:System.Runtime.InteropServices.RuntimeInformation.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Runtime.InteropServices.RuntimeInformation.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_26AF664714964751BC0FD91DC130309E"
@@ -9710,37 +9056,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3365F4C57AD6F23AFB8801D255B5FDF9"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:System.Globalization.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_3365F4C57AD6F23AFB8801D255B5FDF9"
-                    {
-                    "Name" = "8:System.Globalization.Extensions.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Globalization.Extensions.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_33EDAF80EA7343539F2C89E1810E667C"
             {
             "SourcePath" = "8:..\\bin\\Release\\net8.0-windows\\libvlc\\win-x86\\plugins\\codec\\libmft_plugin.dll"
@@ -10519,37 +9834,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3F8EBCD3AE623308032C18E17028B258"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:System.IO.Compression, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_3F8EBCD3AE623308032C18E17028B258"
-                    {
-                    "Name" = "8:System.IO.Compression.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.IO.Compression.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3FB0E842AA624AA485043A4CB8694B9A"
@@ -11572,37 +10856,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4C7CC044D1A9059C8B31D9BCE880440D"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:System.Security.SecureString, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_4C7CC044D1A9059C8B31D9BCE880440D"
-                    {
-                    "Name" = "8:System.Security.SecureString.dll"
-                    "Attributes" = "3:516"
-                    }
-                }
-            "SourcePath" = "8:System.Security.SecureString.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:TRUE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4CD5CF92C45145A7A4A4CA7CBC0F8AC7"
             {
             "SourcePath" = "8:..\\bin\\Release\\net8.0-windows\\libvlc\\win-x86\\plugins\\access\\libvdr_plugin.dll"
@@ -12483,37 +11736,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5A7E85E15A61D29BEC91CCDD21404869"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:System.Security.Cryptography.Algorithms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_5A7E85E15A61D29BEC91CCDD21404869"
-                    {
-                    "Name" = "8:System.Security.Cryptography.Algorithms.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Security.Cryptography.Algorithms.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5AB80C16722A40CF804AF106BFF16708"
             {
             "SourcePath" = "8:..\\bin\\Release\\net8.0-windows\\libvlc\\win-x64\\plugins\\demux\\libmod_plugin.dll"
@@ -12814,37 +12036,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5F3C828BF4A2FF903D8328B8C2D70EAE"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:System.Runtime.Serialization.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_5F3C828BF4A2FF903D8328B8C2D70EAE"
-                    {
-                    "Name" = "8:System.Runtime.Serialization.Xml.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Runtime.Serialization.Xml.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5F965E6811404B07A9E0AB5E57C45172"
             {
             "SourcePath" = "8:..\\bin\\Release\\net8.0-windows\\libvlc\\win-x64\\plugins\\audio_output\\libafile_plugin.dll"
@@ -12992,11 +12183,6 @@
             "AssemblyAsmDisplayName" = "8:LibVLCSharp.WinForms, Version=3.9.3.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_622B4179B0E64942AC7FE9FBACE5638C"
-                    {
-                    "Name" = "8:LibVLCSharp.WinForms.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\bin\\Release\\net8.0-windows\\LibVLCSharp.WinForms.dll"
             "TargetName" = "8:"
@@ -13436,37 +12622,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_6714BA1ED93B19A2383E2988AC1D172F"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:System.Runtime.Serialization.Primitives, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_6714BA1ED93B19A2383E2988AC1D172F"
-                    {
-                    "Name" = "8:System.Runtime.Serialization.Primitives.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Runtime.Serialization.Primitives.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6725AAA35B614F59B2C0573359C52465"
             {
             "SourcePath" = "8:..\\bin\\Release\\net8.0-windows\\libvlc\\win-x86\\plugins\\video_filter\\libvhs_plugin.dll"
@@ -13614,11 +12769,6 @@
             "AssemblyAsmDisplayName" = "8:LibVLCSharp.Forms.resources, Version=3.9.3.0, Culture=fr, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_68EE5FF1F7A445EFBEEFB22B74607192"
-                    {
-                    "Name" = "8:LibVLCSharp.Forms.resources.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\bin\\Release\\net8.0-windows\\fr\\LibVLCSharp.Forms.resources.dll"
             "TargetName" = "8:"
@@ -14505,11 +13655,6 @@
             "AssemblyAsmDisplayName" = "8:LibVLCSharp.Forms, Version=3.9.3.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_74514DEA5BE14EE9B39FA2FE571F160F"
-                    {
-                    "Name" = "8:LibVLCSharp.Forms.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\bin\\Release\\net8.0-windows\\LibVLCSharp.Forms.dll"
             "TargetName" = "8:"
@@ -15896,11 +15041,6 @@
             "AssemblyAsmDisplayName" = "8:Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_8638FCFDF6A74B27951653B886F9C8BD"
-                    {
-                    "Name" = "8:Xamarin.Forms.Xaml.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\bin\\Release\\net8.0-windows\\Xamarin.Forms.Xaml.dll"
             "TargetName" = "8:"
@@ -16347,11 +15487,6 @@
             "AssemblyAsmDisplayName" = "8:Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_8B332DD2E3DC4DD0952D2A84D8604966"
-                    {
-                    "Name" = "8:Xamarin.Forms.Core.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\bin\\Release\\net8.0-windows\\Xamarin.Forms.Core.dll"
             "TargetName" = "8:"
@@ -16509,37 +15644,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8F573BD06CC65A93324E910765738174"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_8F573BD06CC65A93324E910765738174"
-                    {
-                    "Name" = "8:Xamarin.Forms.Xaml.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Xamarin.Forms.Xaml.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8F75054B16584EA4BA88DB5C8EA1B410"
@@ -17442,37 +16546,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9E78F8B0E4005A53785F6FDDDE1674BF"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:LibVLCSharp, Version=3.9.3.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_9E78F8B0E4005A53785F6FDDDE1674BF"
-                    {
-                    "Name" = "8:LibVLCSharp.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:LibVLCSharp.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9E8C6620AD714AD38C392118EAD87B33"
             {
             "SourcePath" = "8:..\\bin\\Release\\net8.0-windows\\libvlc\\win-x64\\plugins\\access\\libsmb_plugin.dll"
@@ -17631,37 +16704,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A095AD667A02DDD49CA1014E79E44877"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_A095AD667A02DDD49CA1014E79E44877"
-                    {
-                    "Name" = "8:System.Net.Http.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Net.Http.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A0A90BAF847A4DF880541EA9F967A663"
@@ -18271,11 +17313,6 @@
             "AssemblyAsmDisplayName" = "8:AxInterop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_AB443061F45547538AF3FEB317958D29"
-                    {
-                    "Name" = "8:AxInterop.WMPLib.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\bin\\Release\\net8.0-windows\\AxInterop.WMPLib.dll"
             "TargetName" = "8:"
@@ -19682,11 +18719,6 @@
             "AssemblyAsmDisplayName" = "8:LibVLCSharp, Version=3.9.3.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_C3E57B2C0BEC414DB80E3981D5C02510"
-                    {
-                    "Name" = "8:LibVLCSharp.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\bin\\Release\\net8.0-windows\\LibVLCSharp.dll"
             "TargetName" = "8:"
@@ -20204,37 +19236,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_CC16D3A0B247C64ED9238531DD5CF46C"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_CC16D3A0B247C64ED9238531DD5CF46C"
-                    {
-                    "Name" = "8:Xamarin.Forms.Platform.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Xamarin.Forms.Platform.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CC47458A9B9C4B04BC9C15C65D8D21CE"
@@ -21184,11 +20185,6 @@
             "AssemblyAsmDisplayName" = "8:Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_DC36C342BB1C49B3AA18002634A2240F"
-                    {
-                    "Name" = "8:Xamarin.Forms.Platform.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\bin\\Release\\net8.0-windows\\Xamarin.Forms.Platform.dll"
             "TargetName" = "8:"
@@ -21468,37 +20464,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E16DC90359C8133D1E981950C59610F8"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:System.Data.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_E16DC90359C8133D1E981950C59610F8"
-                    {
-                    "Name" = "8:System.Data.Common.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Data.Common.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E18385F42FA74B6FADA4B708F6294929"
             {
             "SourcePath" = "8:..\\bin\\Release\\net8.0-windows\\libvlc\\win-x64\\plugins\\codec\\liblibass_plugin.dll"
@@ -21597,37 +20562,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E322CACF0FABF550E40117DB54542A40"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:System.Diagnostics.Tracing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_E322CACF0FABF550E40117DB54542A40"
-                    {
-                    "Name" = "8:System.Diagnostics.Tracing.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Diagnostics.Tracing.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E330D7C9B1E94C088D7E9704C78B413B"
@@ -22390,37 +21324,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_EE633986F194EDC1FF1F9535E3DA0A3B"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:System.Diagnostics.StackTrace, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_EE633986F194EDC1FF1F9535E3DA0A3B"
-                    {
-                    "Name" = "8:System.Diagnostics.StackTrace.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Diagnostics.StackTrace.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EE908B6BA18E44859F66F85D867A5CE9"
             {
             "SourcePath" = "8:..\\bin\\Release\\net8.0-windows\\libvlc\\win-x64\\plugins\\audio_filter\\libugly_resampler_plugin.dll"
@@ -23021,37 +21924,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F6EA91BA2407B2CE4D27B6D984912902"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:System.IO.Compression.FileSystem, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_F6EA91BA2407B2CE4D27B6D984912902"
-                    {
-                    "Name" = "8:System.IO.Compression.FileSystem.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.IO.Compression.FileSystem.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F73854102D6B449AAFF4E0BAF7148B81"
             {
             "SourcePath" = "8:..\\bin\\Release\\net8.0-windows\\libvlc\\win-x64\\plugins\\video_filter\\libblendbench_plugin.dll"
@@ -23070,37 +21942,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F76C3BF32D75C2E5EAD24BFCDF2D424F"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_F76C3BF32D75C2E5EAD24BFCDF2D424F"
-                    {
-                    "Name" = "8:netstandard.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:netstandard.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F77169A20B6349079BF3C07DDF174FE6"
@@ -25022,20 +23863,6 @@
             "Transitive" = "11:TRUE"
             "Target" = "8:_A4649055C6624799A3AB647DE1BD6AE3"
             "Folder" = "8:_F00051729AAE4B21A37853A6A9EBD3AD"
-            "WorkingFolder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
-            "Icon" = "8:_D50B096964044ABC8D2B5929E240AE87"
-            "Feature" = "8:"
-            }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_9D779962787C4122A8D3F85E698AE5F0"
-            {
-            "Name" = "8:Block Player"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:TRUE"
-            "Target" = "8:_A4649055C6624799A3AB647DE1BD6AE3"
-            "Folder" = "8:_8EEBB598DB6E471EA43C30A2BC045476"
             "WorkingFolder" = "8:_37EC4C04CDA24FC0B44987394C8C19AF"
             "Icon" = "8:_D50B096964044ABC8D2B5929E240AE87"
             "Feature" = "8:"

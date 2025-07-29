@@ -35,10 +35,10 @@ namespace BlockPlayer
             Video = new LibVLCSharp.WinForms.VideoView();
             Painel = new TransparentPanel();
             PainelInterface = new Panel();
+            TempoAtualFinal = new Label();
             PainelVolume = new Panel();
             VolumeVideo = new DoubleBufferedPanel();
             VolumeTexto = new Label();
-            TempoAtualFinal = new Label();
             BarraVideo = new DoubleBufferedPanel();
             TimerVideo = new System.Windows.Forms.Timer(components);
             PainelSemVideo = new Panel();
@@ -95,15 +95,28 @@ namespace BlockPlayer
             // 
             // PainelInterface
             // 
-            PainelInterface.Controls.Add(PainelVolume);
             PainelInterface.Controls.Add(TempoAtualFinal);
+            PainelInterface.Controls.Add(PainelVolume);
             PainelInterface.Controls.Add(BarraVideo);
             PainelInterface.Dock = DockStyle.Top;
             PainelInterface.Location = new Point(0, 0);
             PainelInterface.Name = "PainelInterface";
             PainelInterface.Padding = new Padding(10, 15, 10, 10);
-            PainelInterface.Size = new Size(1055, 84);
+            PainelInterface.Size = new Size(1055, 90);
             PainelInterface.TabIndex = 6;
+            // 
+            // TempoAtualFinal
+            // 
+            TempoAtualFinal.AutoSize = true;
+            TempoAtualFinal.Dock = DockStyle.Left;
+            TempoAtualFinal.Font = new Font("Times New Roman", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TempoAtualFinal.ForeColor = Color.White;
+            TempoAtualFinal.Location = new Point(10, 15);
+            TempoAtualFinal.Name = "TempoAtualFinal";
+            TempoAtualFinal.Size = new Size(179, 35);
+            TempoAtualFinal.TabIndex = 2;
+            TempoAtualFinal.Text = "00:00 / 00:00";
+            TempoAtualFinal.Visible = false;
             // 
             // PainelVolume
             // 
@@ -114,7 +127,7 @@ namespace BlockPlayer
             PainelVolume.Location = new Point(839, 15);
             PainelVolume.Name = "PainelVolume";
             PainelVolume.Padding = new Padding(10);
-            PainelVolume.Size = new Size(206, 44);
+            PainelVolume.Size = new Size(206, 50);
             PainelVolume.TabIndex = 6;
             // 
             // VolumeVideo
@@ -144,24 +157,11 @@ namespace BlockPlayer
             VolumeTexto.Text = "100";
             VolumeTexto.Visible = false;
             // 
-            // TempoAtualFinal
-            // 
-            TempoAtualFinal.AutoSize = true;
-            TempoAtualFinal.Dock = DockStyle.Left;
-            TempoAtualFinal.Font = new Font("Times New Roman", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            TempoAtualFinal.ForeColor = Color.White;
-            TempoAtualFinal.Location = new Point(10, 15);
-            TempoAtualFinal.Name = "TempoAtualFinal";
-            TempoAtualFinal.Size = new Size(179, 35);
-            TempoAtualFinal.TabIndex = 2;
-            TempoAtualFinal.Text = "00:00 / 00:00";
-            TempoAtualFinal.Visible = false;
-            // 
             // BarraVideo
             // 
             BarraVideo.BackColor = Color.DimGray;
             BarraVideo.Dock = DockStyle.Bottom;
-            BarraVideo.Location = new Point(10, 59);
+            BarraVideo.Location = new Point(10, 65);
             BarraVideo.MaximumSize = new Size(0, 15);
             BarraVideo.Name = "BarraVideo";
             BarraVideo.Size = new Size(1035, 15);
