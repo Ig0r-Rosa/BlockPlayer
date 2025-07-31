@@ -218,8 +218,6 @@ namespace BlockPlayer
         {
             if (_videoFinalizado)
             {
-                // Seleciona o painel do video atual
-                // Procura o painel do vídeo atual na lista "ContinuarAssistindo"
                 foreach (Control ctrl in ContinuarAssistindo.Controls)
                 {
                     if (ctrl is Panel painel && painel.Tag is VideoInfo info && info.Caminho == _mediaPlayer?.Media?.Mrl)
@@ -229,7 +227,10 @@ namespace BlockPlayer
                     }
                 }
 
-                ApagarContinuarAssistindoSelecionado();
+                if(painelSelecionado != null)
+                {
+                    ApagarContinuarAssistindoSelecionado();
+                }
             }
             else
             {
