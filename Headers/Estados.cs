@@ -219,6 +219,8 @@ namespace BlockPlayer
                     SWP_NOMOVE | SWP_NOSIZE | SWP_NOACTIVATE | SWP_SHOWWINDOW);
 
                 this.Show();
+                this.Visible = true;
+                this.Invalidate();
                 this.BringToFront();
 
                 Video.MediaPlayer = _mediaPlayer;
@@ -244,21 +246,24 @@ namespace BlockPlayer
                 TornarMiniplayerOverlay();
                 ForcarOverlayCompleto();
 
+                // ⚠ Oculta a janela principal imediatamente
+                this.Hide();
+                this.Visible = false;
+
+                // ⚠ Salva a janela que estava com foco antes
+                IntPtr janelaAnterior = GetForegroundWindow();
+
                 SetWindowPos(_miniplayer.Handle, HWND_TOPMOST, 0, 0, 0, 0,
                     SWP_NOMOVE | SWP_NOSIZE | SWP_NOACTIVATE | SWP_SHOWWINDOW);
-
-                IntPtr janelaAnterior = GetForegroundWindow(); // Salva foco atual (jogo, por exemplo)
-
-                this.Hide(); // Oculta player principal antes de mostrar o mini
 
                 _miniplayer.Show();
                 _miniplayer.BringToFront();
                 _miniplayer.Video.Invalidate();
-                _miniplayer.Video.Update();    
-                
+                _miniplayer.Video.Update();
+
                 Thread.Sleep(50);
 
-                // Após exibir o miniplayer, retorna o foco à janela anterior (jogo)
+                // ⚠ Devolve o foco à janela anterior (jogo, por exemplo)
                 ForcarFocoJanela(janelaAnterior);
 
                 _mediaPlayer.Play();
