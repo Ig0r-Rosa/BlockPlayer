@@ -6,37 +6,30 @@ namespace BlockPlayer
 {
     public partial class Janela : Form
     {
+        // Alterna entre janela normal e maximizada (sem ser fullscreen)
         public void AlternarMaximizado()
         {
             if (EstaFullscreen) return;
 
             if (WindowState == FormWindowState.Maximized)
-            {
                 WindowState = FormWindowState.Normal;
-            }
             else
-            {
                 WindowState = FormWindowState.Maximized;
-            }
 
             EstaMaximizado = (WindowState == FormWindowState.Maximized);
         }
 
-
+        // Alterna entre janela normal/maximizada e modo fullscreen real
         public void AlternarFullscreen()
         {
             if (!EstaFullscreen)
             {
-                // Salva estado da janela antes do fullscreen (tamanho e posição apenas)
-                if (WindowState == FormWindowState.Normal)
-                    _boundsAntesFullscreen = Bounds;
-                else
-                    _boundsAntesFullscreen = RestoreBounds;
+                // Salva posição e tamanho atuais para restaurar depois
+                _boundsAntesFullscreen = (WindowState == FormWindowState.Normal) ? Bounds : RestoreBounds;
+                _bordaAnterior = FormBorderStyle;
+                _topMostAnterior = TopMost;
 
-                _bordaAnterior = this.FormBorderStyle;
-                _topMostAnterior = this.TopMost;
-
-                // Entra em fullscreen
+                // Ativa o fullscreen real
                 FormBorderStyle = FormBorderStyle.None;
                 WindowState = FormWindowState.Normal;
                 Bounds = Screen.FromControl(this).Bounds;
@@ -46,7 +39,7 @@ namespace BlockPlayer
             }
             else
             {
-                // Sai do fullscreen e volta ao estado "normal", sempre
+                // Restaura o estado anterior ao fullscreen
                 FormBorderStyle = _bordaAnterior;
                 TopMost = _topMostAnterior;
 
@@ -57,10 +50,12 @@ namespace BlockPlayer
             }
         }
 
+        // Mostra ou oculta o vídeo principal
         public void AtualizarVisibilidadeVideo(bool visivel)
         {
             Video.Visible = visivel;
             PainelSemVideo.Visible = !visivel;
+
             if (visivel)
             {
                 Video.Invalidate();
@@ -74,6 +69,7 @@ namespace BlockPlayer
             }
         }
 
+        // Exibe ou oculta os controles visuais da interface (barra, botões etc.)
         public void ExibirInterface(bool exibe)
         {
             foreach (var item in Interface)
@@ -87,11 +83,12 @@ namespace BlockPlayer
             }
         }
 
+        // Alterna entre play/pause, com verificação de finalização e delay inicial
         public void Pause()
         {
             if (_videoFinalizado)
             {
-                _mediaPlayer.Stop(); // Reinicia
+                _mediaPlayer.Stop(); // Reinicia o vídeo se tiver sido finalizado
                 _mediaPlayer.Play();
                 _videoFinalizado = false;
                 TimerVideo.Start();
@@ -101,7 +98,7 @@ namespace BlockPlayer
 
             if (_mediaPlayer.IsPlaying)
             {
-
+                // Aguarda tempo inicial atualizar (evita congelamento no 00:00)
                 int tentativas = 0;
                 while (_mediaPlayer.Time == 0 && tentativas < 15)
                 {
@@ -124,7 +121,9 @@ namespace BlockPlayer
             }
         }
 
-        // --- Constantes e imports para manipulação de janelas Win32 ---
+        // --- Win32 API: Manipulação de janelas no Windows ---
+
+        // Constantes de estilo de janelas
         private const int GWL_EXSTYLE = -20;
         private const int WS_EX_NOACTIVATE = 0x08000000;
         private const int WS_EX_TRANSPARENT = 0x00000020;
@@ -135,24 +134,22 @@ namespace BlockPlayer
         private const int WS_POPUP = unchecked((int)0x80000000);
         private const int WS_VISIBLE = 0x10000000;
 
-        [DllImport("user32.dll", SetLastError = true)]
-        private static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
+        // Funções nativas do Windows
+        [DllImport("user32.dll", SetLastError = true)] private static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
+        [DllImport("user32.dll", SetLastError = true)] private static extern int GetWindowLong(IntPtr hWnd, int nIndex);
+        [DllImport("user32.dll")] private static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
+        [DllImport("user32.dll")] static extern int SetWindowLongPtr(IntPtr hWnd, int nIndex, IntPtr dwNewLong);
+        [DllImport("user32.dll")] static extern IntPtr GetWindowLongPtr(IntPtr hWnd, int nIndex);
+        [DllImport("user32.dll")] private static extern IntPtr GetForegroundWindow();
+        [DllImport("user32.dll")] private static extern bool SetForegroundWindow(IntPtr hWnd);
+        [DllImport("user32.dll")] private static extern uint GetWindowThreadProcessId(IntPtr hWnd, out uint processId);
+        [DllImport("kernel32.dll")] private static extern uint GetCurrentThreadId();
+        [DllImport("user32.dll")] private static extern bool AttachThreadInput(uint idAttach, uint idAttachTo, bool fAttach);
+        [DllImport("user32.dll")] private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
 
-        [DllImport("user32.dll", SetLastError = true)]
-        private static extern int GetWindowLong(IntPtr hWnd, int nIndex);
-
-        [DllImport("user32.dll")]
-        private static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter,
-            int X, int Y, int cx, int cy, uint uFlags);
-
-        [DllImport("user32.dll")]
-        static extern int SetWindowLongPtr(IntPtr hWnd, int nIndex, IntPtr dwNewLong);
-
-        [DllImport("user32.dll")]
-        static extern IntPtr GetWindowLongPtr(IntPtr hWnd, int nIndex);
-
+        // Constantes para ShowWindow / SetWindowPos
+        private const int SW_RESTORE = 9;
         static readonly IntPtr HWND_TOPMOST = new IntPtr(-1);
-
         const uint SWP_NOSIZE = 0x0001;
         const uint SWP_NOMOVE = 0x0002;
         const uint SWP_NOACTIVATE = 0x0010;
@@ -161,7 +158,23 @@ namespace BlockPlayer
         const uint SWP_FRAMECHANGED = 0x0020;
         const uint SWP_NOSENDCHANGING = 0x0400;
 
-        // --- Configura miniplayer para overlay sem foco ---
+        // Força o foco para uma janela específica
+        private static void ForcarFocoJanela(IntPtr hWnd)
+        {
+            if (hWnd == IntPtr.Zero || hWnd == GetForegroundWindow())
+                return;
+
+            GetWindowThreadProcessId(hWnd, out uint processoAtivo);
+            uint idThreadAtual = GetCurrentThreadId();
+            uint idThreadJanela = GetWindowThreadProcessId(hWnd, out processoAtivo);
+
+            AttachThreadInput(idThreadAtual, idThreadJanela, true);
+            ShowWindow(hWnd, SW_RESTORE);
+            SetForegroundWindow(hWnd);
+            AttachThreadInput(idThreadAtual, idThreadJanela, false);
+        }
+
+        // Aplica estilo de janela para overlay sem foco e sem bordas
         private void TornarMiniplayerOverlay()
         {
             int exStyle = GetWindowLong(_miniplayer.Handle, GWL_EXSTYLE);
@@ -169,7 +182,7 @@ namespace BlockPlayer
             SetWindowLong(_miniplayer.Handle, GWL_EXSTYLE, exStyle);
         }
 
-        // --- Remove WS_EX_TRANSPARENT para permitir clique (se quiser ativar isso) ---
+        // Remove transparência para permitir cliques no miniplayer
         private void TornarMiniplayerCompatível()
         {
             int exStyle = GetWindowLong(_miniplayer.Handle, GWL_EXSTYLE);
@@ -178,7 +191,7 @@ namespace BlockPlayer
             SetWindowLong(_miniplayer.Handle, GWL_EXSTYLE, exStyle);
         }
 
-        // --- Força estilo popup e visível para overlay ---
+        // Aplica estilo WS_POPUP | WS_VISIBLE necessário para sobreposição
         private void ForcarOverlayCompleto()
         {
             int style = (int)GetWindowLongPtr(_miniplayer.Handle, GWL_STYLE);
@@ -186,7 +199,7 @@ namespace BlockPlayer
             SetWindowLongPtr(_miniplayer.Handle, GWL_STYLE, (IntPtr)style);
         }
 
-        // --- Alterna miniplayer ---
+        // Alterna entre o player principal e o miniplayer
         private void AlternarMiniplayer()
         {
             long tempoAtual = _mediaPlayer.Time;
@@ -196,21 +209,19 @@ namespace BlockPlayer
                 _mediaPlayer.Stop();
                 _miniplayer.Video.MediaPlayer = null;
 
-                // Esconde o miniplayer e força atualização para evitar tela preta
+                // Oculta o miniplayer e atualiza para evitar tela preta
                 _miniplayer.Hide();
                 _miniplayer.Invalidate();
 
-                // Força estilo e posição para overlay principal
+                // Restaura player principal
                 ForcarOverlayCompleto();
                 SetWindowPos(_miniplayer.Handle, HWND_TOPMOST, 0, 0, 0, 0,
                     SWP_NOMOVE | SWP_NOSIZE | SWP_NOACTIVATE | SWP_SHOWWINDOW);
 
-                // Mostra o player principal e traz para frente
                 this.Show();
                 this.BringToFront();
-                this.Activate();
 
-                Video.MediaPlayer = _mediaPlayer; // reassocia player de vídeo
+                Video.MediaPlayer = _mediaPlayer;
                 _mediaPlayer.Play();
                 _mediaPlayer.Time = tempoAtual;
 
@@ -218,7 +229,6 @@ namespace BlockPlayer
                 _miniplayer.Video.MediaPlayer = null;
 
                 Thread.Sleep(50);
-
                 _mediaPlayer.Time = tempoAtual;
                 Pause();
             }
@@ -237,18 +247,22 @@ namespace BlockPlayer
                 SetWindowPos(_miniplayer.Handle, HWND_TOPMOST, 0, 0, 0, 0,
                     SWP_NOMOVE | SWP_NOSIZE | SWP_NOACTIVATE | SWP_SHOWWINDOW);
 
+                IntPtr janelaAnterior = GetForegroundWindow(); // Salva foco atual (jogo, por exemplo)
+
+                this.Hide(); // Oculta player principal antes de mostrar o mini
+
                 _miniplayer.Show();
                 _miniplayer.BringToFront();
                 _miniplayer.Video.Invalidate();
-                _miniplayer.Video.Update();
-                this.Hide();
-
-                _miniplayer.Activate();
-
-                _mediaPlayer.Play();
-
+                _miniplayer.Video.Update();    
+                
                 Thread.Sleep(50);
 
+                // Após exibir o miniplayer, retorna o foco à janela anterior (jogo)
+                ForcarFocoJanela(janelaAnterior);
+
+                _mediaPlayer.Play();
+                Thread.Sleep(50);
                 _mediaPlayer.Time = tempoAtual;
             }
         }
